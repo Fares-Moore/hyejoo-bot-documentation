@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Hyejoo Bot Docuementation',
+  title: 'Hyejoo Bot Documentation',
   tagline: 'Welcome to Hyejoo Support',
   favicon: 'img/favicon.ico',
 
@@ -23,7 +23,7 @@ const config = {
   url: 'https://fares-moore.github.io', // Your website URL
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '<hyejoo-bot-documentation>',
+  baseUrl: '/hyejoo-bot-documentation/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -78,26 +78,25 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/hyejoo-icon-temp.jpg',
       colorMode: {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'My Site',
+        title: 'Hyejoo Bot Documentation',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Hyejoo Bot Documentation Logo',
+          src: 'img/hyejoo-icon-temp.jpg',
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Help',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/Fares-Moore/hyejoo-bot-documentation',
             label: 'GitHub',
             position: 'right',
           },
@@ -111,7 +110,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: '/docs/landing',
               },
             ],
           },
@@ -141,7 +140,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/Fares-Moore/hyejoo-bot-documentation',
               },
             ],
           },

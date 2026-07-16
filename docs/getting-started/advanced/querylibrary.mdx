@@ -1,0 +1,44 @@
+
+
+# Optional Command Parameter Library
+This is for more experienced players of Hyejoo Bot that are looking to find the full library of command query parameters!
+
+## card_query
+Query for card attributes. 
+If searching for the card’s name, search for the text itself. 
+
+`/cards card_query:[Card Name]`
+
+The card name autocompletes and assumes the first result so you don't have to type out the full name everytime.
+
+### Groups of cards
+If searching for a selection of cards, search via the cards attributes, with a hyphen `-` in front to include, or a exclamation mark `!` if you want to exclude: 
+
+
+- Name of collection, -[group]
+    - Example input:  -twice, -enhypen, -babymonster
+- Rarity level, -[number of stars]
+     - Example input:  -1, -2, !3, !4
+- Type of card, listed under the card’s info
+    - Example input: -promo, !lottery, -limited, !liveauction
+- Card Level, whether the card has a level
+    - Example input:  >levels
+- Categorisation, via the player’s organisation
+    - Example input:  -fav, >rating
+
+
+count: How many cards you are claiming with the command.
+Example input: any number between 1 to 10
+
+
+boost_id: If an active boost (event) is listed, input the id of the boost in this parameter to have a chance to claim an event promo.
+Example input: christma
+s25, chuseok24
+
+
+group_type: Claim cards claimed will be only from either category of girl groups or boy groups.
+Example input: girlsgroups OR boygroups
+Note: Soloists are classified by gender and not their own category.
+
+global: Query for the whole card database.
+Example input: true OR false

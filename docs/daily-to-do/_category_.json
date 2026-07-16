@@ -1,0 +1,8 @@
+{
+  "label": "Daily To-Do",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "daily-to-do/intro"
+  }
+}
