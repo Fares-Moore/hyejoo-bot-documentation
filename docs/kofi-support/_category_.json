@@ -1,8 +1,8 @@
 {
-  "label": "Kofi Support",
+  "label": "Ko-Fi Support",
   "position": 9,
   "link": {
     "type": "doc",
-    "id": "getting-started/intro"
+    "id": "kofi-support"
   }
 }

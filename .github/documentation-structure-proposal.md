@@ -49,8 +49,11 @@ This file captures the proposed Docusaurus documentation structure for the Hyejo
     - (Explain everything about plots, and every command)
 - Events and Activities
   - Seasonal events
+    - (Look through a promo collections, eg spring25, halloween20, etc, and list out all of them as events)
   - Limited-time activities
+    - (1 star promo events, where 1 start promos eg ivesserafim are dropped randomly in claims without using a boostid, anniversary event, where hyejooanniv recipe item is added to the store to claim a promo card)
   - Community events
+    - (Games, giveaways, community interaction)
 - Ko-Fi Support
   - How to support
   - Rewards and benefits

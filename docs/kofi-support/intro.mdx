@@ -1,14 +1,141 @@
 ---
-sidebar_position: 2
+id: kofi-support
+title: Ko-Fi Support
+sidebar_position: 1
 ---
 
-# Basic Info
+# Ko-Fi Support ☕
 
-### What Is Hyejoo Bot?
-Hyejoo is a K-Pop gacha card collecting game where you collect, flex and complete your favourite kpop groups’ and soloists’ card collections! 
+Love Hyejoo Bot and want to support its development? You can drop a coffee on Ko-Fi to help keep the bot running and unlock some cool perks along the way! This page covers everything you need to know about supporting Hyejoo.
 
-### What is the main objective of the game?
-It's a sandbox, you could do anything including:
- - Completing card collections of your favourite idols/groups for clouts
- - Collecting as many rare cards as possible just as a flex 
- - Participate in regularly updated community events, interact with other community members and just have fun!
+## How to support
+
+1. Head over to our [Ko-Fi page](https://ko-fi.com) and make a donation.
+2. Any donation of **$5 or more** grants you **30 days of premium membership**.
+3. After your donation, use `/kofi` with your transaction ID or link to verify your payment and claim your perks.
+4. Your premium membership will be activated immediately and lasts for the duration purchased.
+
+### Premium membership details
+
+| Aspect | Details |
+| --- | --- |
+| Minimum donation | $5 USD |
+| Premium duration | 30 days per $5 donated |
+| Stacking | Multiple donations stack — `$10 = 60 days`, `$15 = 90 days`, etc. |
+| Expiry | Premium expires after the purchased duration. You can re-up anytime! |
+| Auto-reward | AmuPlus role is automatically added to your account |
+
+:::tip
+Don't forget to run `/kofi` with your transaction ID after donating! Your payment needs to be verified before premium kicks in.
+:::
+
+### How to verify your payment
+
+After donating on Ko-Fi:
+
+1. Copy your **transaction ID** (txid) from your Ko-Fi order page or the order confirmation URL.
+2. Run `/kofi transID:your_transaction_id` in the bot.
+3. You'll get a confirmation message with your premium membership duration.
+4. You can also paste the full order URL instead of just the ID — the bot will extract the txid automatically.
+
+```
+/kofi transID:abc123-abc123-abc123
+/kofi transID:https://ko-fi.com/...?txid=abc123-abc123-abc123
+```
+
+:::warning
+The transaction ID is visible to you when you make the purchase. If you lose it, you can contact us in the [support server] for help.
+:::
+
+## Rewards and benefits 🌟
+
+### Ko-Fi Subscriber perks
+
+| Perk | Description |
+| --- | --- |
+| **AmuPlus Role** 🏅 | Exclusive role in the bot's support server |
+| **Premium Profile** 🖼️ | Extra display features on your `/profile` — show off your collection in style |
+| **Mark Cards with Emoji** ✏️ | Use custom emoji markers on your cards (requires Ko-Fi subscription) |
+| **Extended Preferences** ⚙️ | Access to premium preference options in `/preferences` |
+
+### Daily Ko-Fi Claim `/koficlaim`
+
+Ko-Fi subscribers (AmuPlus role) get a **daily lottery card claim**!
+
+| Aspect | Details |
+| --- | --- |
+| Cooldown | 24 hours |
+| Requirement | AmuPlus role |
+| Reward | A random card from the **Lottery Collection** 🎰 |
+| Command | `/koficlaim` |
+
+Every 24 hours, you can claim a random lottery card. These are special cards from the `lottery` collection that aren't available through regular claiming!
+
+### Monthly Ko-Fi Promo `/kofipromo`
+
+Ko-Fi subscribers also get a **monthly promo card** from exclusive collections!
+
+| Aspect | Details |
+| --- | --- |
+| Cooldown | 30 days |
+| Requirement | AmuPlus role + a valid tier role (Amu3, Amu6, Amu9, Amu12, Amu15, or Amu30) |
+| Reward | A random card from a tier-based collection pool |
+| Command | `/kofipromo` |
+
+### Tier system and collection weights
+
+Your Ko-Fi tier determines which collections you can pull from and your chances at rarer cards:
+
+| Tier | Monthly Donation | Common 🟢 | Rare 🔵 | Epic 🟣 | Legendary 🟠 |
+| --- | --- | --- | --- | --- | --- |
+| **Amu3** | $3 | 100% | — | — | — |
+| **Amu6** | $6 | 55% | 28% | 13% | 4% |
+| **Amu9** | $9 | 40% | 32% | 20% | 8% |
+| **Amu12** | $12 | 25% | 33% | 28% | 14% |
+| **Amu15** | $15 | 15% | 25% | 35% | 25% |
+| **Amu30** | $30 | 5% | 15% | 35% | 45% |
+
+#### Available collections by tier
+
+| Rarity Tier | Collections Included |
+| --- | --- |
+| **Common** 🟢 | `twizonevent`, `monstaexo` |
+| **Rare** 🔵 | `smileyevent26`, `anniversary26` |
+| **Epic** 🟣 | `xmas24`, `anniversary21` |
+| **Legendary** 🟠 | `halloween20`, `halloween21` |
+
+:::tip
+Higher tiers massively increase your legendary collection chances. Amu30 gives you a **45% chance** at epic or legendary collections, while Amu3 is capped at common collections.
+:::
+
+## Commands
+
+| Command | Required params | Permissions | Cooldown | What it does |
+| --- | --- | --- | --- | --- |
+| `/kofi` | Optional transaction ID or link | Any user | None | Show premium info or verify a Ko-Fi payment |
+| `/koficlaim` | None | AmuPlus role only | 24 hours | Claim a daily lottery card |
+| `/kofipromo` | None | AmuPlus role only | 30 days | Claim a monthly promo card based on your tier |
+
+## FAQ ❓
+
+### How do I become a premium member?
+Donate **$5 or more** on our Ko-Fi page, then run `/kofi transID:your_transaction_id` in the bot to verify.
+
+### What does premium give me?
+Premium grants you an **AmuPlus role**, enhanced profile display features, the ability to mark cards with emoji, and access to premium preferences.
+
+### How long does premium last?
+**30 days per $5 donated**. If you donate $15, you get 90 days. Donations stack!
+
+### What's the difference between `/koficlaim` and `/kofipromo`?
+- `/koficlaim` is a **daily** claim (24h cooldown) that gives a random **Lottery Collection** card.
+- `/kofipromo` is a **monthly** claim (30d cooldown) that gives a card from a **tier-based promo collection** with weighted rarities.
+
+### My donation isn't working with `/kofi`. What do I do?
+Make sure you're using the correct transaction ID from your Ko-Fi order page. You can either paste the full URL or just the txid parameter. If it still doesn't work, reach out in the [support server] for help.
+
+### Do I need to keep my Ko-Fi subscription active?
+Premium is time-based — once activated, it lasts for the duration you paid for regardless of subscription status.
+
+### Can I upgrade my tier later?
+Yes! Higher donations just add more time or unlock higher tiers. Each new donation can push you into a higher tier for better monthly promo chances.
