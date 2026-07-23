@@ -1,8 +1,8 @@
 {
-  "label": "Effects, Plots, and Store",
+  "label": "Effects and Store",
   "position": 6,
   "link": {
     "type": "doc",
-    "id": "getting-started/intro"
+    "id": "effects-and-store"
   }
 }

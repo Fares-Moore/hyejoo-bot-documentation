@@ -1,0 +1,163 @@
+---
+id: training-ascension
+title: Training & Ascension
+sidebar_position: 3
+---
+
+# Training & Ascension ⬆️
+
+Leveling up your cards and combining them into higher rarities is a key part of progression. This page covers training, ascending, and combining cards.
+
+## `/train` — Level up your cards
+
+Use `/train` to give a card experience points. Training is how you max out cards so they're ready for ascension.
+
+| Aspect | Details |
+| --- | --- |
+| Cooldown | 15 minutes |
+| Card query | Any card from your inventory |
+| Effect | Gains XP toward next level |
+
+:::tip
+Train cards regularly, especially ones you plan to ascend. Pair training with `/cards` and `/profile` to track your collection's growth.
+:::
+
+## `/ascend` — Combine into higher rarity
+
+Ascension combines **two maxed-out cards** of the same star level into a **single higher-star card**. This is the main way to push your collection toward rarer tiers.
+
+| Aspect | Details |
+| --- | --- |
+| Required | Two cards of the same star level, both at max XP |
+| Result | One card of the next star level (e.g., 2★ + 2★ → 3★, 3★ + 3★ → 4★) |
+| Cost | Flakes ❄️ (base cost scales with card level) |
+| Limitations | 4* and above cards cannot be ascended, nor can cards from fragments, album, liveauction, jackpot, birthdays, limited, signed, or removed collections |
+
+### Ascension rules
+
+- Both cards must be at the **same star level**.
+- Cards must be **fully trained** (max XP for their level).
+- You cannot ascend the **last copy** of a favorited card.
+- The resulting card comes from a pool that excludes certain collection types.
+
+:::warning
+Ascension costs tomatoes based on the cards' evaluations. Higher level ascensions cost more, but the **Cherry Blossoms** passive effect reduces forge/ascend costs by 50%!
+:::
+
+## `/combine` — Fuse fodder cards
+
+Combine two cards of the same star level into a new card. Unlike ascension, the cards don't need to be maxed out. This is useful for recycling duplicate cards.
+
+| Aspect | Details |
+| --- | --- |
+| Required | Two cards of the same star level |
+| Result | One new card of the same star level |
+| Cost | Flakes ❄️ |
+| Vials earned | A small amount of vials from the process |
+
+### Combine rules
+
+- Same rules as ascension for excluded collection types.
+- Cannot combine promo collection cards unless both are from the same promo collection.
+- Lottery collections and album collections have special filtering rules.
+
+## `/forge` — The Smith System
+
+Forging is a more advanced card combination system that uses **two cards of the same star level** to create a new card while also earning **vials 🧪**.
+
+| Aspect | Details |
+| --- | --- |
+| Required | Two cards of the same star level (can be same card with multiple copies) |
+| Cost | Flakes ❄️ (calculated from card evaluations) |
+| Reward | A new card of the same star level + vials |
+| 4★ forging | Costs 7x more but produces no vials |
+
+### Forging rules
+
+#### General rules 📏
+
+| Rule | Details |
+| --- | --- |
+| **Eligible cards** | Must be from non-excluded collections (no fragments, limited, birthdays, etc.) |
+| **Specialty collections** | Cannot forge from limited, birthdays, liveauctions, or fragments |
+| **Cost reduction** | **Cherry Blossoms** passive effect reduces forge costs by **50%** |
+
+#### Collection matching 🎯
+
+| Input cards | Result |
+| --- | --- |
+| Two cards from the **same** collection | A card from that same collection (e.g., 3★ -ive + 3★ -ive → 3★ -ive) |
+| Two cards from **different** collections | A card from a **completely random** collection |
+
+The result's group tag (boygroups, girlgroups, etc.) follows the input cards' tags.
+
+#### Promo card forging 🎉
+
+| Input cards | Result |
+| --- | --- |
+| Two promo cards from the **same** promo collection | A promo card from that collection (e.g., 3★ -anniversary26 + 3★ -anniversary26 → 3★ -anniversary26) |
+| Two promo cards from **different** promo collections | ❌ A **normal** card — the result will **not** be a promo card! |
+
+:::warning
+Forging promos from different collections wastes the promo value — the result won't be a promo card!
+:::
+
+#### Album card forging 💿
+
+| Input cards | Result |
+| --- | --- |
+| Two album cards from the **same** album collection | An album card from that collection (e.g., 4★ -bgalbums + 4★ -bgalbums → 4★ -bgalbums) |
+| Two album cards from **different** album collections | An album card from **either** collection (e.g., 4★ -bgalbums + 4★ -ggalbums → 4★ -bgalbums or -ggalbums) |
+| An album card + a **normal** card | ❌ A **normal** card — not from either album collection! |
+
+#### Lottery card forging 🎰
+
+Lottery cards can be forged, and have a chance to drop when forging normal cards of the same rarity.
+
+:::tip
+Craft the `cherrybloss` effect to halve your forge and ascend costs — it pays for itself quickly if you do a lot of forging!
+:::
+
+## Card management commands
+
+These commands help you manage, compare, and evaluate your cards:
+
+| Command | Required params | What it does |
+| --- | --- | --- |
+| `/cards` | Card query (optional) | Browse all cards you own with filters and search |
+| `/cards global` | Card query (optional) | Browse cards from the global card pool |
+| `/profile` | Target user ID (optional) | View a player's profile card and collection stats |
+| `/eval one` | Card query | Evaluate one card's worth |
+| `/eval many` | Card query, optional count | Evaluate multiple cards at once |
+| `/eval many global` | Card query, optional count | Evaluate cards from the global pool |
+| `/fav one` | Card query | Favorite one card (protects it from accidental actions) |
+| `/fav many` | Card query, optional count | Favorite multiple cards |
+| `/fav remove one` | Card query | Remove favorite from one card |
+| `/fav remove many` | Card query, optional count | Remove favorites from multiple cards |
+| `/lock one` | Card query | Lock one card for extra protection |
+| `/lock many` | Card query, optional count | Lock multiple cards |
+| `/lock remove one` | Card query | Unlock one card |
+| `/lock remove many` | Card query, optional count | Unlock multiple cards |
+| `/rate one` | Card query | Rate one card |
+| `/rate many` | Card query, optional count | Rate multiple cards |
+| `/rate remove one` | Card query | Remove a rating from one card |
+| `/rate remove many` | Card query, optional count | Remove ratings from multiple cards |
+| `/wish one` | Card query | Add one card to your wishlist |
+| `/wish many` | Card query, optional count | Add multiple cards to your wishlist |
+| `/wish remove one` | Card query | Remove one card from your wishlist |
+| `/wish remove many` | Card query, optional count | Remove multiple wishlist entries |
+| `/diff from` | Target user ID | Compare your cards against another user's collection |
+| `/diff for` | Target user ID | Compare another user's cards against yours |
+| `/has` | Target user ID + card query | Check whether another player owns a specific card |
+| `/summon` | Card query | Look up a specific card from the global pool |
+
+:::tip
+Use **favorites ⭐** and **locks 🔒** to protect your most valuable cards! A favorited/locked card can't be accidentally sold, liquefied, or used in forging. Check your cards with `/cards` to keep track.
+:::
+
+## Quick tips
+
+- **Train → Ascend → Repeat** — Build a pipeline: train cards to max, ascend them, then train the result.
+- **Cherry Blossoms is a must-have** — 50% off all forges and ascends saves you a ton of tomatoes in the long run.
+- **Use `/combine` for dupes** — If you have duplicate cards you don't need, combining them is better than selling.
+- **Forging gives vials** — If you're working toward a `/draw`, forging is a great way to accumulate vials while recycling cards.

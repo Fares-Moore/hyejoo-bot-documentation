@@ -6,49 +6,84 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #b58cc9;
+  --ifm-color-primary-dark: #9f74b2;
+  --ifm-color-primary-darker: #8d62a1;
+  --ifm-color-primary-darkest: #754c83;
+  --ifm-color-primary-light: #cdaee0;
+  --ifm-color-primary-lighter: #e2c7ef;
+  --ifm-color-primary-lightest: #f3e7fb;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #d8b7e8;
+  --ifm-color-primary-dark: #c59cd8;
+  --ifm-color-primary-darker: #b389ca;
+  --ifm-color-primary-darkest: #9a6fb3;
+  --ifm-color-primary-light: #e8d0f2;
+  --ifm-color-primary-lighter: #f5e7fb;
+  --ifm-color-primary-lightest: #fdf6ff;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
 }
 
 .function-card {
   display: block;
   height: 100%;
-  padding: 1.5rem;
+  padding: 1.4rem 1.2rem;
   border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 12px;
+  border-radius: 16px;
   text-decoration: none;
   color: inherit;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(243,231,251,0.85));
+  box-shadow: 0 4px 12px rgba(181, 140, 201, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .function-card:hover {
   border-color: var(--ifm-color-primary);
-  box-shadow: 0 0 15px var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(181, 140, 201, 0.2);
 }
 
 .function-card h3 {
   margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .function-card p {
   margin-bottom: 0;
+  color: var(--ifm-color-emphasis-800);
+}
+
+[data-theme='dark'] .function-card {
+  background: linear-gradient(135deg, rgba(47, 37, 58, 0.95), rgba(71, 53, 91, 0.9));
+  border-color: rgba(216, 183, 232, 0.35);
+}
+
+[data-theme='dark'] .function-card p {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+[data-theme='dark'] .function-card h3 {
+  color: #f7eaff;
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-800);
+  margin-top: 0.75rem;
+}
+
+[data-theme='dark'] .hero__subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.markdown h2 {
+  color: var(--ifm-color-primary-darkest);
+}
+
+[data-theme='dark'] .markdown h2 {
+  color: #f2dcff;
 }

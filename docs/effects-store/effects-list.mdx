@@ -1,0 +1,117 @@
+---
+id: effects-list
+title: Effect Cards
+sidebar_position: 3
+---
+
+# Effect Cards ✨
+
+Effect Cards are special items that give you passive buffs or one-time active abilities. You craft them from the store using **effect recipes**, then equip or use them through your hero.
+
+## How effects work
+
+- **Crafting** — Buy an effect recipe from `/store` (under Effect Recipes), then use it from your inventory. It consumes the required cards from your collection.
+- **Passive Effects** — Once crafted, equip passives to your hero's effect slots using `/hero equip`. They provide ongoing buffs as long as they're slotted.
+- **Active Effects** — Use them directly with `/effect use`. Each active effect has a limited number of uses and a cooldown between uses.
+- **Viewing effects** — Use `/effect list actives` to see your usable effects, or `/effect list passives` (or `/hero slots`) to see your equipped passives.
+- **Effect info** — Use `/effect info` to see details about any effect card.
+
+:::note
+Your hero starts with **2 passive effect slots** by default. You can unlock more with **Effect Slot Upgrade** items from the bonus store!
+:::
+
+## Passive Effects 🛡️
+
+Passive effects stay active as long as they are equipped to your hero's effect slots. They provide ongoing benefits.
+
+| ID | Name | What it does | Duration |
+| --- | --- | --- | --- |
+| `tohrugift` | **Gift From Tohru** | Increase your chances to get a 3-star card on your first claim every day | 210 days |
+| `cakeday` | **Cake Day** 🎥 | Get +100 more flakes on `/daily` for every claim you did in the previous day | 210 days |
+| `holygrail` | **The Holy Grail** 🎥 | Get +25% more vials when liquefying 1 and 2-star cards | 210 days |
+| `skyfriend` | **Skies Of Friendship** | Get 13% snowflakes back from wins on auction | 210 days |
+| `cherrybloss` | **Cherry Blossoms** | All card forges and ascends are 50% cheaper | 210 days |
+| `onvictory` | **Onwards To Victory** | Get guild rank points 25% faster | 210 days |
+| `rulerjeanne` | **The Ruler Jeanne** | `/daily` cooldown is every 17 hours instead of 20 hours | 210 days |
+| `spellcard` | **Impossible Spell Card** | All active effects will have 40% less cooldown | 210 days |
+| `festivewish` | **Festival of Wishes** | Get notified when a card on your wishlist is auctioned | 30 days |
+| `walpurgisnight` | **Walpurgis Night** | `/draw` can give up to 6★ per daily instead of max 3★ | 50 days |
+
+:::note
+Effects marked with 🎥 have animated GIF images when you view them in the bot!
+:::
+
+### Recipe costs for passives
+
+Each passive recipe requires sacrificing specific card rarities:
+
+| Effect | Price 🍅 | Cards needed |
+| --- | --- | --- |
+| Gift From Tohru | 4,500 | 2★ x3 |
+| Festival of Wishes | 1,000 | 1★ x3 |
+| Onwards To Victory | 1,000 | 2★ x6 |
+| Impossible Spell Card | 5,000 | 2★ x3, 3★ x3 |
+| Cherry Blossoms | 20,000 | 2★ x3, 3★ x1 |
+| Cake Day | 20,000 | 2★ x5 |
+| The Holy Grail | 22,500 | 2★ x2, 3★ x2 |
+| The Ruler Jeanne | 30,000 | 3★ x3 |
+| Skies Of Friendship | 35,000 | 1★ x1, 2★ x4 |
+| Walpurgis Night | 15,000 | 2★ x1, 3★ x4 |
+
+## Active (Usable) Effects ⚡
+
+Active effects have a limited number of uses and a cooldown period between uses. Use them with `/effect use`.
+
+| ID | Name | What it does | Uses | Cooldown | Price 🍅 |
+| --- | --- | --- | --- | --- | --- |
+| `enayano` | **Enlightened Ayano** | Completes a tier 1 daily quest when used | 20 uses | 20h | 5,500 |
+| `pbocchi` | **Powerful Bocchi** | Generates a new daily quest (70% tier 1, 30% tier 2) | 20 uses | 32h | 7,000 |
+| `claimrecall` | **Claim Recall** | Reduces your claim count by 4, lowering claim cost | 14 uses | 15h | 10,000 |
+| `judgeday` | **The Judgment Day** | Copies the effect of almost any other usable effect | 12 uses | 48h | 12,000 |
+| `spaceunity` | **The Space Unity** | Gives a random unique card from a non-promo collection you choose | 7 uses | 40h | 15,000 |
+| `hyejooanniv` | **Hyejoo Anniversary** | Grants a random card from the Hyejoo Anniversary26 collection | 1 use | 0h | 5,000 |
+
+### Recipe costs for actives
+
+| Effect | Cards needed |
+| --- | --- |
+| Enlightened Ayano | 1★ x2, 2★ x2 |
+| Powerful Bocchi | 2★ x2, 3★ x2 |
+| Claim Recall | 1★ x3, 2★ x3 |
+| The Judgment Day | 2★ x1, 3★ x3 |
+| The Space Unity | 2★ x2, 3★ x2 |
+| Hyejoo Anniversary | 2★ x3 *(only available during anniversary event)* |
+
+## Hero & Effects commands
+
+These are the main commands for managing your hero and effects:
+
+| Command | What it does |
+| --- | --- |
+| `/hero show` | View your hero and their equipped effect slots. |
+| `/hero get` | Set or change your hero (from submitted heroes). |
+| `/hero list` | Browse available heroes you can choose. |
+| `/hero equip` | Equip a passive effect card to an empty hero slot. |
+| `/hero slots` | View your passive effect slots and equipped effects (same as `/effect list passives`). |
+| `/effect list actives` | Show your usable active effect cards. |
+| `/effect list passives` | Show your passive effect cards. |
+| `/effect info` | Get details about a specific effect. |
+| `/effect use` | Use an active effect card. |
+
+## Effect slot upgrades
+
+You start with **2 passive effect slots**. To unlock more:
+
+1. Buy an **Effect Slot Upgrade** from the bonus store for 50,000 🍋.
+2. You must be at least **level 100** to use it.
+3. Each upgrade adds **1 slot** for **210 days**.
+4. You can unlock a maximum of **1 slot per 100 levels**.
+
+Use `/hero slots` to see your current slots, their remaining duration, and what effects are equipped.
+
+## Quick tips
+
+- **Spell Card + active effects** — The **Impossible Spell Card** passive reduces ALL active effect cooldowns by 40%. Definitely worth crafting if you use actives often.
+- **Festival of Wishes** is relatively cheap (1,000 🍅, 3x 1★ cards) and very handy for auction players — you'll get notified whenever someone lists a card from your wishlist.
+- **Use Claim Recall after a big claim session** — If you've claimed a lot of cards and the cost has gone up, Claim Recall brings the count down by 4, saving you tomatoes on your next claim.
+- **The Ruler Jeanne** reduces your `/daily` cooldown from 20h to 17h — that's 3 hours saved every day, adding up over time!

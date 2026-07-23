@@ -1,0 +1,101 @@
+---
+id: card-management-commands
+title: Card Management Commands
+sidebar_position: 3
+---
+
+# Card Management Commands 🛠️
+
+:::info
+This page is your full reference for managing, organizing, comparing, and evaluating your cards. All commands listed here are verified against the bot's command schema (COMMAND_SCHEMA.md).
+:::
+
+## Core collection commands
+
+| Command | Required params | Permissions | What it does |
+| --- | --- | --- | --- |
+| `/cards` | Card query (optional) | Any user | Browse the cards you own. Use `global:true` to search the full card pool. Supports filtering by name, collection, star level, and more. |
+| `/summon` | Card query | Any user | Summon and view a specific card from your collection. |
+| `/info` | Card query | Any user | Show card data, owner count, demand (wishlist count), tags, and pricing info for a card. |
+| `/claim cards` | Optional count/promo/any/boost ID/group type | Any user | Claim cards using flakes. Cost scales with number of claims. |
+| `/level claim` | Optional count/promo/any/boost ID/group type | Any user | Alternate claims for cards with random amounts of levels. |
+
+## Comparison and checking commands
+
+| Command | Required params | Permissions | What it does |
+| --- | --- | --- | --- |
+| `/has` | Target user ID + card query | Any user | Check whether another player owns a specific card. |
+| `/diff from` | Target user ID | Any user | Compare your card collection against another user's cards. |
+| `/diff for` | Target user ID | Any user | Compare another user's collection against yours. |
+| `/profile` | Target user ID (optional) | Any user | View a profile-style overview for a player. |
+| `/stats` | None | Any user | Show your current user statistics. |
+
+## Wishlist, favorites, and personal organization
+
+| Command | Required params | Permissions | What it does |
+| --- | --- | --- | --- |
+| `/wish one` | Card query | Any user | Add one card to your wishlist 📋. |
+| `/wish many` | Card query, optional count | Any user | Add multiple cards to your wishlist. |
+| `/wish remove one` | Card query | Any user | Remove one wishlist entry. |
+| `/wish remove many` | Card query, optional count | Any user | Remove multiple wishlist entries. |
+| `/fav one` | Card query | Any user | Mark one card as a favorite ⭐. |
+| `/fav many` | Card query, optional count | Any user | Mark multiple cards as favorites. |
+| `/fav remove one` | Card query | Any user | Remove a favorite mark from one card. |
+| `/fav remove many` | Card query, optional count | Any user | Remove favorite marks from multiple cards. |
+
+## Evaluation and rating commands
+
+| Command | Required params | Permissions | What it does |
+| --- | --- | --- | --- |
+| `/eval one` | Card query | Any user | Evaluate one card's worth. |
+| `/eval many` | Card query, optional count | Any user | Evaluate multiple cards at once. |
+| `/rate one` | Card query | Any user | Rate one card. |
+| `/rate many` | Card query, optional count | Any user | Rate multiple cards. |
+| `/rate remove one` | Card query | Any user | Remove a rating from one card. |
+| `/rate remove many` | Card query, optional count | Any user | Remove ratings from multiple cards. |
+
+## Locking and inventory protection
+
+| Command | Required params | Permissions | What it does |
+| --- | --- | --- | --- |
+| `/lock one` | Card query | Any user | Lock one card in your inventory 🔒. |
+| `/lock many` | Card query, optional count | Any user | Lock multiple cards. |
+| `/lock remove one` | Card query | Any user | Unlock one card. |
+| `/lock remove many` | Card query, optional count | Any user | Unlock multiple cards. |
+
+:::tip
+Favoriting cards protects them from accidental selling, liquefying, or use in forges. Favourite your legendaries and rares first!
+:::
+:::tip
+Locking cards protects them from other players from seeing them when they use `/has` or `/diff from`. Use this to hide your cards if you're feeling sneaky...
+:::
+
+## Extra card systems — covered in other sections
+
+These commands are part of the broader card experience but are detailed elsewhere:
+
+| Command | Required params | Permissions | What it does | Covered in |
+| --- | --- | --- | --- | --- |
+| `/sell one` | Card query, optional price | Any user | Sell one card to the economy system. | [Draw & Legroll](../clouting/draw-and-legroll) |
+| `/sell many` | Card query, optional count | Any user | Sell multiple cards at once. | [Draw & Legroll](../clouting/draw-and-legroll) |
+| `/sell preview` | Card query | Any user | Preview the value from selling cards. | [Draw & Legroll](../clouting/draw-and-legroll) |
+| `/train` | Card query | Any user | Train a card to gain XP. 15 min cooldown. | [Training & Ascension](../clouting/training-ascension) |
+| `/ascend` | Two card queries | Any user | Ascend two maxed cards into a higher card. | [Training & Ascension](../clouting/training-ascension) |
+| `/combine` | Two card queries | Any user | Combine fodder cards into a new card. | [Training & Ascension](../clouting/training-ascension) |
+| `/forge` | Two card queries | Any user | Forge cards into a new card using the smith system. | [Training & Ascension](../clouting/training-ascension) |
+| `/liquefy one` | Card query | Any user | Liquefy one card into vials 🧪. | [Draw & Legroll](../clouting/draw-and-legroll) |
+| `/liquefy many` | Card query, optional count | Any user | Liquefy multiple cards at once. | [Draw & Legroll](../clouting/draw-and-legroll) |
+| `/liquefy preview` | Card query | Any user | Preview the vial value from liquefying. | [Draw & Legroll](../clouting/draw-and-legroll) |
+| `/draw` | Card query | Any user | Spend vials to draw a card. | [Draw & Legroll](../clouting/draw-and-legroll) |
+| `/legroll` | None | Any user | Spend a legendary ticket to roll a 5★ card. | [Draw & Legroll](../clouting/draw-and-legroll) |
+
+## A simple starter workflow
+
+If you're new, here's a tidy little flow:
+
+1. Use `/cards` to browse your collection.
+2. Use `/claim cards` to add new cards (or `/summon` to look up specific ones).
+3. Use `/wish` to save cards you want later.
+4. Use `/eval` to understand value before selling or converting.
+5. Use `/rate` and `/fav` to keep your collection organized and personal.
+6. Use `/lock` to protect your most valuable cards.

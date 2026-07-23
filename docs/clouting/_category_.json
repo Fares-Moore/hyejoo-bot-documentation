@@ -1,8 +1,8 @@
 {
-  "label": "Clouts",
+  "label": "Clouts and Progression",
   "position": 5,
   "link": {
     "type": "doc",
-    "id": "getting-started/intro"
+    "id": "clouts-and-progression"
   }
 }

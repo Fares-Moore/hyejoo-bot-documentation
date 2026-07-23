@@ -1,44 +1,72 @@
-
+---
+id: getting-started-advanced-querylibrary
+title: Optional Command Parameter Library
+sidebar_position: 2
+---
 
 # Optional Command Parameter Library
-This is for more experienced players of Hyejoo Bot that are looking to find the full library of command query parameters!
 
-## card_query
-Query for card attributes. 
-If searching for the card’s name, search for the text itself. 
+This page is for players who want to get a little more precise with command usage. The bot supports several parameter styles across card, claim, and collection commands, and this reference focuses on the most common ones you are likely to run into.
 
-`/cards card_query:[Card Name]`
+:::note
+Not every command uses every parameter. Many of these options show up most often in card-related flows such as /claim cards, /cards, /summon, /eval, and related collection commands.
+:::
 
-The card name autocompletes and assumes the first result so you don't have to type out the full name everytime.
+## Common parameter types
 
-### Groups of cards
-If searching for a selection of cards, search via the cards attributes, with a hyphen `-` in front to include, or a exclamation mark `!` if you want to exclude: 
+### card_query
+Use this for card-based commands when you want to target a specific card or a group of cards.
 
+Examples:
+- `/cards card_query:twice`
+- `/summon card_query:dark`
 
-- Name of collection, -[group]
-    - Example input:  -twice, -enhypen, -babymonster
-- Rarity level, -[number of stars]
-     - Example input:  -1, -2, !3, !4
-- Type of card, listed under the card’s info
-    - Example input: -promo, !lottery, -limited, !liveauction
-- Card Level, whether the card has a level
-    - Example input:  >levels
-- Categorisation, via the player’s organisation
-    - Example input:  -fav, >rating
+You can search by card name, collection, rarity, type, or other card traits. The bot will usually autocomplete the closest match, so you do not need to type the full name every time.
 
+### Filtering a card group
+When you want a subset of cards, you can add filters with `-` to include or `!` to exclude.
 
-count: How many cards you are claiming with the command.
-Example input: any number between 1 to 10
+Examples:
+- `-twice`
+- `-enhypen`
+- `-1`, `-2`, `!3`, `!4`
+- `-promo`, `!lottery`, `-limited`, `!liveauction`
+- `>levels`
+- `-fav`, `>rating`
 
+These filters are especially useful when you are trying to narrow a result list or search a very specific pool of cards.
 
-boost_id: If an active boost (event) is listed, input the id of the boost in this parameter to have a chance to claim an event promo.
-Example input: christma
-s25, chuseok24
+### count
+Use this when a command supports claiming or processing multiple cards at once.
 
+Example:
+- `count:5`
 
-group_type: Claim cards claimed will be only from either category of girl groups or boy groups.
-Example input: girlsgroups OR boygroups
-Note: Soloists are classified by gender and not their own category.
+This is most relevant for claim-style commands such as /claim cards and /level claim.
 
-global: Query for the whole card database.
-Example input: true OR false
+### boost_id
+If an event or boost is active, some claim commands can use a boost ID to increase the odds of getting a specific promo or event-related card.
+
+Examples:
+- `boost_id:christmas25`
+- `boost_id:chuseok24`
+
+### group_type
+This is used when a claim command should only pull from a specific category of cards.
+
+Examples:
+- `group_type:girlsgroups`
+- `group_type:boygroups`
+
+Note that soloists are usually treated by gender rather than as their own separate group category.
+
+### global
+Use this when a command should look at the global card pool rather than only your personal inventory or the local guild context.
+
+Examples:
+- `global:true`
+- `global:false`
+
+## Quick reminder
+
+If you are still getting comfortable with commands, the best approach is to start simple and let autocomplete help you. The advanced parameter syntax becomes much easier once you already know the basic command names and the kinds of cards you are trying to target.

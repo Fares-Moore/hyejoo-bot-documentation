@@ -1,0 +1,86 @@
+---
+id: collection-progress
+title: Collection Progress
+sidebar_position: 5
+---
+
+# Collection Progress 📋
+
+Tracking, completing, and resetting collections is the core of clouting. This page covers all the commands for managing your collection progress.
+
+## `/collection list` — Your progress at a glance
+
+Shows your collection completion status across all collections or a filtered subset.
+
+| Parameter | What it does |
+| --- | --- |
+| `cols` | Filter by specific collection names or IDs |
+| `completed` | Show only completed (`true`) or incomplete (`false`) collections |
+| `clouted` | Show only clouted (`true`) or unclouted (`false`) collections |
+| `sortComplete` | Sort by completion status |
+
+### Completion logic
+
+- **Normal collections**: All cards in the set must be owned.
+- **Fragment collections**: Only 1★ cards need to be owned (higher stars come from fragment merging).
+
+## `/collection info` — Collection details
+
+View detailed info about a specific collection, including all cards in the set and your ownership status.
+
+| Parameter | What it does |
+| --- | --- |
+| `collection` | Name or ID of the collection to inspect |
+| fields shown | Card names, star levels, whether you own them |
+
+## `/collection reset` — Reset completed collections
+
+When you've completed a collection and want to reset it for additional rewards or progression.
+
+| Parameter | What it does |
+| --- | --- |
+| `collection` | The completed collection to reset |
+| Shows | Requirements and rewards for resetting |
+
+### Reset requirements
+
+- You must own every card in the collection.
+- Some collections have specific reset conditions.
+- Resetting may consume cards or require additional resources.
+
+## Collection types
+
+Understanding different collection types helps you plan your clouting:
+
+| Type | How to complete | Notes |
+| --- | --- | --- |
+| **Normal** | Collect all cards in the set | Standard completion |
+| **Fragments** | Collect all 1★ cards | Higher stars come from fragment system |
+| **Promo** | Limited-time event collections | Only available during events |
+| **Album** | Special album collections | Have their own rules for forging |
+| **Lottery** | Rare lottery collections | Special filtering rules apply |
+| **Legendary (5★)** | Collect all 5★ cards | Rarest cards in the game |
+| **Limited/Birthdays** | Time-limited special cards | May not be re-released |
+
+## The clout system
+
+When you complete a collection:
+
+1. You can **clout** it — marking it as completed and adding to your total clout count.
+2. Use `/collection list clouted:true` to show only collections you've clouted.
+3. Use `/collection list clouted:false` to see collections still waiting to be completed.
+4. Use `/collection list completed:true` to see which sets have all cards collected.
+
+## Clouted collections
+
+The `clouted` filter in `/collection list` shows the status of your clout progress:
+
+- **clouted:true** — Collections you've already completed and clouted
+- **clouted:false** — Collections you haven't yet completed (or completed but not yet clouted)
+
+## Quick tips
+
+- **Filter by completion** — Use `/collection list completed:false` to see what collections still need work and prioritize your claims.
+- **Focus on one collection at a time** — Pick a collection and claim cards from it to make steady progress.
+- **Check collection info often** — `/collection info` shows you exactly which cards you're missing.
+- **Don't forget to clout** — After completing a collection, make sure to actually clout it to mark your progress!

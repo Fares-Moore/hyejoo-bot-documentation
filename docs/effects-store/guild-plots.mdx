@@ -1,0 +1,210 @@
+---
+id: guild-plots
+title: Guild Plots & Buildings
+sidebar_position: 4
+---
+
+# Guild Plots & Buildings 🏘️
+
+Plots are your **passive lemon income** system. Buy a plot in a guild, build structures on it, and earn lemons 🍋 whenever other players take certain actions in that server.
+
+## Getting started with plots
+
+To start using plots you need to be at least **level 20**. Each plot costs lemons, and the price increases the more plots you own.
+
+### Plot commands
+
+| Command | What it does |
+| --- | --- |
+| `/plot list` | Show all your plots in the current guild. |
+| `/plot list global` | Show all your plots across all guilds. |
+| `/plot buy` | Purchase a new plot in the current guild. |
+| `/plot info` | View details, stored lemons, and stats for a specific plot. |
+| `/plot info global` | View plot info across all guilds. |
+| `/plot upgrade` | Upgrade a building on one of your plots to the next level. |
+| `/plot collect` | Collect all stored lemons from your plots in the current guild. |
+| `/plot demolish` | Demolish a plot and building, getting 75% of invested lemons back. |
+
+### Plot limits
+
+- **Per guild**: Your guild level determines how many plots you can have. The formula is `ceil(guild_level / 8) + 1` plots per guild.
+- **Global**: You can own `max(0, floor((player_level - 20) / 10) + 1)` plots total across all guilds.
+- **Minimum level**: You need to be **level 20** before you can buy your first plot.
+
+### Plot costs
+
+The cost of buying a new plot doubles with each plot you own:
+
+`25 × 2^(number of plots you already own)`
+
+| Plots owned | Next plot cost 🍋 |
+| --- | --- |
+| 0 | 25 |
+| 1 | 50 |
+| 2 | 100 |
+| 3 | 200 |
+| 4 | 400 |
+| 5 | 800 |
+| 6 | 1,600 |
+| 7 | 3,200 |
+| 8 | 6,400 |
+| 9 | 12,800 |
+| 10 | 25,600 |
+
+### Lemon cap
+
+You have a maximum number of lemons you can hold at once. Your cap is determined by the cost of your next plot:
+
+- If your next plot costs less than 100,000 🍋, your cap is **100,000 🍋**.
+- If your next plot costs 100,000 🍋 or more, your cap equals that cost.
+
+If collecting plot revenue would exceed your cap, you'll be warned and can choose to collect anyway (forfeiting the excess) or cancel.
+
+## Buildings (Blueprints) 🏗️
+
+Buildings are placed on plots using **blueprints** bought from the store with lemons 🍋. Each building requires a specific player level to build and has multiple upgrade levels.
+
+### Important building rules
+
+- You **must build a Castle first** before placing any other building in a guild.
+- You **cannot have two of the same building** in the same guild.
+- Buildings earn passive lemons based on **other players' actions** in the guild — not your own.
+- Buildings have **maintenance costs** paid from the guild's balance.
+
+### Castle 🏰
+
+The **first building you must place**. Generates lemons daily even without player activity, and boosts storage capacity for all your other buildings in the same guild.
+
+| Level | Price 🍋 | Level Req | Maintenance | Effect |
+| --- | --- | --- | --- | --- |
+| 1 | 0 | 20 | 10 🍅/day | Generates 30 🍋 every 24h, allows other buildings |
+| 2 | 500 | 40 | 15 🍅/day | +50% storage for all buildings, generates 40 🍋/day |
+| 3 | 1,000 | 60 | 20 🍅/day | +75% storage, generates 50 🍋/day |
+| 4 | 2,000 | 80 | 25 🍅/day | +100% storage, generates 60 🍋/day |
+| 5 | 5,000 | 100 | 50 🍅/day | +125% storage, generates 70 🍋/day |
+
+### Gacha Bank 🏦
+
+Earns lemons when players in the guild run `/daily` or `/claim` cards.
+
+| Level | Price 🍋 | Level Req | Maintenance | Effect |
+| --- | --- | --- | --- | --- |
+| 1 | 0 | 30 | 100 🍅/day | Gives 🍋 when a user does `/daily` |
+| 2 | 2,000 | 60 | 150 🍅/day | Gives 🍋 when a user claims cards or does `/daily` |
+
+### Tavern 🍺
+
+Earns lemons when players complete achievements and quests in the guild.
+
+| Level | Price 🍋 | Level Req | Maintenance | Effect |
+| --- | --- | --- | --- | --- |
+| 1 | 0 | 40 | 50 🍅/day | Gives 🍋 on achievement completion |
+| 2 | 2,000 | 80 | 70 🍅/day | Gives 🍋 on quest or achievement completion |
+
+### Smithing Hub 🔨
+
+Earns lemons when players forge, liquefy, or draw cards.
+
+| Level | Price 🍋 | Level Req | Maintenance | Effect |
+| --- | --- | --- | --- | --- |
+| 1 | 0 | 50 | 10 🍅/day | Gives 🍋 when people forge cards |
+| 2 | 2,500 | 75 | 50 🍅/day | Gives 🍋 when people forge or liquefy |
+| 3 | 5,000 | 100 | 100 🍅/day | Gives 🍋 when people forge, liquefy, or draw |
+
+### Auction House 🏛️
+
+Earns lemons from auction activity in the guild.
+
+| Level | Price 🍋 | Level Req | Maintenance | Effect |
+| --- | --- | --- | --- | --- |
+| 1 | 0 | 100 | 10 🍅/day | Gives 🍋 when someone wins an auction bid |
+| 2 | 10,000 | 150 | 20 🍅/day | **2x** 🍋 from auction bids |
+| 3 | 20,000 | 200 | 50 🍅/day | **3x** 🍋 from auction bids |
+
+## Storage capacity
+
+Each building has a maximum lemon storage before it stops earning more. The base storage caps are:
+
+| Building Level | Base Storage |
+| --- | --- |
+| 1 | 300 🍋 |
+| 2 | 600 🍋 |
+| 3 | 1,200 🍋 |
+| 4 | 1,800 🍋 |
+| 5 | 3,600 🍋 |
+| 6 | 7,200 🍋 |
+
+Your Castle level increases this storage by a percentage. If your guild also has a **Lemonade Stand**, storage is boosted further by 10% per stand level.
+
+## Collecting lemons 🍋
+
+Use `/plot collect` to gather all stored lemons from your plots in a guild. You can collect once per hour.
+
+- If collecting would exceed your lemon cap, the bot will warn you.
+- You can choose to continue and forfeit the excess, or cancel.
+- Collected lemons go directly into your balance.
+
+## Guild store buildings 🏪
+
+These are buildings purchased by the **server owner or managers** using the **guild's balance** (not your personal balance). They provide global buffs to everyone in the guild.
+
+| Building | Price | Maintenance | Effect |
+| --- | --- | --- | --- |
+| **Lemonade Stand** 🥤 | 2,500 🍅 | 25-125 🍅/day | Increases all plot lemon storage capacity by 10-50% (per level) |
+| **Pamper Central** 💆 | 15,000 🍅 | 15-50 🍅/day | Reduces all building maintenance fees by 5-20% (per level) |
+| **Discount Center** 🏷️ | 5,000 🍅 | 10-80 🍅/day | Reduces auction listing fees by 5-20% (per level) |
+
+### Lemonade Stand levels
+
+| Level | Price 🍅 | Maintenance | Effect |
+| --- | --- | --- | --- |
+| 1 | 0 | 25 🍅/day | +10% lemon storage |
+| 2 | 100 | 50 🍅/day | +20% lemon storage |
+| 3 | 1,000 | 75 🍅/day | +30% lemon storage |
+| 4 | 2,000 | 100 🍅/day | +40% lemon storage |
+| 5 | 10,000 | 125 🍅/day | +50% lemon storage |
+
+### Pamper Central levels
+
+| Level | Price 🍅 | Maintenance | Effect |
+| --- | --- | --- | --- |
+| 1 | 0 | 15 🍅/day | -5% maintenance fees |
+| 2 | 2,500 | 20 🍅/day | -10% maintenance fees |
+| 3 | 5,000 | 25 🍅/day | -15% maintenance fees |
+| 4 | 50,000 | 50 🍅/day | -20% maintenance fees |
+
+### Discount Center levels
+
+| Level | Price 🍅 | Maintenance | Effect |
+| --- | --- | --- | --- |
+| 1 | 0 | 10 🍅/day | -5% auction fee |
+| 2 | 5,000 | 20 🍅/day | -10% auction fee |
+| 3 | 8,000 | 40 🍅/day | -15% auction fee |
+| 4 | 12,000 | 80 🍅/day | -20% auction fee |
+
+## Demolishing plots
+
+If you want to free up a plot slot, use `/plot demolish`:
+
+- **Empty plots** are deleted with no refund.
+- **Plots with buildings** give you back **75% of the total lemons** you invested (blueprint price + all upgrade costs).
+- If you have multiple buildings and one of them is a **Castle**, you cannot demolish the Castle while other buildings exist in the guild.
+- Demolished plots free up a slot so you can build something else.
+
+## Guild commands related to plots
+
+| Command | What it does |
+| --- | --- |
+| `/guild info` | View guild info and current buildings. |
+| `/guild status` | See guild finances and maintenance costs. |
+| `/guild donate` | Donate tomatoes to the guild balance. |
+| `/guild convert` | Convert guild lemons into tomatoes (owner/manager). |
+| `/guild lead` | View the guild leaderboard. |
+
+## Quick tips
+
+- **Castle first, always** 🏰 — You can't build anything else without a Castle on your plot. Make this your first purchase.
+- **Choose your guild wisely** — Plots only earn from actions in the guild they're placed in. Active guilds with lots of players will earn you more lemons!
+- **Collect regularly** — Buildings have storage caps, so if you don't collect, you'll miss out on potential earnings once they hit the cap.
+- **Consider the Lemonade Stand** — If you're in a guild with active builders, a Lemonade Stand boosts everyone's storage, meaning less frequent collecting needed.
+- **Level matters** — Many buildings and upgrades are locked behind player levels. Keep playing to unlock higher-tier options!

@@ -1,0 +1,79 @@
+---
+id: daily-claims
+title: Daily Claims
+sidebar_position: 2
+---
+
+# Daily Claims 🗓️
+
+Your daily claim loop is the bread and butter of progression. This covers getting your daily reward, claiming cards, and understanding how costs scale.
+
+## `/daily` — Your daily reward
+
+Use `/daily` to claim your daily flakes and refresh your daily state. This is the most important habit in the game because it gives you your main currency and resets your claim cost.
+
+| Aspect | Details |
+| --- | --- |
+| Cooldown | 20 hours (17 hours with **The Ruler Jeanne** passive effect) |
+| Base reward | 500 ❄️ |
+| Streak bonus | +5 ❄️ for each consecutive streak day |
+| What resets | Claim cost, daily quests, store purchase limits |
+
+:::tip
+Make `/daily` your first stop every time you log in. It refreshes everything and sets you up for the day.
+:::
+
+## `/claim cards` — Building your collection
+
+This is how you get new cards. You spend **tomatoes 🍅** to claim random cards from the pool. The more you claim in a day, the more each claim costs.
+
+### How claim cost works
+
+Claim costs scale up the more cards you claim in a single day. The cost resets when you use `/daily`.
+
+| Claims in a day | Approximate cost trend |
+| --- | --- |
+| First claim | Low cost (starts at 50 ❄️) |
+| Incremental claims | Increases by 50 ❄️ for every claimed card |
+| 30 claims | **Guarantees a promo card drop during event boost periods** |
+
+### Optional parameters for `/claim cards`
+
+| Parameter | What it does |
+| --- | --- |
+| `count` | Number of cards to claim (max 10 per command) |
+| `boost` | Apply an active boost ID for special card drops |
+| `group_type` | Filter by group type (e.g., girlgroups, boygroups) |
+| `promo` (deprecated) | Use promo currency during special events |
+| `any` (deprecated) | Bypass guild lock restrictions |
+
+:::tip
+Check your balance with `/balance` before claiming to avoid overspending. Claim in smaller batches to keep costs manageable.
+:::
+
+### Special claim bonuses
+
+- **Tohru effect** — If you have **Gift From Tohru** passive equipped and haven't claimed any cards today, your first claim has increased chance at a 3★ card.
+- **Boost drops** — During active boosts, every 30th claim guarantees a boost card drop.
+
+## `/level claim` — Level-based claiming
+
+An alternate claim flow that uses level-based logic instead of standard claim mechanics. This can give different card results compared to `/claim cards`.
+
+| Aspect | Details |
+| --- | --- |
+| Parameters | Same optional params as `/claim cards` (count, promo, any, boost, group_type) |
+| Best for | Players who want card levels distribution rather than regular card claiming |
+
+## Related commands
+
+| Command | Cooldown | What it does |
+| --- | --- | --- |
+| `/balance` | None | Check your current currency balances before claiming |
+| `/daily` | 20 hours (17h with Jeanne) | Claim daily reward and reset claim cost |
+| `/cooldown` | None | See when your daily and claim cooldowns are ready |
+| `/stats` | None | View your current stats including total claims and progression |
+| `/work` | 10 minutes | Earn temporary rewards (flakes, vials, or user XP) |
+| `/journey` | 12 hours | Go on a journey for a chance at a random card |
+| `/vote` | 12 hours | Vote for the bot and check reward availability |
+| `/todo` | None | Show a checklist of recurring tasks you can complete today |

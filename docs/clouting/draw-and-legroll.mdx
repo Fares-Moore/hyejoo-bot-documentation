@@ -1,0 +1,100 @@
+---
+id: draw-and-legroll
+title: Draw & Legendary Roll
+sidebar_position: 4
+---
+
+# Draw & Legendary Roll 🎲
+
+Two powerful systems for getting new cards: spending vials to draw, and using legendary tickets for guaranteed 5★ pulls.
+
+## `/liquefy` — Turn cards into vials
+
+Before you can draw, you need **vials 🧪**. Liquefying unwanted cards converts them into vials.
+
+| Command | What it does |
+| --- | --- |
+| `/liquefy one` | Liquefy a single card, earning vials based on its evaluation |
+| `/liquefy many` | Liquefy multiple cards at once |
+| `/liquefy preview` | Preview how many vials you'd get from liquefying specific cards |
+
+| Aspect | Details |
+| --- | --- |
+| Vial formula | Based on the card's evaluation value |
+| **Holy Grail bonus** | +25% more vials when liquefying 1★ and 2★ cards (requires passive effect) |
+| Result | Vials 🧪 are added to your balance |
+
+:::tip
+The **Holy Grail** passive effect is fantastic if you liquefy a lot — 25% extra vials on low-star cards adds up fast!
+:::
+
+## `/draw` — Spend vials for cards
+
+Use `/draw` to spend vials and get a new card. Draw results are based on your vial pool.
+
+| Aspect | Details |
+| --- | --- |
+| Cost | Vials 🧪 (cost scales with vial balance) |
+| Result | A random card |
+| Max 3★ per daily | By default, draw can give up to 3★ per daily cycle |
+| **Walpurgis Night** | Passive effect that lets draw give up to 6★ per daily instead of max 3★ |
+
+### Draw cost calculation
+
+The more vials you have, the more each draw costs. This means you'll want to manage your vial balance carefully.
+
+### Walpurgis Night effect
+
+With the **Walpurgis Night** passive equipped (lasts 50 days):
+
+- Draw can give cards up to **6★** instead of the usual 3★ max per daily.
+- This significantly increases your chance at high-rarity cards from draws.
+
+## `/legroll` — Legendary ticket rolling
+
+When you have a **Legendary Card Claim Ticket**, use `/legroll` to spend it and get a guaranteed 5★ card.
+
+| Aspect | Details |
+| --- | --- |
+| Cost | 1 Legendary Card Claim Ticket |
+| Result | A guaranteed **5★ legendary card** |
+| Ticket source | Clouts from completing a collection via `/collection reset` |
+
+### How legendary tickets work
+
+- Legend tickets are inventory items (type: `claim_ticket`) that give a 5★ card.
+- The collection is determined when the ticket is awarded.
+- Use `/legroll` without any extra parameters to redeem.
+
+:::tip
+Save your legendary tickets for when you're targeting specific legendaries. Since the collection is determined when the ticket is awarded (not when you roll), check what collection your ticket is for before using it.
+
+(Some legendaries might not exist when you complete their collection, you can save these tickets for when they get added!)
+:::
+
+## `/sell` — Selling cards
+
+If you have cards you don't need and don't want to liquefy, you can sell them for tomatoes 🍅.
+
+| Command | Required params | What it does |
+| --- | --- | --- |
+| `/sell one` | Card query, optional price | Sell a single card to the economy system |
+| `/sell many` | Card query, optional count | Sell multiple cards at once |
+| `/sell preview` | Card query | Preview the value of selling cards |
+
+## `/summon` — Look up a card
+
+Use `/summon` with a card query to find and view a specific card from the global card pool. This is useful for checking card details before deciding to train, ascend, or forge.
+
+| Aspect | Details |
+| --- | --- |
+| Required | Card query (name, ID, or partial match) |
+| Shows | Card name, star level, collection, image, and metadata |
+| Use case | Finding cards to target for training or collection completion |
+
+## Quick tips
+
+- **Liquefy 1★ and 2★ cards** — These are cheapest to replace and give the most efficient vial conversion with Holy Grail.
+- **Draw after building up vials** — Wait until you have a decent vial reserve before drawing to maximize your chances.
+- **Save legend tickets for special occasions** — A guaranteed 5★ is one of the best resources in the game.
+- **Check `/liquefy preview` first** — Always preview before liquefying to make sure you're not giving up valuable cards.
