@@ -1,9 +1,50 @@
 ---
-sidebar_position: 2
+id: daily-to-do-cards
+title: Cards
+sidebar_position: 7
 ---
 
-# Cards
+# Cards 🃏
 
-`/cards`
+## `/cards`
 
-Browse through all the cards you own. You can filter and search to find specific ones. Each card shows its name, how many copies you have, any emoji mark you've set, and other details.
+Browse through every card you own in one place! You can filter, search, and sort to find exactly what you're looking for. Each card shows its **name**, how many **copies** you have, any **emoji mark** you've set, and other useful details.
+
+### Command parameters
+
+| Parameter | Required | What it does |
+| --- | --- | --- |
+| `card_query` | ❌ Optional | Filter by card name, group, or collection |
+| `global` | ❌ Optional | Set to `true` to search the **entire card pool** instead of just your collection |
+
+### What you'll see in your collection 🖼️
+
+| Info | Description |
+| --- | --- |
+| **Card name** | The name of your card |
+| **Copies** | How many of that card you own |
+| **Emoji mark** | Any custom emoji you've set (via Ko-Fi perks) |
+| **Star rating** | ★ rating from 1★ to 5★ |
+| **Rating** | Personal and Community-submitted ratings on the card |
+| **Lock status** | 🔒 if the card is locked to prevent accidental actions |
+
+### Handy filtering tips 🔍
+
+- **Search by name** — `/cards card_query:tohru` finds all Tohru cards
+- **Search by group** — `/cards card_query:twice` shows your Twice collection
+- **Search by collection** — Use collection IDs to filter specific sets
+- **Global search** — `/cards global:true card_query:rare` searches the full card pool
+
+:::tip
+Check out the [Optional Command Parameter Library](https://fares-moore.github.io/hyejoo-bot-documentation/docs/getting-started/advanced/getting-started-advanced-querylibrary#common-parameter-types) for more advanced filtering options! 🔎
+:::
+
+### Related commands
+
+| Command | Why it's useful |
+| --- | --- |
+| `/summon` | Show off a single card in all its glory |
+| `/profile` | View your collection stats and achievements |
+| `/eval` | Check a card's value before selling or trading |
+| `/fav` | Mark your favorite cards |
+| `/lock` | Protect valuable cards from accidents |

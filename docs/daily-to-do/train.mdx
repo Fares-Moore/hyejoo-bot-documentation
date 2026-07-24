@@ -4,14 +4,50 @@ title: Train
 sidebar_position: 6
 ---
 
-# Train
+# Train 💪
 
-## /train
+## `/train`
 
-Train a card to earn experience points and help it level up. This is part of the progression loop for card growth, and it becomes more important once you start collecting stronger cards or aiming for ascension.
+Help your cards grow stronger by training them! Each training session gives **experience points (XP)** to a card, helping it level up. This becomes super important once you start aiming for **ascension** (combining two max-level cards into a higher-star card) or just want to level up your favorites.
 
-### What to know
+### Command parameters
 
-- The command has a 15-minute cooldown
-- Training is more useful when you already have cards you want to keep improving
-- It pairs well with /cards and /profile when you want to see how your collection is growing
+| Parameter | Required | What it does |
+| --- | --- | --- |
+| `card_query` | ✅ Yes | Which card to train (card name or query — see [query library](#)) |
+| *(none)* | — | Just pick a card and train it! |
+
+### Training details 📊
+
+| Aspect | Details |
+| --- | --- |
+| Cooldown | **15 minutes** between training sessions |
+| What you get | **Card XP** toward the next level |
+| Best for | Cards you plan to **ascend** or want to max out |
+| Level cap | Once a card is max level, you can **ascend** it with another maxed card! (Level 50 for 2* cards, Level 100 for 3* Cards) |
+
+### When training matters most 🔑
+
+- **Preparing for ascension** — Two max-level cards of the same star rating can be ascended into a higher-star card
+- **Building your best cards** — Level up your favorite pulls and flex them on your profile
+- **Collection goals** — Some collections or achievements may benefit from leveled-up cards
+
+:::tip
+Pair training with `/cards` to pick your best candidates and `/collection reset` to see how your collection is growing! 📈
+:::
+
+### Training strategy 🎯
+
+1. **Pick your targets** — Use `/cards` to find cards you want to level up
+2. **Train consistently** — Every 15 minutes, train the card until it reaches max level
+3. **Combine and ascend** — Once you have two maxed cards of the same ★ rating, use `/ascend` to combine them
+4. **Repeat!** — Ascending cards is needed to help you progress further to your clouts!
+
+### Related commands
+
+| Command | Why it matters |
+| --- | --- |
+| `/cards` | Find cards to train in your collection |
+| `/ascend` | Combine two maxed cards into a higher-star card |
+| `/profile` | Show off your collection and card progress |
+| `/cooldown` | Check when training is ready again |

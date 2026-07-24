@@ -2,6 +2,7 @@
   "label": "Cards",
   "position": 4,
   "link": {
-    "type": "generated-index"
+    "type": "doc",
+    "id": "cards-and-collection"
   }
 }

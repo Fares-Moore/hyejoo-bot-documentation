@@ -10,5 +10,6 @@
 - **Structure:** 
   - Use Callout / Admonitions syntax (e.g., :::note, :::warning) for tips.
   - Command parameters must be rendered as Markdown tables.
-- **Tone:** Casual, concise, written to be as user-friendly as possible for players without technical background, skew towards more cutesy and playful language by using emojis and fun expressions for Kpop Card Collection game on Discord. 
+- **Tone:** Casual, concise, written to be as user-friendly as possible for players without technical background, skew towards more cutesy and playful language by using emojis and fun expressions for Kpop Card Collection game on Discord.
+- **Important Note:** Omit all use of Tomatoes Currency (❄️) in the documentation. Tomatoes are depracted in the production environment and have been completely replaced by Flakes ❄️
 - **Constraint:** Output raw Markdown directly. Avoid chat conversational preambles.
