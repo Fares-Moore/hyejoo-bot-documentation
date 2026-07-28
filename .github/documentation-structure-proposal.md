@@ -12,8 +12,8 @@ This file captures the proposed Docusaurus documentation structure for the Hyejo
 - Cards and Collection
   - Card overview
   - Card collection guide
-    - Normal Cards (1*-4*) 
-    - Legendaries (5*)
+    - Normal Cards (1★-4★) 
+    - Legendaries (5★)
     - Fragments
     - Special
     - Promos

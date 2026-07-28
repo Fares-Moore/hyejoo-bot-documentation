@@ -4,69 +4,460 @@ title: Optional Command Parameter Library
 sidebar_position: 2
 ---
 
-# Optional Command Parameter Library
+# Optional Command Parameter Library 🧩
 
-This page is for players who want to get a little more precise with command usage. The bot supports several parameter styles across card, claim, and collection commands, and this reference focuses on the most common ones you are likely to run into.
+This page is a deep reference for players who want precise control over commands. The bot supports several parameter styles across card, claim, collection, and effect commands — and once you learn the patterns, you can slice, sort, and filter your way to exactly the cards you're looking for.
 
 :::note
-Not every command uses every parameter. Many of these options show up most often in card-related flows such as /claim cards, /cards, /summon, /eval, and related collection commands.
+Not every command uses every parameter. Many of these options show up most often in card-related flows like `/cards`, `/claim cards`, `/summon`, `/eval`, and collection commands.
 :::
 
-## Common parameter types
+---
 
-### card_query
-Use this for card-based commands when you want to target a specific card or a group of cards.
+## Card Query (`card_query`) — the heart of card commands
 
-Examples:
-- `/cards card_query:twice`
-- `/summon card_query:dark`
+The `card_query` parameter is the single most powerful tool in the bot. You feed it a string of keywords, filters, and sorters, and the bot parses them all at once. You can combine as many as you want in a single query.
 
-You can search by card name, collection, rarity, type, or other card traits. The bot will usually autocomplete the closest match, so you do not need to type the full name every time.
+**Basic keyword search** — just type a name or partial name:
 
-### Filtering a card group
-When you want a subset of cards, you can add filters with `-` to include or `!` to exclude.
+| Command | What it does |
+| --- | --- |
+| `/cards card_query:twice` | Search cards by collection/name |
+| `/cards card_query:mo` | Partial name matches work too |
+| `/summon card_query:chaeyoung` | Summon a specific card by name |
 
-Examples:
-- `-twice`
-- `-enhypen`
-- `-1`, `-2`, `!3`, `!4`
-- `-promo`, `!lottery`, `-limited`, `!liveauction`
-- `>levels`
-- `-fav`, `>rating`
+The bot matches card **names** using regex, so partial matches work fine. You don't need to type the full name.
 
-These filters are especially useful when you are trying to narrow a result list or search a very specific pool of cards.
+:::tip
+If you want to search for a card by its **ID** rather than name, the bot also auto-completes IDs in Discord's parameter dropdown!
+:::
 
-### count
-Use this when a command supports claiming or processing multiple cards at once.
+---
 
-Example:
-- `count:5`
+## Filtering syntax (`-` and `!`)
 
-This is most relevant for claim-style commands such as /claim cards and /level claim.
+This is the core of advanced queries. Prefix a filter with **`-`** to include or **`!`** to exclude. The parser treats every space-separated word that starts with `-` or `!` as a filter.
 
-### boost_id
-If an event or boost is active, some claim commands can use a boost ID to increase the odds of getting a specific promo or event-related card.
+### By collection
 
-Examples:
-- `boost_id:christmas25`
-- `boost_id:chuseok24`
+| Command | What it does |
+| --- | --- |
+| `/cards card_query:-twice` | Show only cards from the `twice` collection |
+| `/cards card_query:-ive` | Show only cards from the `ive` collection |
+| `/cards card_query:!blackpink` | Exclude all `blackpink` cards |
 
-### group_type
-This is used when a claim command should only pull from a specific category of cards.
+- **`-collection`** — show only cards from that collection
+- **`!collection`** — exclude all cards from that collection
 
-Examples:
-- `group_type:girlsgroups`
-- `group_type:boygroups`
+The bot auto-matches collection names, so you can use partial names. For example `-twice` matches the `twice` collection.
 
-Note that soloists are usually treated by gender rather than as their own separate group category.
+### By star level (rarity)
 
-### global
-Use this when a command should look at the global card pool rather than only your personal inventory or the local guild context.
+| Command | What it does |
+| --- | --- |
+| `/cards card_query:-3` | Show only 3★ cards |
+| `/cards card_query:-1 -2` | Show only 1★ and 2★ cards |
+| `/cards card_query:!4` | Exclude all 4★ cards |
+| `/cards card_query:!1 !2` | Exclude 1★ and 2★ cards |
 
-Examples:
-- `global:true`
-- `global:false`
+- **`-1`**, **`-2`**, **`-3`**, **`-4`**, **`-5`** — show only cards of that star level
+- **`!1`**, **`!2`**, **`!3`**, **`!4`** — exclude cards of that star level
+
+These are numeric filters on the card's `level` (star rating), not the card's name.
+
+### By card type / promo status
+
+| Command | What it does |
+| --- | --- |
+| `/cards card_query:-promo` | Show only promo-type cards |
+| `/cards card_query:!promo` | Exclude promo cards (show only normal) |
+| `/cards card_query:-limited` | Show only limited cards |
+| `/cards card_query:!liveauction` | Exclude live auction cards |
+| `/cards card_query:-lottery` | Show only lottery cards |
+| `/cards card_query:!lottery` | Exclude lottery cards |
+
+The bot checks if the card's collection is promo/limited/liveauction/lottery/etc. and filters accordingly.
+
+### By card state (inventory only)
+
+These filters only work when querying **your own card inventory** (not global):
+
+| Command | What it does |
+| --- | --- |
+| `/cards card_query:-fav` | Only favorited cards |
+| `/cards card_query:!fav` | Only non-favorited cards |
+| `/cards card_query:-lock` | Only locked cards |
+| `/cards card_query:!lock` | Only unlocked cards |
+| `/cards card_query:-new` | Cards obtained since your last `/daily` |
+| `/cards card_query:!new` | Cards obtained before your last `/daily` |
+| `/cards card_query:-rated` | Cards you have rated |
+| `/cards card_query:!rated` | Cards you haven't rated |
+| `/cards card_query:-wish` | Cards on your wishlist |
+| `/cards card_query:!wish` | Cards not on your wishlist |
+| `/cards card_query:-multi` | Cards you own more than 1 of |
+| `/cards card_query:!multi` | Cards you own exactly 1 of |
+
+### By animation
+
+| Command | What it does |
+| --- | --- |
+| `/cards card_query:-gif` | Animated cards only |
+| `/cards card_query:!gif` | Static (non-animated) cards only |
+
+### By group type
+
+| Command | What it does |
+| --- | --- |
+| `/cards card_query:-girlgroups` | Girls groups only |
+| `/cards card_query:-boygroups` | Boy groups only |
+
+:::note
+Soloists are usually treated by their assigned gender group rather than having their own category.
+:::
+
+### With fragments
+
+| Command | What it does |
+| --- | --- |
+| `/cards card_query:-fragments` | Only fragment collection cards |
+
+### Recipe cards
+
+| Command | What it does |
+| --- | --- |
+| `/cards card_query:-recipe` | Cards assigned to an active recipe in your inventory |
+| `/cards card_query:!recipe` | Exclude recipe-assigned cards |
+
+{/*
+
+### Diff / miss comparison
+
+| Command | What it does |
+| --- | --- |
+| `/diff from user_id:... card_query:-diff` | Cards **you** have that the other user doesn't |
+| `/diff for user_id:... card_query:!diff` | Cards the **other user** has that you don't |
+
+- **`-diff`** or **`-miss`** — cards **you** have that the other user doesn't
+- **`!diff`** or **`!miss`** — cards the **other user** has that you don't
+
+This is used with the `/diff for` and `/diff from` commands to see who's missing what!
+
+*/}
+---
+
+## Sorting with `>` and `<`
+
+You can sort the results by prepending `>` (descending) or `<` (ascending) to a sort key.
+
+| Command | Sort direction |
+| --- | --- |
+| `/cards card_query:>name` | Alphabetical A→Z |
+| `/cards card_query:<name` | Reverse alphabetical Z→A |
+| `/cards card_query:>star` | Highest star level first |
+| `/cards card_query:<star` | Lowest star level first |
+| `/cards card_query:>eval` | Most valuable (Flakes Cost) first |
+| `/cards card_query:<eval` | Least valuable (Flakes Cost) first |
+| `/cards card_query:>date` | Newest first (by obtained date) |
+| `/cards card_query:<date` | Oldest first |
+| `/cards card_query:>rating` | Highest rated first |
+| `/cards card_query:<rating` | Lowest rated first |
+| `/cards card_query:>levels` | Highest XP/level first |
+| `/cards card_query:<levels` | Lowest XP/level first |
+| `/cards card_query:>col` | Alphabetical by collection name |
+| `/cards card_query:<col` | Reverse alphabetical by collection name |
+| `/cards card_query:>amount` | Most copies first |
+| `/cards card_query:<amount` | Fewest copies first |
+
+If no sort is given, the default order is **star level descending → collection → name**.
+
+:::tip
+You can chain sorts! For example, `>col <star` sorts by collection A→Z, then by star level ascending within each collection.
+:::
+
+### Amount filters
+
+| Command | What it does |
+| --- | --- |
+| `/cards card_query:>2` | Cards where you own **more than 2** copies |
+| `/cards card_query:<5` | Cards where you own **fewer than 5** copies |
+| `/cards card_query:=1` | Cards you own **exactly 1** copy of |
+| `/cards card_query:>=3` | Cards where you own **3 or more** copies |
+
+These are numeric comparisons on the `amount` property. Works in your personal inventory only.
+
+---
+
+## Special symbols
+
+### `.` — last viewed card
+
+| Command | What it does |
+| --- | --- |
+| `/summon card_query:.` | Summon the last card you viewed |
+| `/info card_query:.` | Show info on the last card you viewed |
+
+The dot `.` references the **last card you viewed or interacted with**. The bot stores this per-user, so you can quickly pull up the same card again without re-typing the name.
+
+### `#tag` — filter by user-created tags
+
+| Command | What it does |
+| --- | --- |
+| `/cards card_query:#cute` | Show cards tagged with `cute` |
+| `/cards card_query:#rare !#common` | Show cards tagged `rare` but not `common` |
+
+Tags are user-submitted labels on cards (managed via `/tag` commands). You can filter for cards that have (or don't have) specific tags.
+
+- **`#tag`** — show cards with this tag
+- **`!#tag`** — exclude cards with this tag
+
+### `:extra` — command-specific extra data
+
+| Command | What it does |
+| --- | --- |
+| `/effect use effect_name:judgeday extra_arguments:claimrecall` | Use Judgment Day to copy Claim Recall |
+| `/effect use effect_name:spaceunity extra_arguments:-ive` | Use Space Unity to target the `ive` collection |
+
+The colon `:` prefix passes extra arguments that some commands interpret differently. For instance, with **The Judgment Day** effect, everything after the effect name in `extra_arguments` is forwarded to the copied effect.
+
+### `$source` — filter by image source
+
+| Command | What it does |
+| --- | --- |
+| `/cards card_query:$booru` | Show cards with image sourced from booru |
+
+Filters cards whose metadata has a matching source tag. This is a niche filter used alongside `/meta` commands for source tracking.
+
+---
+
+## Command-specific optional parameters
+
+Beyond the card query syntax, many commands have their own dedicated optional parameters. Here's the full list grouped by command.
+
+### `/claim cards` and `/level claim`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `count` | Number | How many cards to claim at once (e.g., `count:5`) |
+| `promo` | Boolean | Claim using promo currency instead of flakes |
+| `any` | Boolean | Skip the autocomplete step and claim any random card |
+| `boost_id` | String | Target a specific active event/boost (e.g., `boost_id:christmas25`) |
+| `group_type` | String | Restrict to a group category (e.g., `girlsgroups`, `boygroups`) |
+| `unlocked` | Boolean | Only claim from unlocked collections |
+
+### `/cards`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `card_query` | String | Your inventory cards matching this query |
+| `global` | Boolean | If `true`, search the global card pool instead of your inventory |
+
+### `/sell`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `card_query` | String | Card(s) to sell |
+| `price` | Number | Optional — set a custom price for `/sell one` |
+| `count` | Number | Optional — how many to sell for `/sell many` |
+
+### `/eval`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `card_query` | String | Card(s) to evaluate |
+| `count` | Number | How many cards to eval at once |
+| `global` | Boolean | Evaluate from the global card pool instead of your inventory |
+
+### `/fav`, `/rate`, `/wish`, `/lock`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `card_query` | String | Card(s) to target |
+| `count` | Number | How many cards to process at once |
+| *(subcommand)* | String | `one`, `many`, `remove one`, `remove many`, or `list` |
+
+### `/forge`, `/ascend`, `/combine`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `card_query_1` | String | First card to use |
+| `card_query_2` | String | Second card to use |
+
+Both queries use the full card query syntax, so you can use filters, sorts, and keywords for each slot.
+
+### `/liquefy`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `card_query` | String | Card(s) to liquefy |
+| `count` | Number | How many cards to liquefy at once |
+
+### `/draw`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `card_query` | String | Which card or card type to draw towards |
+
+### `/hero equip`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `slot_number` | Number | Which effect slot to equip into (1, 2, 3, etc.) |
+| `effect_name` | String | The effect ID to equip (e.g., `tohrugift`, `cherrybloss`) |
+
+### `/effect use`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `effect_name` | String | The effect to activate (e.g., `claimrecall`, `judgeday`) |
+| `extra_arguments` | String | Extra data passed to the effect (required for `judgeday` and `spaceunity`) |
+
+### `/effect info`, `/hero info`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `effect_name` / `hero` | String | Which effect or hero to look up |
+
+### `/hero get`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `hero` | String | Hero name or ID to set as your active hero |
+
+### `/hero list`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `hero` | String | Optional — filter the hero list by name |
+
+### `/profile`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `user_id` | String | Optional — view another user's profile instead of your own |
+
+### `/diff for` / `/diff from`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `user_id` | String | **Required** — the other user to compare against |
+| `card_query` | String | Optional — filter the comparison to specific cards |
+
+### `/has`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `user_id` | String | **Required** — the user to check |
+| `card_query` | String | **Required** — which card to check for |
+
+### `/achievements`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `missing` | Boolean | If `true`, show only achievements you haven't completed yet |
+
+### `/collection`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `collection` | String | Collection name or ID for `/collection info`, `/collection reset` |
+| *(filters)* | Various | `/collection list` supports card-query-style filters |
+
+### `/auction`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `card_query` | String | Filter auctions by card (for `/auction list`, `/auction preview`) |
+| `auction_id` | String | Target a specific auction (for `/auction info`, `/auction bid`, `/auction cancel`) |
+| `me` | Boolean | Show only your own auctions |
+| `bid` | Boolean | Show only auctions you've bid on |
+| `price` | Number | Set bid amount or starting price |
+| `time_length` | Number | Auction duration in hours (1–10) |
+
+### `/store view`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `store_number` | Number | Which store category to browse (1–5) |
+
+### `/store info` / `/store buy`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `item_id` | String | The item ID to inspect or purchase |
+
+### `/inventory`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `item_name` / `index` | String/Number | Which inventory item to target (by name or index number) |
+| `effect` | String | Required when using Effect Use Increase — the effect to extend |
+
+### `/plot`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `plot_number` | Number | Which plot to target (for info, upgrade, demolish) |
+| `global` | Boolean | Look at plots across all guilds |
+
+### `/guild`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `building` | String | Which building to inspect (for `/guild info`) |
+| `amount` | Number | Amount to donate or convert |
+| `collection` | String | Target collection for guild lock |
+
+### `/tag`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `card_query` | String | Which card to tag |
+| `tag_text` | String | The tag content to add or vote on |
+
+### `/transaction`
+
+| Parameter | Type | What it does |
+| --- | --- | --- |
+| `transaction_id` | String | Target a specific transaction |
+| *(filters)* | Various | `/transaction list` supports optional filter parameters |
+
+---
+
+## Quick reference: card query syntax summary
+
+| Syntax | What it does | Example |
+| --- | --- | --- |
+| `text` | Search card names | `twice` |
+| `.` | Last viewed card | `.` |
+| `-collection` | Include collection | `-twice` |
+| `!collection` | Exclude collection | `!blackpink` |
+| `-N` | Include star level N | `-3` |
+| `!N` | Exclude star level N | `!1` |
+| `-promo` | Promo cards only | `-promo` |
+| `!promo` | Non-promo only | `!promo` |
+| `-limited` | Limited cards only | `-limited` |
+| `-fav` / `!fav` | Favorited / not favorited | `-fav` |
+| `-lock` / `!lock` | Locked / unlocked | `-lock` |
+| `-new` / `!new` | Obtained since daily / before | `-new` |
+| `-rated` / `!rated` | Rated / unrated | `-rated` |
+| `-wish` / `!wish` | Wishlisted / not | `-wish` |
+| `-multi` / `!multi` | Duplicates / singles | `-multi` |
+| `-gif` / `!gif` | Animated / static | `-gif` |
+| `-girlgroups` / `-boygroups` | Group type | `-girlgroups` |
+| `-fragments` | Fragment collections | `-fragments` |
+| `-recipe` / `!recipe` | Recipe-assigned cards | `-recipe` |
+| `-diff` / `!diff` | Diff mode | `-diff` |
+| `>key` | Sort descending | `>eval` |
+| `<key` | Sort ascending | `<name` |
+| `>N` | Amount > N | `>2` |
+| `<N` | Amount < N | `<5` |
+| `=N` | Amount = N | `=1` |
+| `>=N` | Amount >= N | `>=3` |
+| `#tag` | Has tag | `#cute` |
+| `!#tag` | Doesn't have tag | `!#common` |
+| `:data` | Extra argument | `:claimrecall` |
+| `$source` | Source filter | `$booru` |
 
 ## Quick reminder
 
-If you are still getting comfortable with commands, the best approach is to start simple and let autocomplete help you. The advanced parameter syntax becomes much easier once you already know the basic command names and the kinds of cards you are trying to target.
+If you're still getting comfortable with commands, the best approach is to start simple and let autocomplete help you. The advanced parameter syntax becomes much easier once you already know the basic command names and the kinds of cards you're trying to target. Feel free to bookmark this page and come back as you level up — there's always a new filter to try! 🚀
