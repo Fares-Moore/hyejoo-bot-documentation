@@ -1,25 +1,74 @@
 ---
 id: daily-claims
-title: Level Claims
+title: Daily Claims & Level Claims
 sidebar_position: 2
 ---
 
+# Daily Claims 🗓️
+
+Your daily claim loop is the lifeblood of your collection! This page covers `/daily`, `/claim cards`, and `/level claim` — the commands you'll use every day to grow your card pool and fuel your clouts.
+
+## `/daily` — Start your day
+
+Every day starts with `/daily`. This command resets your claim cost and gives you fresh daily quests.
+
+| Aspect | Details |
+| --- | --- |
+| Cooldown | 20 hours (17 hours with **Ruler Jeanne** passive effect) |
+| Reward | ❄️ Flakes (scales with daily streak + **Cake Day** bonus) |
+| Effect | Resets your claim counter back to 0 |
+
 :::tip
-Use `/level claim` to get more combine fodder and speed up your ascends!
+Always start your play session with `/daily`! It resets your claim costs so you're not paying extra for the first card of the day.
+:::
+
+## `/claim cards` — Standard card claiming
+
+Use `/claim cards` to pull cards from unlocked collections. This is your main way to grow your collection!
+
+### Optional parameters for `/claim cards`
+
+| Parameter | What it does |
+| --- | --- |
+| `count` | Number of cards to claim at once (e.g., `count:5`) |
+| `promo` | Claim using promo currency instead of flakes |
+| `any` | Skip autocomplete and claim any random card |
+| `boost_id` | Target a specific active event (e.g., `boost_id:christmas25`) |
+| `group_type` | Restrict to a group category (e.g., `girlgroups`, `boygroups`) |
+| `unlocked` | Only claim from unlocked collections |
+
+### How claim cost works
+
+Claim costs scale up the more cards you claim in a single day. The cost resets when you run `/daily`.
+
+| Claims in a day | Approximate cost per claim |
+| --- | --- |
+| 1st claim | 50 ❄️ |
+| 2nd claim | 100 ❄️ |
+| 5th claim | 250 ❄️ |
+| 10th claim | 500 ❄️ |
+| 30th claim | 1,500 ❄️ |
+
+**Total for 10 claims in a row:** 2,750 ❄️
+**Total for 30 claims in a row:** 23,250 ❄️
+
+### Special claim bonuses
+
+- **Tohru effect** — If you have **Gift From Tohru** passive equipped and haven't claimed any cards today, your first claim has increased chance at a 3★ card.
+- **Boost drops** — During active event boosts, every 30th claim guarantees a boost card drop.
+- **Claim Recall active** — Using `/effect use effect_name:claimrecall` reduces your claim count by 4, significantly lowering costs!
+
+:::tip
+Check your balance with `/balance` before claiming to avoid overspending. Claim in smaller batches to keep costs manageable during boost events!
 :::
 
 ## `/level claim` — Level-based claiming
 
-This is how you get new cards **with levels**. Cards between 1★ and 3★ have a possiblity of dropping with up to **40%** of its maximum level! Feed these to your clout targets with `/combine` to feed these levels to the card you're levelling!
-### How claim cost works
+This is how you get new cards **with levels**! Cards between 1★ and 3★ have a possibility of dropping with up to **40%** of their maximum level. Feed these directly to your clout targets with `/combine` to level them up faster!
 
-Claim costs scale up the more cards you claim in a single day. The cost resets when you use `/daily`.
-
-| Claims in a day | Approximate cost trend |
-| --- | --- |
-| First claim | Low cost (starts at 50 ❄️) |
-| Incremental claims | Increases by 50 ❄️ for every claimed card |
-| 30 claims | **Guarantees a promo card drop during event boost periods** |
+:::tip
+Use `/level claim` to get more combine fodder and speed up your ascends!
+:::
 
 ### Optional parameters for `/level claim`
 
@@ -31,11 +80,7 @@ Claim costs scale up the more cards you claim in a single day. The cost resets w
 | `promo` (deprecated) | Use promo currency during special events |
 | `any` (deprecated) | Bypass guild lock restrictions |
 
-:::tip
-Check your balance with `/balance` before claiming to avoid overspending. Claim in smaller batches to keep costs manageable.
-:::
+### Level claim bonuses
 
-### Special claim bonuses
-
-- **Tohru effect** — If you have **Gift From Tohru** passive equipped and haven't claimed any cards today, your first claim has increased chance at a 3★ card.
-- **Boost drops** — During active boosts, every 30th claim guarantees a boost card drop.
+- **Pre-leveled cards** — Drawn from your unlocked collections with a chance at bonus levels.
+- **Combine faster** — Skip the training step! Pre-leveled cards give more XP when used as combine fodder.

@@ -45,6 +45,61 @@ Clouting is the main endgame loop. When you complete a card collection (get ever
 5. 👑 **Go for legendaries** — Save up tickets for `/legroll` to get that 5★ flex
 6. 📊 **Track your collections** — Use `/collection list` to see what's missing
 
+## Key clouting commands reference 📋
+
+All clout-related commands from the bot, with their required parameters, cooldowns, and descriptions:
+
+| Command | Required parameters | Cooldown | Description |
+| --- | --- | --- | --- |
+| `/daily` | None | 20h (17h with Jeanne effect) | Claim daily rewards and reset claim cost |
+| `/claim cards` | Optional count/promo/any/boost ID/group type | Cost-based only | Claim cards using flakes or promo currency |
+| `/level claim` | Optional count/promo/any/boost ID/group type | Cost-based only | Alternate claim flow with level-based logic |
+| `/train` | Card query | 15 minutes | Train a card to gain XP |
+| `/ascend` | Two card queries | None | Ascend two maxed cards into a higher card |
+| `/combine` | Two card queries | None | Combine fodder cards into a new card |
+| `/forge` | Two card queries | None | Forge two same-rarity cards into a new card |
+| `/liquefy one` | Card query | None | Liquefy one card into vials |
+| `/liquefy many` | Card query + optional count | None | Liquefy multiple cards at once |
+| `/liquefy preview` | Card query | None | Preview vial value from liquefying |
+| `/draw` | Card query | None | Spend vials to draw a card |
+| `/legroll` | None | None | Spend a legendary ticket to roll a 5★ card |
+| `/collection list` | Optional filters | None | Show collections and completion progress |
+| `/collection info` | Collection query | None | Show a collection's details |
+| `/collection reset` | Collection query | None | Reset a completed collection for rewards |
+| `/miss` | None | None | Show missing achievements |
+| `/stats` | None | None | Show current user stats |
+
+## Progression commands by system
+
+### Daily commands 🗓️
+
+| Command | Cooldown | What you get |
+| --- | --- | --- |
+| `/daily` | 20h (17h with Ruler Jeanne) | ❄️ Flakes + resets claim cost |
+| `/claim cards` | Cost-based | Random cards from unlocked collections |
+| `/level claim` | Cost-based | Level-boosted cards (up to 40% of max level) |
+
+### Card improvement commands 💪
+
+| Command | Cooldown | What it does |
+| --- | --- | --- |
+| `/train` | 15 min | Gains XP toward next card level |
+| `/ascend` | None | Two maxed same-rarity cards → next rarity |
+| `/combine` | None | Fodder card → XP for target card |
+| `/forge` | None | Two same-rarity cards → new card + vials 🧪 |
+| `/liquefy` | None | Cards → vials 🧪 |
+| `/draw` | None | Vials 🧪 → random card (up to 3★ daily, 6★ with Walpurgis) |
+
+### Collection commands 📊
+
+| Command | Optional params | What it does |
+| --- | --- | --- |
+| `/collection list` | `cols`, `completed`, `clouted`, `sortComplete` | Show filtered collection progress |
+| `/collection info` | `collection` (name/ID) | View cards in a collection and your ownership |
+| `/collection reset` | `collection` (name/ID) | See requirements and rewards for resetting |
+| `/miss` | None | Show achievements you haven't completed yet |
+| `/stats` | None | View your full player statistics |
+
 ## Quick tips 💡
 
 - 🗓️ **Plan your daily loop** — Start with `/daily` to refresh your state, then use `/claim cards` for your main pulls

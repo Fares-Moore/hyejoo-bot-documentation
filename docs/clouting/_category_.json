@@ -2,7 +2,9 @@
   "label": "Clouts and Progression",
   "position": 5,
   "link": {
-    "type": "doc",
-    "id": "clouts-and-progression"
+    "type": "generated-index",
+    "title": "Clouts and Progression",
+    "description": "Level up your cards, complete collections, and show off your achievements!",
+    "slug": "/clouting/overview"
   }
 }
