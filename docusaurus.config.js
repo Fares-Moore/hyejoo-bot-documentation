@@ -25,6 +25,10 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/hyejoo-bot-documentation/',
 
+  // Required for GitHub Pages: ensures all generated links end with /
+  // Without this, direct navigation to subpages returns a 404
+  trailingSlash: true,
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Fares-Moore', // Usually your GitHub org/user name.
