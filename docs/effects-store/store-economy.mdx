@@ -6,110 +6,111 @@ sidebar_position: 2
 
 # Store & Economy 🛒
 
-Hyejoo Bot has multiple stores and currencies. This guide covers how to browse, buy, and use items from the store.
-## Store overview
+Hyejoo has a bunch of different stores where you can spend your hard-earned currency! This guide covers how to browse, buy, and use items like a pro. 💰
 
-The store is accessed via `/store` commands. Items are organized into categories that you can browse by number.
+## Store overview 🏪
+
+The store is super easy to use — just `/store` commands!
 
 | Command | What it does |
 | --- | --- |
-| `/store view` | Browse store categories and see available items in each. |
-| `/store info` | View details about a specific item, including price and requirements. |
-| `/store buy` | Purchase an item using the appropriate currency. |
+| `/store view` | Browse store categories and see what's available in each one |
+| `/store info` | Peek at the details on a specific item — price, requirements, the works |
+| `/store buy` | Grab an item using the right currency! |
 
-### How to browse
+### How to shop 🛍️
 
-1. Use `/store view` to see the list of categories (e.g., Blueprints, Effect Recipes, Bonus Items).
-2. Each category is numbered. Use `/store view store_number:#` to open a category.
-3. Inside a category, items are listed with their ID, name, price, and a short description.
-4. Use `/store info itemID:item_id` to see full details.
-5. Use `/store buy itemID:item_id` to purchase.
+1. **Start with `/store view`** — You'll see a list of categories like Blueprints, Effect Recipes, and Bonus Items
+2. **Pick a category** — Use `/store view store_number:1` (or 2, or 3) to open that shop page
+3. **Check out the goods** — Items show their ID, name, price, and a quick description
+4. **Get the details** — Use `/store info itemID:item_id` to see full info
+5. **Buy buy buy!** — Use `/store buy itemID:item_id` and it's yours!
 
-### Purchase limits
+### Shopping rules 🛒
 
-- **Ticket Store** items are limited to **3 purchases per day**. The counter resets on your next `/daily`.
-- Some items may require a minimum user level or an active boost event to be available.
+- **Ticket Store** items are capped at **3 purchases per day**. Resets when you do `/daily`!
+- Some items need a minimum player level or an active event to be available.
 
-## Store categories
+## Store categories 🗂️
 
-### <ins>Store 1</ins> - Blueprints 🏗️
+### 🏗️ Store 1 — Blueprints
 
-Blueprints are used to build structures on your guild plots. Each blueprint costs **lemons 🍋** and requires a certain player level to place. Once built, it generates passive lemon income based on other players' actions.
+Blueprints are the plans you need to **build stuff on your guild plots**! Each one costs **lemons 🍋** and needs a certain player level. Once built, they earn you passive lemon income while other players do their thing.
 
 | Blueprint | Price 🍋 | Level Req | What it does |
 | --- | --- | --- | --- |
-| **Castle** | 150 | 20 | Required first building. Generates 30 lemons/day and boosts storage for other buildings. |
-| **Gacha Bank** | 500 | 30 | Earns lemons when users in the guild run `/daily` (lvl 1) or also `/claim` (lvl 2). |
-| **Tavern** | 750 | 40 | Earns lemons when someone completes an achievement (lvl 1) or quests too (lvl 2). |
-| **Smithing Hub** | 1,000 | 50 | Earns lemons when users forge (lvl 1), liquefy (lvl 2), or draw cards (lvl 3). |
-| **Auction House** | 5,000 | 100 | Earns lemons when someone wins an auction bid. Higher levels give 2x-3x payouts. |
+| **Castle** 🏰 | 150 | 20 | Your first building — gotta have it! Makes 30 🍋/day and boosts storage for other buildings |
+| **Gacha Bank** 🏦 | 500 | 30 | Earns 🍋 when guildmates run `/daily` or `/claim` |
+| **Tavern** 🍺 | 750 | 40 | Earns 🍋 when someone finishes achievements or quests |
+| **Smithing Hub** 🔨 | 1,000 | 50 | Earns 🍋 when people forge, liquefy, or draw cards |
+| **Auction House** 🏛️ | 5,000 | 100 | Earns 🍋 when someone wins an auction. Higher levels pay 2x–3x more! |
 
-See the [Guild Plots & Buildings](./guild-plots) page for full details on building levels and upgrades.
+For full details on building upgrades, check out [Guild Plots & Buildings](./guild-plots) 🏘️
 
-### <ins>Store 2</ins> - Effect Recipes ✨
+### ✨ Store 2 — Effect Recipes
 
-Effect recipes let you craft **Effect Cards** by sacrificing specific cards. These are bought with **Flakes ❄️**.
+Effect recipes let you craft **Effect Cards** by sacrificing a few cards from your collection. All paid in **Flakes ❄️**!
 
 | Recipe | Price ❄️ | Effect | Type |
 | --- | --- | --- | --- |
-| **Gift From Tohru** | 4,500 | Better 3★ chance on first daily claim | Passive |
-| **Festival of Wishes** | 1,000 | Get notified when wishlist cards are auctioned | Passive |
-| **Onwards To Victory** | 1,000 | Guild rank points earned 25% faster | Passive |
-| **Impossible Spell Card** | 5,000 | Active effects have 40% less cooldown | Passive |
-| **Enlightened Ayano** | 5,500 | Completes a tier 1 daily quest when used | Active |
-| **Powerful Bocchi** | 7,000 | Generates a new daily quest (70% tier 1, 30% tier 2) | Active |
-| **Claim Recall** | 10,000 | Reduces claim count by 4, lowering claim cost | Active |
-| **The Judgment Day** | 12,000 | Copy the effect of almost any other usable effect | Active |
-| **Walpurgis Night** | 15,000 | `/draw` can give up to 6★ per daily (instead of 3★ max) | Passive |
-| **The Space Unity** | 15,000 | Get a random unique card (non-promo) from a collection | Active |
-| **The Holy Grail** | 22,500 | +25% more vials when liquefying 1-2★ cards | Passive |
-| **Cherry Blossoms** | 20,000 | All forges and ascends are 50% cheaper | Passive |
-| **Cake Day** | 20,000 | +100 more flakes on `/daily` per claim from the previous day | Passive |
-| **The Ruler Jeanne** | 30,000 | `/daily` cooldown reduced to 17 hours (from 20) | Passive |
-| **Skies Of Friendship** | 35,000 | Get 13% snowflakes back from auction wins | Passive |
+| **Gift From Tohru** 🐉 | 4,500 | Better 3★ chance on first daily claim | Passive |
+| **Festival of Wishes** 🎐 | 1,000 | Get notified when wishlist cards hit the auction house | Passive |
+| **Onwards To Victory** 🏁 | 1,000 | Guild rank points earned 25% faster | Passive |
+| **Impossible Spell Card** 🃏 | 5,000 | Active effects cooldown 40% faster | Passive |
+| **Enlightened Ayano** 🌟 | 5,500 | Auto-completes a tier 1 daily quest | Active |
+| **Powerful Bocchi** 🎸 | 7,000 | Creates a new daily quest for you | Active |
+| **Claim Recall** ↩️ | 10,000 | Drops your claim count by 4 — cheaper claims! | Active |
+| **The Judgment Day** ⚖️ | 12,000 | Copy almost any other active effect you want | Active |
+| **Walpurgis Night** 🌙 | 15,000 | `/draw` can give up to 6★ per daily! | Passive |
+| **The Space Unity** 🌌 | 15,000 | Get a random card you don't have from any collection | Active |
+| **The Holy Grail** 🏆 | 22,500 | +25% more vials when liquefying 1–2★ cards | Passive |
+| **Cherry Blossoms** 🌸 | 20,000 | All forges and ascends are 50% cheaper | Passive |
+| **Cake Day** 🎂 | 20,000 | +100 more ❄️ on `/daily` per claim from yesterday | Passive |
+| **The Ruler Jeanne** 👑 | 30,000 | `/daily` cooldown drops to 17h (from 20h) | Passive |
+| **Skies Of Friendship** ☁️ | 35,000 | Get 13% of auction wins back as ❄️ | Passive |
 
-See the [Effect Cards](./effects-list) page for full details on how effects work.
+Learn all about how effects work on the [Effect Cards](./effects-list) page! ✨
 
-### <ins>Store 3</ins> - Bonus Items 🎁
+### 🎁 Store 3 — Bonus Items
 
-Bonus items are special purchases bought with **lemons 🍋** (or Flakes ❄️ for the Legend Swapper) that give unique account-wide upgrades.
+These are special account-wide upgrades bought with **lemons 🍋** (or ❄️ for the Legend Swapper).
 
 | Item | Price | Currency | Level Req | What it does |
 | --- | --- | --- | --- | --- |
-| **Effect Slot Upgrade** | 50,000 | 🍋 Lemons | 100 | Adds 1 passive effect slot for 210 days (max 1 per 100 levels). |
-| **Effect Use Increase** | 20,000 | 🍋 Lemons | 100 | Adds 1 use to an active effect or 3 days to a passive effect. |
-| **Legendary Card Swapper** | 10,000,000 | 🍋 Lemons | 100 | Swaps a legendary card for another random legendary in the same collection. |
+| **Effect Slot Upgrade** | 50,000 | 🍋 Lemons | 100 | Adds **1 more passive effect slot** for 210 days (max 1 per 100 levels) |
+| **Effect Use Increase** | 20,000 | 🍋 Lemons | 100 | Gives +1 use to an active effect or +3 days to a passive effect |
+| **Legendary Card Swapper** | 10,000,000 | 🍋 Lemons | 100 | Swap a legendary for another random one in the same collection |
 
 {/*
 
 ### Guild Store 🏪
 
 :::warning
-This is currently not in use as Hyejoo Bot is only available on the Hyejoo Support Discord Server.  
+Not in use yet! Hyejoo Bot is currently only on the main Hyejoo Support Discord Server.  
 :::
 
-The guild store sells buildings that are purchased using the **guild's balance** (tomatoes/lemons owned by the server). Only the **server owner** or designated **managers** can buy from this store. Purchases are built immediately — they don't go to your inventory.
+The guild store has builds that the **server owner or managers** can buy using the **guild's shared balance** (not your personal wallet!). They go up immediately and help everyone in the server.
 
 | Building | Price | Currency | What it does |
 | --- | --- | --- | --- |
-| **Lemonade Stand** | 2,500 | ❄️ Tomatoes | Increases lemon storage capacity of all user plots in the guild by up to 50% at max level. |
-| **Pamper Central** | 15,000 | ❄️ Tomatoes | Reduces maintenance fees for all buildings in the guild by up to 20% at max level. |
-| **Discount Center** | 5,000 | ❄️ Tomatoes | Reduces auction listing fees in the guild by up to 20% at max level. |
+| **Lemonade Stand** 🥤 | 2,500 | ❄️ Flakes | Boosts everyone's lemon storage by up to 50% |
+| **Pamper Central** 💆 | 15,000 | ❄️ Flakes | Cuts building maintenance costs by up to 20% |
+| **Discount Center** 🏷️ | 5,000 | ❄️ Flakes | Lowers auction listing fees by up to 20% |
 
 */}
 
-## Inventory commands
+## Inventory commands 🎒
 
-Once you buy items, they go into your inventory. Use these commands to manage them:
+Bought something? It goes straight to your inventory! Here's how to manage your stuff:
 
 | Command | What it does |
 | --- | --- |
-| `/inventory list` | Show all items in your inventory. |
-| `/inventory info` | View details about a specific inventory item. |
-| `/inventory use` | Use an item (e.g., build a blueprint, craft a recipe, activate a bonus). |
-| `/inventory preview` | Preview what an item does and its recipe cost before using it. |
-| `/inventory sell` | Sell an inventory item you no longer need. |
+| `/inventory list` | See everything in your bag 🎒 |
+| `/inventory info` | Check the details on any item |
+| `/inventory use` | Use an item — build a blueprint, craft a recipe, activate a bonus, etc. |
+| `/inventory preview` | Peek at what an item does and what it costs before using it |
+| `/inventory sell` | Sell something you don't need anymore |
 
 :::tip
-You can find items by their ID or by number index. Use `/inventory list` or `/inventory preview` to see your items with their index numbers, then `/inventory info index:#` for quick details.
+Items show up by ID or index number. Use `/inventory list` or `/inventory preview` to see 'em, then `/inventory info index:#` for quick details! 🔍
 :::

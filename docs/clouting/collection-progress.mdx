@@ -35,30 +35,31 @@ View detailed info about a specific collection, including all cards in the set a
 
 ## `/collection reset` — Reset completed collections
 
-When you've completed a collection and want to reset it for additional rewards or progression.
+When you've completed a collection, resetting it earns you a **clout**, **XP**, **Flakes ❄️**, and sometimes a **legendary card or ticket**! This section covers the basics — for the full deep-dive (card consumption, fragment collections, what happens without a 4★/5★), head over to the **[Draw & Legendary Roll page](./draw-and-legroll#collection-reset--turn-completed-collections-into-clouts)**! 📖
 
 | Parameter | What it does |
 | --- | --- |
 | `collection` | The completed collection to reset |
-| Shows | Requirements and rewards for resetting |
+| Shows | Requirements, cards to be consumed, and rewards |
 
-### Reset requirements
+### Quick summary
 
-- You must own every card in the collection.
-- Some collections have specific reset conditions.
-- Resetting may consume cards or require additional resources.
+- You must own **every card** in the collection (see [special cases](./draw-and-legroll#reset-requirements-)).
+- Resetting **consumes cards** and rewards you with a clout, XP, and flakes.
+- If the collection has a **legendary** (5★ for normal, 4★ for fragment), you get a ticket or card too!
+- Check the **[full guide here](./draw-and-legroll#collection-reset--turn-completed-collections-into-clouts)** for all the juicy details! 🎯
 
 ## Collection types
 
 Understanding different collection types helps you plan your clouting:
 
-| Type | How to complete | Notes |
+| Type | How to complete | Reward on reset |
 | --- | --- | --- |
-| **Normal** | Collect all cards in the set | Standard completion |
-| **Fragments** | Collect all 1★ cards | Higher stars come from fragment system |
-| **Promo** | Limited-time event collections | Only available during events |
-| **Album** | Special album collections | Have their own rules for forging |
-| **Lottery** | Rare lottery collections | Special filtering rules apply |
+| **Normal** | Collect all cards in the set | Legendary **ticket** if a 5★ exists |
+| **Fragments** 🧩 | Collect all **1★** cards (higher stars from fragment system) | **4★ card** added directly if one exists |
+| **Promo** | Limited-time event collections | May or may not have a legendary |
+| **Album** | Special album collections | Depends on the set |
+| **Lottery** | Rare lottery collections | Depends on the set |
 | **Legendary (5★)** | Collect all 5★ cards | Rarest cards in the game |
 | **Limited/Birthdays** | Time-limited special cards | May not be re-released |
 
@@ -78,9 +79,9 @@ The `clouted` filter in `/collection list` shows the status of your clout progre
 - **clouted:true** — Collections you've already completed and clouted
 - **clouted:false** — Collections you haven't yet completed (or completed but not yet clouted)
 
-## Quick tips
+## Quick tips 💡
 
-- **Filter by completion** — Use `/collection list completed:false` to see what collections still need work and prioritize your claims.
-- **Focus on one collection at a time** — Pick a collection and claim cards from it to make steady progress.
-- **Check collection info often** — `/collection info` shows you exactly which cards you're missing.
-- **Don't forget to clout** — After completing a collection, make sure to actually clout it to mark your progress!
+- **Filter by what's missing** — Use `/collection list completed:false` to see what collections still need work!
+- **Focus on one set at a time** — Pick a collection and chip away at it for steady progress.
+- **Check `/collection info` often** — It shows you exactly which cards you're still missing.
+- **Don't forget to clout!** — After completing a collection, actually clout it to mark your progress! 🏆

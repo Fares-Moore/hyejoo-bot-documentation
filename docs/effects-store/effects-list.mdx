@@ -6,29 +6,31 @@ sidebar_position: 3
 
 # Effect Cards ✨
 
-Effect Cards are special items that give you passive buffs or one-time active abilities. You craft them from the store using **effect recipes**, then equip or use them through your hero.
-:::tip
-For our more experienced players, refer to the Quick Player tips section for more advanced tips the playerbase commonly uses.
-:::
-## How effects work
+Effect Cards are special items that give you ongoing buffs or one-time boosts! Think of 'em like power-ups for your gameplay 🎮 You craft them from the store using **effect recipes**, then equip or use them through your hero.
 
-- **Crafting** — Buy an effect recipe from `/store buy effect_name:` (under Effect Recipes), then use it from your inventory with `/inventory use item_name:`. It consumes the required cards from your collection.
-- **Passive Effects** — Once crafted, equip passives to your hero's effect slots using `/hero equip`. They provide ongoing buffs as long as they're slotted.
-    - Your hero starts with **2 passive effect slots** by default. You can unlock more with **Effect Slot Upgrade** items from the bonus store!
-- **Active Effects** — Use them directly with `/effect use`. Each active effect has a limited number of uses and a cooldown between uses.
-- **Viewing effects** — Use `/effect list actives` to see your usable effects, or `/effect list passives` (or `/hero slots`) to see your equipped passives.
-- **Effect info** — Use `/effect info` to see details about any effect card.
+:::tip
+Check out the Quick Player Tips section at the bottom of this page — the player community has some really clever tricks to share!
+:::
+
+## How effects work 🛠️
+
+- **Crafting** 🏭 — Buy an effect recipe from `/store buy` (look under Effect Recipes), then use it from your inventory with `/inventory use`. It'll eat some cards from your collection, but hey — you get a cool power-up in return!
+- **Passive Effects** 🛡️ — Once crafted, equip passives to your hero's effect slots using `/hero equip`. They hang out there and give you ongoing buffs as long as they're equipped!
+    - Your hero starts with **2 passive effect slots** by default. Want more? Grab an **Effect Slot Upgrade** from the bonus store!
+- **Active Effects** ⚡ — Use these directly with `/effect use`. Each one has a set number of uses and a little cooldown before you can use it again.
+- **Viewing effects** 👀 — Use `/effect list actives` to see your usable effects, or `/effect list passives` (or `/hero slots`) to see what passives you've got equipped.
+- **Effect info** 📖 — Use `/effect info` to peep the details on any effect card.
 
 ### Passive vs Active — What's the difference? 🤔
 
 | Aspect | 🛡️ Passive Effects | ⚡ Active Effects |
 | --- | --- | --- |
-| **How they work** | Stay equipped to your hero's slots and provide **ongoing buffs** | Used one at a time with `/effect use` for a **one-time benefit** |
-| **How to activate** | `/hero equip` — equip to a slot, then they run automatically | `/effect use` — manually trigger when you want the effect |
-| **Duration** | Lasts a set number of **days** (e.g., 210 days) then expires | Lasts a set number of **uses** (e.g., 20 uses), then expires |
-| **Cooldown** | **24 hours** before you can swap the effect out of a slot | Varies per effect (e.g., 15h, 20h, 48h) before you can use it again |
-| **Limit per hero** | Up to **2 slots** (more with **Effect Slot Upgrade**) | Unlimited — you can own as many as you craft |
-| **Example** | **Gift From Tohru** — boosts your first claim every day | **Claim Recall** — reduces your claim count by 4 when used |
+| **How they work** | Stay equipped to your hero's slots — they just **do their thing** in the background! | Used one at a time with `/effect use` for a **one-time boost** |
+| **How to activate** | `/hero equip` — pop it in a slot and forget about it, it runs automatically | `/effect use` — fire it up when you need it most! |
+| **Duration** | Lasts a set number of **days** (e.g., 210 days) then it's goodbye 👋 | Lasts a set number of **uses** (e.g., 20 uses), then it's spent |
+| **Cooldown** | **24 hours** before you can swap it out of a slot | Varies per effect (e.g., 15h, 20h, 48h) before you can use it again |
+| **Limit per hero** | Up to **2 slots** (more with **Effect Slot Upgrade**) | Unlimited — stack as many as you can craft! |
+| **Example** | **Gift From Tohru** — makes your first claim each day extra special 💜 | **Claim Recall** — shaves 4 claims off your claim counter! |
 
 :::note
 **Passives** are set-and-forget — equip them once and they work in the background. **Actives** are tactical tools — save them for the right moment! 🎯
@@ -36,23 +38,23 @@ For our more experienced players, refer to the Quick Player tips section for mor
 
 ## Passive Effects 🛡️
 :::tip
-The most commonly used effects by the players are **cherrybloss** and **walpurgisnight**, followed by **cakeday** and **skyfriend** at a lower priority.
+Frequent flyers! The most popular effects among players are **cherrybloss** 🌸 and **walpurgisnight** 🌙, with **cakeday** 🎂 and **skyfriend** ☁️ close behind.
 :::
 
-Passive effects stay active as long as they are equipped to your hero's effect slots. They provide ongoing benefits.
+Passive effects hang out in your hero's effect slots and keep working as long as they're equipped. Set 'em and forget 'em!
 
 | Effect | What it does | Duration | Price ❄️ | Cards needed |
 | --- | --- | --- | --- | --- |
-| `tohrugift` — **Gift From Tohru** | Upon `/daily`, your first claim after will have a high chance of giving you a 3★ star card, and will occur as long as the passive effect exists | 210 days | 4,500 | 2★ x3 |
-| `cakeday` — **Cake Day** | Grants a bonus +100 more ❄️ on `/daily` for every claim you did in the previous day,<br /> <br />E.g. if you did 8 claims the last day, you will receive a maximum of 3,300 flakes the following day, assuming max daily streak bonus of 2,500 flakes upon `/daily`  | 210 days | 20,000 | 2★ x5 |
-| `holygrail` — **The Holy Grail** | Grants a bonus +25% more vials when liquefying 1 and 2-star cards | 210 days | 22,500 | 2★ x2, 3★ x2 |
-| `skyfriend` — **Skies Of Friendship** | Grants a bonus +13% flakes ❄️ refund from wins on auction, <br /><br />E.g, upon winning a 10,000 flake auction, you will receive 1,300 flakes ❄️ via the passive effect | 210 days | 35,000 | 1★ x1, 2★ x4 |
-| `cherrybloss` — **Cherry Blossoms** | All card forges' and ascends' costs are lowered by 50%, <br /><br />E.g. a 3★ ascend would typically cost >8,000 flakes ❄️, with cherrybloss, lowers it to ~4,000 flakes ❄️ | 210 days | 20,000 | 2★ x3, 3★ x1 |
-| `onvictory` — **Onwards To Victory** | **(Underutilized)** Get guild rank points 25% faster, <br /><br />*Guild rank points in the current iteration of the game is unutilized, this effect can be ignored.* | 210 days | 1,000 | 2★ x6 |
-| `rulerjeanne` — **The Ruler Jeanne** | Grants a -15% cooldown reduction to `/daily`, <br /><br /> Cooldown is every 17 hours instead of 20 hours | 210 days | 30,000 | 3★ x3 |
-| `spellcard` — **Impossible Spell Card** | Grants a -40% cooldown reduction to all active effects,<br /><br />E.g. `judgeday` cooldown is now every 28.8 hours instead of 48 hours | 210 days | 5,000 | 2★ x3, 3★ x3 |
-| `festivewish` — **Festival of Wishes** | **(Underutilized)** Get notified when a card on your wishlist is auctioned, <br /><br />*This effect in the current iteration of the game is already a default feature, this effect can be ignored.* | 30 days | 1,000 | 1★ x3 |
-| `walpurgisnight` — **Walpurgis Night** | Grants a +100% max star level limit increase to `/draw`,<br /><br />I.E. `/draw` can give up to 6★ in cards per daily (e.e. two ★ cards) instead of max 3★ (e.g. one 3★ card) | 50 days | 15,000 | 2★ x1, 3★ x4 |
+| `tohrugift` — **Gift From Tohru** 🐉 | After `/daily`, your very first claim has a high chance of giving you a **3★** card! | 210 days | 4,500 | 2★ x3 |
+| `cakeday` — **Cake Day** 🎂 | Get **+100 more ❄️** on `/daily` for every claim you made the previous day.<br /><br />Example: 8 claims yesterday = up to 3,300 ❄️ today (with max streak bonus)! | 210 days | 20,000 | 2★ x5 |
+| `holygrail` — **The Holy Grail** 🏆 | Get **+25% more vials 🧪** when liquefying 1★ and 2★ cards | 210 days | 22,500 | 2★ x2, 3★ x2 |
+| `skyfriend` — **Skies Of Friendship** ☁️ | Get **13% of your auction wins back** in flakes ❄️.<br /><br />Example: win a 10,000 ❄️ auction → get 1,300 ❄️ back! | 210 days | 35,000 | 1★ x1, 2★ x4 |
+| `cherrybloss` — **Cherry Blossoms** 🌸 | All forges and ascends cost **50% less** ❄️!<br /><br />Example: a 3★ ascend that costs 8,000 ❄️ → only 4,000 ❄️ | 210 days | 20,000 | 2★ x3, 3★ x1 |
+| `onvictory` — **Onwards To Victory** 🏁 | Get guild rank points **25% faster**.<br /><br />*(You can probably skip this one — guild ranks aren't doing much right now!)* | 210 days | 1,000 | 2★ x6 |
+| `rulerjeanne` — **The Ruler Jeanne** 👑 | Reduces your `/daily` cooldown from 20h to **17h** — more daily rewards, more often! | 210 days | 30,000 | 3★ x3 |
+| `spellcard` — **Impossible Spell Card** 🃏 | Your active effects cooldown **40% faster**.<br /><br />Example: `judgeday` cooldown drops from 48h to ~28.8h! | 210 days | 5,000 | 2★ x3, 3★ x3 |
+| `festivewish` — **Festival of Wishes** 🎐 | Get notified when a wishlist card hits the auction house.<br /><br />*(You can skip this — it's already a free feature!)* | 30 days | 1,000 | 1★ x3 |
+| `walpurgisnight` — **Walpurgis Night** 🌙 | `/draw` can give you cards up to **6★** per daily cycle instead of the usual 3★ max. More chances at rare pulls! | 50 days | 15,000 | 2★ x1, 3★ x4 |
 
 :::note
 Each passive recipe requires sacrificing specific card rarities — these cards will be <u>normal cards that are randomly assigned</u> when the recipe is purchased. The required cards are shown in the **Cards needed** column above.
@@ -60,33 +62,29 @@ Each passive recipe requires sacrificing specific card rarities — these cards 
 
 ## Active (Usable) Effects ⚡
 
-Active effects have a limited number of uses and a cooldown period between uses. Use them with `/effect use`.
+Active effects are one-time power-ups! Each one has a limited number of uses and a cooldown between uses. Fire 'em up with `/effect use` when the time is right!
 
 | Effect | What it does | Uses | Cooldown | Price ❄️ | Cards needed |
 | --- | --- | --- | --- | --- | --- |
-| `enayano` — **Enlightened Ayano** | Automatically completes a tier 1 daily quest when this active effect is used | 20 uses | 20h | 5,500 | 1★ x2, 2★ x2 |
-| `pbocchi` — **Powerful Bocchi** | Generates a new a tier 1 daily quest when this active effect is used  | 20 uses | 32h | 7,000 | 2★ x2, 3★ x2 |
-| `claimrecall` — **Claim Recall** | Reduces your claim count by 4, lowering claim cost,<br /><br />E.g. if your next claim would cost 250 flakes ❄️, i.e your 5th claim of the day, `claimrecall` will lower it by 4 claims worth of  ❄️, back down to 50  ❄️ | 14 uses | 15h | 10,000 | 1★ x3, 2★ x3 |
-| `judgeday` — **The Judgment Day** | Copies the effect of almost any other usable effect when this active effect is used, <br /><br />E.g. do `/effect use effect_name:judgeday extra_arguments:claimrecall` to use the `claimrecall` effect, even if your existing `claimrecall` effect is on cooldown, or if you don't own the active effect    | 12 uses | 48h | 12,000 | 2★ x1, 3★ x3 |
-| `spaceunity` — **The Space Unity** | Grants you a copy of a random **unowned** unique 1★, 2★ or 3★ card from a specified normal card collection, <br /><br />E.g. if you are missing a 3★ card from a normal collection, you can use `spaceunity` and it will guarantee to grant you that specific card. | 7 uses | 40h | 15,000 | 2★ x2, 3★ x2 |
-| `hyejooanniv` — **Hyejoo Anniversary** | Grants a random card from the Hyejoo Anniversary26 collection, <br /><br /> - cannot be copied by `judgeday` <br /> - cannot have its uses increased by `effectincrease` <br /> - only purchaseable during the anniversary event<br /> - remains usable outside of the anniversary event | 1 use | None | 5,000 | 2★ x3 *(only available during anniversary event)* |
+| `enayano` — **Enlightened Ayano** 🌟 | Instantly finishes a **tier 1 daily quest** for you. Free rewards, no effort! | 20 uses | 20h | 5,500 | 1★ x2, 2★ x2 |
+| `pbocchi` — **Powerful Bocchi** 🎸 | Creates a **brand new tier 1 daily quest** for you to complete. More quests = more rewards! | 20 uses | 32h | 7,000 | 2★ x2, 3★ x2 |
+| `claimrecall` — **Claim Recall** ↩️ | Pushes your claim count **back by 4**, making your next claims cheaper!<br /><br />Example: at your 5th claim (costing 250 ❄️), using this takes you back to your 1st claim (**50 ❄️**)! | 14 uses | 15h | 10,000 | 1★ x3, 2★ x3 |
+| `judgeday` — **The Judgment Day** ⚖️ | Copies the effect of almost **any other active effect**!<br /><br />Example: `/effect use effect_name:judgeday extra_arguments:claimrecall` lets you use Claim Recall even if it's on cooldown or you don't own it! | 12 uses | 48h | 12,000 | 2★ x1, 3★ x3 |
+| `spaceunity` — **The Space Unity** 🌌 | Gives you a **random card you DON'T have** from a normal collection (1★-3★).<br /><br />Perfect for filling those last few gaps! Just tell it which collection to look in. | 7 uses | 40h | 15,000 | 2★ x2, 3★ x2 |
+| `hyejooanniv` — **Hyejoo Anniversary** 🥂 | Get a random card from the **Hyejoo Anniversary26** collection!<br /><br />⚠️ Only available during anniversary events, but usable anytime after! | 1 use | None | 5,000 | 2★ x3 *(event only)* |
 
-### How to use each active effect
+### How to use each active effect 🎮
 
-Each active effect is used with `/effect use`, but some need extra arguments. Here's the full breakdown:
+Some effects are simple one-click deals, others need a little extra info. Here's the full how-to:
 
-| Effect | Command | Extra arguments examples |
+| Effect | Command | Extra notes |
 | --- | --- | --- |
-| **The Space Unity** | `/effect use effect_name:spaceunity extra_arguments:collection_id` | The **collection ID** of a normal collection you're missing cards from <br />(e.g., `/effect use effect_name:spaceunity extra_arguments:-ive`). <br />It'll grant you a random unowned 1★-3★ card from the specified collection! |
-| **The Judgment Day** | `/effect use effect_name:judgeday extra_arguments:effect_id` | The **effect ID** of the active effect you want to copy (e.g., `claimrecall`). <br />This lets you use another effect's ability even if it's on cooldown or you don't own it! <br /><br /> *If you want to use `spaceunity` specifically, add the collection tag after,<br />(e.g., `/effect use effect_name:judegday extra_arguments:spaceunity -ive`)*|
-| **Enlightened Ayano** | `/effect use effect_name:enayano` | None — just use it and it'll complete a tier 1 daily quest! |
-| **Powerful Bocchi** | `/effect use effect_name:pbocchi` | None — use it and it'll generate a new tier 1 daily quest for you! |
-| **Claim Recall** | `/effect use effect_name:claimrecall` | None — pops your claim cost back by 4 claims right away! |
-| **Hyejoo Anniversary** | `/effect use effect_name:hyejooanniv` | None — one-time use that gives you a random card from the Hyejoo Anniversary26 collection! 🎉 |
-
-:::tip
-For **The Judgment Day**, the `extra_arguments` is whatever you'd normally pass to the effect you're copying. For example, to use `spaceunity` through `judgeday`: <br />`/effect use effect_name:judgeday extra_arguments:spaceunity -collection` <br />The first word after `judgeday` is the target effect ID, and everything after that gets passed along as that effect's arguments!
-:::
+| **The Space Unity** 🌌 | `/effect use effect_name:spaceunity extra_arguments:collection_id` | Tell it **which collection** to look at!<br />Example: `/effect use effect_name:spaceunity extra_arguments:-ive` grabs a card you're missing from the IVE collection! |
+| **The Judgment Day** ⚖️ | `/effect use effect_name:judgeday extra_arguments:effect_id` | Tell it **which effect** to copy!<br />Example: `/effect use effect_name:judgeday extra_arguments:claimrecall` copies Claim Recall!<br />Want to use Space Unity through it? Add the collection after: `/effect use effect_name:judgeday extra_arguments:spaceunity -ive` |
+| **Enlightened Ayano** 🌟 | `/effect use effect_name:enayano` | Simple! Just use it and a tier 1 daily quest auto-completes. |
+| **Powerful Bocchi** 🎸 | `/effect use effect_name:pbocchi` | Also simple! Gives you a shiny new tier 1 daily quest. |
+| **Claim Recall** ↩️ | `/effect use effect_name:claimrecall` | Super simple — pops your claim cost back by 4 claims, just like that! |
+| **Hyejoo Anniversary** 🥂 | `/effect use effect_name:hyejooanniv` | One-click, one-time, one random anniversary card! 🎉 |
 
 ## Hero & Effects commands
 
@@ -108,7 +106,7 @@ These are the main commands for managing your hero and effects:
 
 You start with **2 passive effect slots**. To unlock more:
 
-1. Buy an **Effect Slot Upgrade** from **Store 3★* the bonus store for 50,000 🍋.
+1. Buy an **Effect Slot Upgrade** from **Store 3** (Bonus Items) for 50,000 🍋.
 2. You must be at least **level 100** to use it.
 3. Each upgrade adds **1 slot** for **210 days**.
 4. You can unlock a maximum of **1 slot per 100 levels**.

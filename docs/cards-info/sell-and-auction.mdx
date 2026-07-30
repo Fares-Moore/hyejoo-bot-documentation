@@ -1,0 +1,174 @@
+---
+id: sell-and-auction
+title: Sell & Auction House
+sidebar_position: 4
+---
+
+# Sell & Auction House 🏪💰
+
+Got extra cards? There are two ways to turn 'em into Flakes ❄️ — sell 'em directly to the bot, or list 'em on the **Auction House** for other players to bid on! Let's get into it! 🏪
+
+## Selling to the bot 🤖
+
+The easiest way to get rid of cards you don't need! Sell 'em straight to the bot for a quick payout in Flakes ❄️.
+
+| Command | Required params | What it does |
+| --- | --- | --- |
+| `/sell one` | Card query, optional target user | Sell a single card to the bot (or another player) |
+| `/sell many` | Card query, optional count, optional target user | Sell multiple cards at once |
+| `/sell preview` | Card query | Preview the total value before selling |
+
+### How selling works
+
+- The bot pays you **40% of the card's evaluation** when you sell to it.
+- Selling to another player uses **100% of the card's evaluation** as the price.
+- Locked cards are excluded from selling by default — add `locked:true` to include them.
+- Favorited cards with only 1 copy are protected from being sold.
+
+### Selling to other players 👥
+
+You can sell cards directly to another player — no auction house needed! Just add their user ID:
+
+`/sell one card_query user_id:123456789`
+
+| Aspect | Details |
+| --- | --- |
+| Price | **100%** of the card's evaluation |
+| Payment | Buyer pays in Flakes ❄️ |
+| Notification | The other player gets a prompt to **accept** or **decline** |
+| Pending | If they don't respond immediately, a pending transaction is created |
+| Missing filter | Use `missing:true` to show only cards the other player doesn't have |
+
+:::tip
+Selling directly to another player bypasses auction fees — perfect for guildmates and friends! 🤝
+:::
+
+:::warning
+**Safety first!** Some players disable direct selling in their preferences. If a player has selling disabled, the bot will let you know. You can also adjust your own settings with `/preferences`!
+:::
+
+## Transactions 📋
+
+When you sell to another player, a **transaction** is created. Both parties can manage it:
+
+| Command | What it does |
+| --- | --- |
+| `/transaction confirm` | Accept a pending transaction and complete the exchange |
+| `/transaction decline` | Reject a pending transaction |
+| `/transaction list` | View all your pending and completed transactions |
+| `/transaction info` | Check details on a specific transaction |
+
+### How transactions work
+
+1. Seller runs `/sell one card user_id:player123`
+2. The buyer gets a confirmation prompt
+3. If the buyer accepts — flakes are transferred and the card moves to their inventory ✨
+4. If the buyer declines or is offline — a **pending transaction** is created
+5. Both parties can use `/transaction list` to find it and `/transaction confirm` to finish it later
+
+## The Auction House 🏛️
+
+Want to get the **best price** for a rare card? List it on the Auction House and let players bid it up! This is where the big money moves happen. 💰
+
+| Command | Required params | What it does |
+| --- | --- | --- |
+| `/auction list` | Optional filters (card query, me, diff, bid) | Browse active auctions |
+| `/auction info` | Auction ID | View full details on a specific auction |
+| `/auction preview` | Optional filters | Preview active auctions one at a time |
+| `/auction sell` | Card query, optional price & time | List a card for auction |
+| `/auction bid` | Auction ID + bid amount | Place a bid on an auction |
+| `/auction cancel` | Auction ID | Cancel your auction (before anyone bids) |
+
+### Listing a card for auction 🏷️
+
+Ready to sell? Here's what you need to know:
+
+| Aspect | Details |
+| --- | --- |
+| **Price range** | Between **50%** and **400%** of the card's evaluated value |
+| **Duration** | **1 to 10 hours** (default is 6 hours) |
+| **Listing fee** | **% of your set price** (percentage varies by server, reduced by **Discount Center** building) |
+| **What you CAN'T auction** | Legendary (5★) cards, lottery cards, jackpot cards, and **signed** cards |
+| **Protected cards** | Locked cards can't be sold; favorited single-copy cards get a warning |
+
+:::tip
+Set your price strategically! Too high and nobody bites, too low and you might undersell. Check `/auction list` to see what similar cards are going for! 📈
+:::
+
+#### Listing fee calculation
+
+The listing fee is a percentage of your set price. But if your guild has a **Discount Center** building, the fee gets cheaper!
+
+`Fee = Price × (auctionFeePercent / 100) × Discount_Center_multiplier`
+
+| Discount Center level | Fee reduction |
+| --- | --- |
+| No building | 0% (full fee) |
+| Level 1 | -5% |
+| Level 2 | -10% |
+| Level 3 | -15% |
+| Level 4 | -20% |
+
+### Bidding on auctions 🏏
+
+Found a card you want? Here's how to win it:
+
+| Aspect | Details |
+| --- | --- |
+| **Minimum bid** | Must be **higher than the current price** |
+| **Bid attempts** | Max **5 bids** per auction per person |
+| **Outbid refund** | If you're outbid, your old bid amount is refunded |
+| **Sniping protection** | If a bid comes in the last **5 minutes**, the auction extends by **3 minutes** |
+| **Increasing your bid** | You can increase your own bid up to 5 times |
+| **Can't bid on your own** | Self-bidding is not allowed |
+
+### Winning an auction 🎉
+
+When the timer runs out and you're the highest bidder:
+
+1. The card is added to your inventory 🎴
+2. You pay your winning bid amount
+3. If you have the **Skies of Friendship ☁️** passive effect, you get **13% cashback**!
+
+`Cashback = Winning_Bid × 0.13`
+
+### Cancelling an auction ⛔
+
+You can cancel your auction, but only if:
+- **Nobody has bid on it yet**
+- There's **more than 1 hour** left on the timer
+
+Cancelling does **not** refund the listing fee.
+
+### Auction notifications
+
+The bot will DM you about auction activity if you have notifications enabled:
+
+| Notification | When it triggers |
+| --- | --- |
+| **New bid on your auction** | Someone bids on your listing |
+| **You've been outbid** | Someone outbids you on an auction |
+| **Wishlist alert** | A card on your wishlist is listed — this works for everyone, even without an effect! 🎯 |
+
+:::tip
+The **Festival of Wishes 🎐** passive used to be needed for wishlist auction notifications, but now **it's a free feature for everyone**! You can skip crafting that one. 😄
+:::
+
+## Sell vs Auction — which to choose? 🤔
+
+| Scenario | Best choice |
+| --- | --- |
+| Quick flakes, don't mind the discount | `/sell one` to bot 🤖 |
+| Trading with a friend or guildmate | `/sell one user_id:` 👥 |
+| Rare card that others might want | **Auction House** 🏛️ |
+| You're in a hurry (1 hour listings) | Auction with `timeLength:1` ⏰ |
+| Multiple cards to unload | `/sell many` 📦 |
+
+## Quick tips 💡
+
+- **Check `/auction list`** before listing to see what's already on market
+- **Use `/sell preview`** to check values before committing
+- **High demand cards** (popular idols, rare collections) do best on auction
+- **Use the `diff` filter** — `/auction list diff:true` shows cards you don't own yet
+- **Watch your bids** — you only get 5 bid attempts per auction, so bid smart!
+- **Discount Center matters** — if your guild has one, auction fees are way cheaper 🏗️

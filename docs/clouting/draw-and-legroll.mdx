@@ -6,11 +6,15 @@ sidebar_position: 4
 
 # Draw & Legendary Roll 🎲
 
-Two powerful systems for getting new cards: spending vials to draw, and using legendary tickets for guaranteed 5★ pulls.
+Two awesome ways to get new cards: spend **vials 🧪** to draw, or use **legendary tickets** for guaranteed 5★ pulls! Let's dive in! 🌊
 
 ## `/liquefy` — Turn cards into vials
 
 Before you can draw, you need **vials 🧪**. Liquefying unwanted cards converts them into vials.
+
+:::tip
+`/work` also gives you vials on occasion!
+:::
 
 | Command | What it does |
 | --- | --- |
@@ -25,7 +29,7 @@ Before you can draw, you need **vials 🧪**. Liquefying unwanted cards converts
 | Result | Vials 🧪 are added to your balance |
 
 :::tip
-The **Holy Grail** passive effect is fantastic if you liquefy a lot — 25% extra vials on low-star cards adds up fast!
+The **Holy Grail** passive effect is a good bonus if you liquefy a lot — 25% extra vials on low-star cards adds up!
 :::
 
 ## `/draw` — Spend vials for cards
@@ -50,51 +54,97 @@ With the **Walpurgis Night** passive equipped (lasts 50 days):
 - Draw can give cards up to **6★** instead of the usual 3★ max per daily.
 - This significantly increases your chance at high-rarity cards from draws.
 
+## `/collection reset` — Turn completed collections into clouts
+
+Once you've collected **every card** in a collection, you can reset it to earn a **clout**, some **XP**, **Flakes ❄️**, and — if the collection has one — a **legendary card or ticket**! This is also known as "clouting" a collection.
+
+| Parameter | What it does |
+| --- | --- |
+| `collection` | The completed collection you want to reset |
+| Shows | Requirements, cards to be consumed, and rewards |
+
+### Reset requirements 📋
+
+To reset a collection, you need to **own every card** in it... usually! There's an exception:
+
+| Collection type | What you need to own |
+| --- | --- |
+| **Normal collections** | Every single card in the set (all star levels) |
+| **Fragment collections** 🧩 | Only the **1★** cards — higher stars come from the fragment system |
+| **Promo / Album / Lottery / Limited** | Every card in the set |
+
+So checking through `/collection list completed:true` is your best friend! 🎯
+
+### Cards consumed during reset
+
+When you reset, the bot takes cards from your inventory as the cost. Here's how many:
+
+| If your collection has... | Cards consumed |
+| --- | --- |
+| **200 or fewer cards** | **One copy of each card** below legendary level (5★ for normal, 4★ for fragment) |
+| **More than 200 cards** | **200 cards** taken proportionally across star levels |
+
+:::note
+**Favorited cards** are protected! If a card is favorited and you only have one copy, it won't be taken. Make sure you have at least 2 copies if you want to keep one! 🔒
+:::
+
+### What you get in return 🏆
+
+| Reward | Details |
+| --- | --- |
+| **+1 Clout** | Tracks your total collection resets. Check with `/collection list clouted:true` |
+| **XP** | Equal to the total number of cards in the collection |
+| **Flakes ❄️ refund** | **30%** of the collection's total evaluation value back as flakes |
+| **Legendary** 🎴 | Depends on whether the collection has one (see below) |
+
+### What happens if the collection has no legendary? 🤔
+
+Not every collection has a legendary card (5★ for normal collections, 4★ for fragment collections)! Here's what that means:
+
+- If a **normal collection** has no **5★ card** defined, resetting it still gives you the clout, XP, and 30% eval flakes — you just **won't get a legendary ticket**.
+- If a **fragment collection** has no **4★ card** defined, same deal — you get everything *except* the card reward.
+
+This can happen with newer collections or promo sets where legendaries haven't been added yet. You can always save those collections for later, or clout them now and come back when legendaries drop! 📈
+
+### Fragment collections — special 4★ reward
+
+For **fragment collections**, things work a little differently! Instead of a legendary ticket, the **4★ card** (if one exists) is added **directly to your card inventory** — no rolling needed! 🎉
+
+| Collection type | If a legendary exists... | If not... |
+| --- | --- | --- |
+| **Normal** 📦 | Get a **Legendary Card Claim Ticket** for that collection's 5★ | Clout + XP + flakes, no ticket |
+| **Fragment** 🧩 | Get the **4★ card** added straight to your inventory | Clout + XP + flakes, no card |
+
 ## `/legroll` — Legendary ticket rolling
 
-When you have a **Legendary Card Claim Ticket**, use `/legroll` to spend it and get a guaranteed 5★ card.
+Once you've reset a collection and earned a **Legendary Card Claim Ticket**, use `/legroll` to redeem it for a guaranteed 5★ card!
 
 | Aspect | Details |
 | --- | --- |
 | Cost | 1 Legendary Card Claim Ticket |
 | Result | A guaranteed **5★ legendary card** |
-| Ticket source | Clouts from completing a collection via `/collection reset` |
+| Ticket source | Earning a clout via `/collection reset` on a collection that has a 5★ |
 
 ### How legendary tickets work
 
 - Legend tickets are inventory items (type: `claim_ticket`) that give a 5★ card.
-- The collection is determined when the ticket is awarded.
+- The **collection is locked in** the moment the ticket is awarded — so when you reset a collection, the ticket is already tied to that specific set.
 - Use `/legroll` without any extra parameters to redeem.
 
 :::tip
-Save your legendary tickets for when you're targeting specific legendaries. Since the collection is determined when the ticket is awarded (not when you roll), check what collection your ticket is for before using it.
+Save your legendary tickets for when you're targeting specific legendaries. Since the collection is already locked in when the ticket is awarded, check which collection your ticket is for before using it!
 
-(Some legendaries might not exist when you complete their collection, you can save these tickets for when they get added!)
+(Some legendaries might not exist yet when you complete their collection — you can save those tickets and wait for them to be added!) 🎯
 :::
 
 ## `/sell` — Selling cards
 
-If you have cards you don't need and don't want to liquefy, you can sell them for Flakes ❄️.
+Want to turn cards into Flakes ❄️? You've got two options — sell to the bot for quick flakes, or list on the Auction House for other players to bid!
 
 | Command | Required params | What it does |
 | --- | --- | --- |
-| `/sell one` | Card query, optional price | Sell a single card to the economy system |
-| `/sell many` | Card query, optional count | Sell multiple cards at once |
+| `/sell one` | Card query, optional target user/price | Sell a single card to the bot or another player |
+| `/sell many` | Card query, optional count/target user | Sell multiple cards at once |
 | `/sell preview` | Card query | Preview the value of selling cards |
 
-## `/summon` — Look up a card
-
-Use `/summon` with a card query to find and view a specific card from the global card pool. This is useful for checking card details before deciding to train, ascend, or forge.
-
-| Aspect | Details |
-| --- | --- |
-| Required | Card query (name, ID, or partial match) |
-| Shows | Card name, star level, collection, image, and metadata |
-| Use case | Finding cards to target for training or collection completion |
-
-## Quick tips
-
-- **Liquefy 1★ and 2★ cards** — These are cheapest to replace and give the most efficient vial conversion with Holy Grail.
-- **Draw after building up vials** — Wait until you have a decent vial reserve before drawing to maximize your chances.
-- **Save legend tickets for special occasions** — A guaranteed 5★ is one of the best resources in the game.
-- **Check `/liquefy preview` first** — Always preview before liquefying to make sure you're not giving up valuable cards.
+For the full deep-dive on selling, player-to-player trades, and the auction house with all its rules and fees, check out the dedicated **[Sell & Auction House](../cards-info/sell-and-auction)** page! 🏪

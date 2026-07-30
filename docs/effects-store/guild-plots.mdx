@@ -7,43 +7,40 @@ sidebar_position: 4
 # Guild Plots & Buildings 🏘️
 
 :::note
-Guilds are a mechanic based on the fact that the bot would have been playable in multiple servers. 
-
-As the bot is currently only playable on the main Hyejoo Support Discord Server, many of the following guild mechanics might not be relevant to players currently.
+Guilds were originally built for a multi-server bot setup, but right now Hyejoo is only playable on the main Hyejoo Support Discord Server. Some guild mechanics might not feel as relevant right now!
 :::
 :::tip
-However, collecting lemons is stil crucial for purchasing `effectincrease` items at 20,000 lemons 🍋 each, so its still recommended that players take advantage of this system regardless.
+But don't sleep on plots! You need **lemons 🍋** to buy items like **Effect Use Increase** (20,000 🍋 each), so it's totally worth getting into the plot system anyway! 💰
 :::
-Plots are your **passive lemon income** system. Buy a plot in a guild (server), build structures on it, and earn lemons 🍋 whenever other players take certain actions in that server.
 
-## Getting started with plots
+Plots are your **passive lemon income** system! Buy a plot in a guild, build stuff on it, and earn 🍋 whenever other players do stuff in that server. It's like having a little business! 🏪
 
-To start using plots you need to be at least **level 20**. (Check your level with `/profile`!) 
+## Getting started with plots 🌱
 
-Each plot costs lemons, and the price increases the more plots you own.
+You need to be at least **level 20** to start. (Check your level with `/profile`!) Each plot costs lemons, and the price goes up the more plots you own.
 
-### Plot commands
+### Plot commands 🎮
 
 | Command | What it does |
 | --- | --- |
-| `/plot list` | Show all your plots in the current guild. |
-| `/plot list global` | Show all your plots across all guilds. |
-| `/plot buy` | Purchase a new plot in the current guild. |
-| `/plot info` | View details, stored lemons, and stats for a specific plot. |
-| `/plot info global` | View plot info across all guilds. |
-| `/plot upgrade` | Upgrade a building on one of your plots to the next level. |
-| `/plot collect` | Collect all stored lemons from your plots in the current guild. |
-| `/plot demolish` | Demolish a plot and building, getting 75% of invested lemons back. |
+| `/plot list` | See your plots in the current guild |
+| `/plot list global` | See all your plots across all guilds |
+| `/plot buy` | Buy a new plot in the current guild |
+| `/plot info` | Check details, stored lemons, and stats for a plot |
+| `/plot info global` | View plot info across all guilds |
+| `/plot upgrade` | Upgrade a building to the next level |
+| `/plot collect` | Collect all stored lemons from your plots |
+| `/plot demolish` | Tear down a plot + building, get 75% of invested lemons back |
 
-### Plot limits
+### Plot limits 📏
 
-- **Per guild**: Your guild level determines how many plots you can have. The formula is `ceil(guild_level / 8) + 1` plots per guild.
-- **Global**: You can own `max(0, floor((player_level - 20) / 10) + 1)` plots total across all guilds.
-- **Minimum level**: You need to be **level 20** before you can buy your first plot.
+- **Per guild**: Your guild level decides how many plots you can have. Roughly `ceil(guild_level / 8) + 1` plots per guild.
+- **Global**: About `floor((player_level - 20) / 10) + 1` plots total across all guilds (minimum 1).
+- **Minimum**: You need to be **level 20** before buying your first plot.
 
-### Plot costs
+### Plot costs 💸
 
-The cost of buying a new plot doubles with each plot you own:
+The cost doubles with each plot you own! Here's how it scales:
 
 `25 × 2^(number of plots you already own)`
 
@@ -61,30 +58,27 @@ The cost of buying a new plot doubles with each plot you own:
 | 9 | 12,800 |
 | 10 | 25,600 |
 
-### Lemon cap
+### Lemon cap 🍋
 
-You have a maximum number of lemons you can hold at once. Your cap is determined by the cost of your next plot:
+You can only hold so many lemons at once. Your cap is:
+- **100,000 🍋** if your next plot costs less than 100,000 🍋
+- Equal to your next plot cost if it's 100,000 🍋 or more
 
-- If your next plot costs less than 100,000 🍋, your cap is **100,000 🍋**.
-- If your next plot costs 100,000 🍋 or more, your cap equals that cost.
-
-If collecting plot revenue would exceed your cap, you'll be warned and can choose to collect anyway (forfeiting the excess) or cancel.
+If collecting would go over your cap, the bot will warn you — you can still collect, but you'll lose the extra! ⚠️
 
 ## Buildings (Blueprints) 🏗️
 
-Buildings are placed on plots using **blueprints** bought from the store with lemons 🍋. Each building requires a specific player level to build and has multiple upgrade levels.
+Buildings go on your plots using **blueprints** bought from the store with 🍋. Each building needs a certain player level and has multiple upgrade levels!
 
-### Important building rules
+### Important building rules 📏
 
 :::tip
-Build the buildings according the sequence displayed in the shop and max out all the plots in the server for maximum lemons 🍋 income. 
-
-On average, the server can net a player between 16k to 20k lemons 🍋 every 24 hours assuming maximum building upgrades in all of the player's plots.  
+Build in the order the shop shows you, and max out all your plots in the server for the best 🍋 income! Most players can earn **16k–20k 🍋 every 24 hours** with maxed buildings on all plots. 💰
 :::
 
-- You **must build a Castle first** before placing any other building in a guild.
-- You **cannot have two of the same building** in the same guild.
-- Buildings earn passive lemons based on **other players' actions** in the guild — not your own.
+- You **must build a Castle first** before anything else in a guild.
+- You **can't have two of the same building** in the same guild.
+- Buildings earn lemons from **other players' actions** in the guild, not your own.
 - Buildings have **maintenance costs** paid from the guild's balance.
 
 ### Castle 🏰
@@ -213,8 +207,8 @@ If you want to free up a plot slot, use `/plot demolish`:
 | --- | --- |
 | `/guild info` | View guild info and current buildings. |
 | `/guild status` | See guild finances and maintenance costs. |
-| `/guild donate` | Donate tomatoes to the guild balance. |
-| `/guild convert` | Convert guild lemons into tomatoes (owner/manager). |
+| `/guild donate` | Donate flakes ❄️ to the guild balance. |
+| `/guild convert` | Convert guild lemons 🍋 into flakes ❄️ (owner/manager). |
 | `/guild lead` | View the guild leaderboard. |
 
 ## Quick tips
