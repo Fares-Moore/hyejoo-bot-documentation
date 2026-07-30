@@ -7,95 +7,344 @@ sidebar_position: 3
 # Card Management Commands 🛠️
 
 :::info
-This page is your full reference for managing, organizing, comparing, and evaluating your cards. All commands listed here are verified against the bot's command schema (COMMAND_SCHEMA.md).
+This page is your full reference for managing, organizing, comparing, and evaluating your cards. Each command below has its own detailed breakdown so you know exactly what to expect.
 :::
 
-## Core collection commands
+## Quick reference 🔍
 
-| Command | Required params | Permissions | What it does |
-| --- | --- | --- | --- |
-| `/cards` | Card query (optional) | Any user | Browse the cards you own. Use `global:true` to search the full card pool. Supports filtering by name, collection, star level, and more. |
-| `/summon` | Card query | Any user | Summon and view a specific card from your collection. |
-| `/info` | Card query | Any user | Show card data, owner count, demand (wishlist count), tags, and pricing info for a card. |
-| `/claim cards` | Optional count/promo/any/boost ID/group type | Any user | Claim cards using flakes. Cost scales with number of claims. |
-| `/level claim` | Optional count/promo/any/boost ID/group type | Any user | Alternate claims for cards with random amounts of levels. |
+| Command | What it does | Jump to |
+| --- | --- | --- |
+| `/cards` | Browse your collection with filters | [Daily To-Do → Cards](../daily-to-do/cards) |
+| `/summon` | Display a single card in full glory | [↓ `/summon`](#summon--view-a-card) |
+| `/info` | View card data, owner count, demand & pricing | [↓ `/info`](#info--card-details) |
+| `/has` | Check if another player owns a card | [↓ Comparison commands](#comparison-commands) |
+| `/diff from` / `/diff for` | Compare collections with another player | [↓ Comparison commands](#comparison-commands) |
+| `/wish` | Manage your wishlist | [↓ `/wish`](#wish--track-cards-you-want) |
+| `/fav` | Mark cards as favorites | [↓ `/fav`](#fav--mark-your-favourites) |
+| `/eval` | Evaluate a card's worth | [↓ `/eval`](#eval--check-card-value) |
+| `/rate` | Rate cards in your collection | [↓ `/rate`](#rate--personal-ratings) |
+| `/mark` | Add an emoji marker to a card | [↓ `/mark`](#mark--emoji-markers) |
+| `/lock` | Protect cards from accidental actions | [↓ `/lock`](#lock--inventory-protection) |
+| `/profile` | View a player's profile overview | [↓ Comparison commands](#comparison-commands) |
+| `/stats` | Show your user statistics | [↓ Comparison commands](#comparison-commands) |
 
-## Comparison and checking commands
+---
 
-| Command | Required params | Permissions | What it does |
-| --- | --- | --- | --- |
-| `/has` | Target user ID + card query | Any user | Check whether another player owns a specific card. |
-| `/diff from` | Target user ID | Any user | Compare your card collection against another user's cards. |
-| `/diff for` | Target user ID | Any user | Compare another user's collection against yours. |
-| `/profile` | Target user ID (optional) | Any user | View a profile-style overview for a player. |
-| `/stats` | None | Any user | Show your current user statistics. |
+## `/summon` — View a card
 
-## Wishlist, favorites, and personal organization
+Summon and display a single card from your collection in all its glory. Great for showing off your rarest pulls or inspecting a card up close!
 
-| Command | Required params | Permissions | What it does |
-| --- | --- | --- | --- |
-| `/wish one` | Card query | Any user | Add one card to your wishlist 📋. |
-| `/wish many` | Card query, optional count | Any user | Add multiple cards to your wishlist. |
-| `/wish remove one` | Card query | Any user | Remove one wishlist entry. |
-| `/wish remove many` | Card query, optional count | Any user | Remove multiple wishlist entries. |
-| `/fav one` | Card query | Any user | Mark one card as a favorite ⭐. |
-| `/fav many` | Card query, optional count | Any user | Mark multiple cards as favorites. |
-| `/fav remove one` | Card query | Any user | Remove a favorite mark from one card. |
-| `/fav remove many` | Card query, optional count | Any user | Remove favorite marks from multiple cards. |
+| Aspect | Details |
+| --- | --- |
+| Required param | `card_query` — name, group, or collection |
+| Permissions | Any user |
+| What you see | Full card art, name, star level, collection info, and any marks/ratings |
 
-## Evaluation and rating commands
+### Tips 💡
 
-| Command | Required params | Permissions | What it does |
-| --- | --- | --- | --- |
-| `/eval one` | Card query | Any user | Evaluate one card's worth. |
-| `/eval many` | Card query, optional count | Any user | Evaluate multiple cards at once. |
-| `/rate one` | Card query | Any user | Rate one card. |
-| `/rate many` | Card query, optional count | Any user | Rate multiple cards. |
-| `/rate remove one` | Card query | Any user | Remove a rating from one card. |
-| `/rate remove many` | Card query, optional count | Any user | Remove ratings from multiple cards. |
+- Use `/summon` to show off a card to friends or in trade chats.
+- Combine with `/info` to get the full picture before making a deal.
 
-## Locking and inventory protection
+---
 
-| Command | Required params | Permissions | What it does |
-| --- | --- | --- | --- |
-| `/lock one` | Card query | Any user | Lock one card in your inventory 🔒. |
-| `/lock many` | Card query, optional count | Any user | Lock multiple cards. |
-| `/lock remove one` | Card query | Any user | Unlock one card. |
-| `/lock remove many` | Card query, optional count | Any user | Unlock multiple cards. |
+## `/info` — Card details
+
+Get the complete dossier on any card: pricing data, how many players own it, how many have it on their wishlist, what tags are attached, and more.
+
+| Aspect | Details |
+| --- | --- |
+| Required param | `card_query` — name, group, or collection |
+| Permissions | Any user |
+| Shows | Owner count, demand (wishlist count), tags, pricing info, and raw card data |
+
+### What `/info` tells you 📊
+
+| Data point | What it means |
+| --- | --- |
+| **Owner count** | How many unique players own at least one copy |
+| **Demand / Wishlist count** | How many players have this card on their wishlist — higher demand usually means higher trade value |
+| **Tags** | Community-applied tags (see the [Tag system](/tag) for details) |
+| **Pricing** | The card's base evaluation, useful before selling or trading |
+
+### Tips 💡
+
+- Always check `/info` before buying, selling, or trading a card — knowledge is power!
+- High demand + low owner count = a card worth holding onto (or listing on the auction house).
+
+---
+
+## Comparison commands
+
+Compare your collection against others or check specific ownership.
+
+### `/has` — Check card ownership
+
+See whether another player owns a specific card. Quick and to the point!
+
+| Aspect | Details |
+| --- | --- |
+| Required params | `target_user_id` + `card_query` |
+| Permissions | Any user |
+
+### `/diff from` / `/diff for` — Collection comparison
+
+Compare your entire card collection against another player's to see who has what the other is missing.
+
+| Command | Direction |
+| --- | --- |
+| `/diff from` | Shows cards **you** have that the **other player** is missing |
+| `/diff for` | Shows cards the **other player** has that **you** are missing |
+
+| Aspect | Details |
+| --- | --- |
+| Required param | `target_user_id` |
+| Permissions | Any user |
 
 :::tip
-Favoriting cards protects them from accidental selling, liquefying, or use in forges. Favourite your legendaries and rares first!
+Use `/diff from` to find trade bait — cards you can offer to another player! Use `/diff for` to see what you're missing from their collection.
 :::
+
+### `/profile` — Player overview
+
+View a profile-style overview for any player (or yourself if you omit the target).
+
+| Aspect | Details |
+| --- | --- |
+| Required param | `target_user_id` (optional — omit for your own profile) |
+| Permissions | Any user |
+| Shows | Collection stats, clout count, achievements, and more |
+
+### `/stats` — Your statistics
+
+Show your personal user statistics at a glance.
+
+| Aspect | Details |
+| --- | --- |
+| Required params | None |
+| Permissions | Any user |
+
+---
+
+## `/wish` — Track cards you want
+
+Your personal wishlist helps you keep track of cards you're hunting. When a card on your wishlist gets listed on the auction house, the bot will **DM you a notification** — no special effect needed!
+
+### Subcommands
+
+| Command | What it does |
+| --- | --- |
+| `/wish one` | Add one card to your wishlist 📋 |
+| `/wish many` | Add multiple cards to your wishlist (optional `count` parameter) |
+| `/wish remove one` | Remove one wishlist entry |
+| `/wish remove many` | Remove multiple wishlist entries (optional `count` parameter) |
+
+| Aspect | Details |
+| --- | --- |
+| Required param | `card_query` |
+| Optional param | `count` (for `/wish many` and `/wish remove many`) |
+| Permissions | Any user |
+
+### Wishlist auction notifications 🔔
+
+When a card on your wishlist is listed on the Auction House, the bot automatically notifies you — no passive effect required! This used to require the **Festival of Wishes 🎐** effect, but it's now a free feature for everyone.
+
+### Tips 💡
+
+- Build your wishlist early — it helps you track what to claim and makes auction sniping easier.
+- Use `/wish many` to bulk-add cards from a collection you're trying to complete.
+
+---
+
+## `/fav` — Mark your favourites
+
+Favouriting a card protects it from accidental selling, liquefying, or use in forges. Your favourites are also displayed prominently on your profile.
+
+### Subcommands
+
+| Command | What it does |
+| --- | --- |
+| `/fav one` | Mark one card as a favourite ⭐ |
+| `/fav many` | Mark multiple cards as favourites (optional `count`) |
+| `/fav remove one` | Remove favourite from one card |
+| `/fav remove many` | Remove favourites from multiple cards (optional `count`) |
+
+| Aspect | Details |
+| --- | --- |
+| Required param | `card_query` |
+| Optional param | `count` (for `/fav many` and `/fav remove many`) |
+| Permissions | Any user |
+
+### Protection rules 🛡️
+
+| Action | Protected? |
+| --- | --- |
+| Selling | ✅ Protected — cannot sell your last favourited copy |
+| Liquefying | ✅ Protected — cannot liquefy your last favourited copy |
+| Forging | ✅ Protected — cannot forge your last favourited copy |
+| Collection reset | ✅ Protected — favourited cards won't be consumed if you only have one copy |
+
 :::tip
-Locking cards protects them from other players from seeing them when they use `/has` or `/diff from`. Use this to hide your cards if you're feeling sneaky...
+Favourite your legendaries and rares first! This is the simplest way to prevent costly accidents.
 :::
+
+---
+
+## `/eval` — Check card value
+
+Evaluate a card's monetary worth in flakes ❄️. Essential before selling, liquefying, or trading.
+
+### Subcommands
+
+| Command | What it does |
+| --- | --- |
+| `/eval one` | Evaluate a single card |
+| `/eval many` | Evaluate multiple cards at once (optional `count`) |
+| `/eval many global` | Evaluate cards from the global pool (optional `count`) |
+
+| Aspect | Details |
+| --- | --- |
+| Required param | `card_query` |
+| Optional param | `count` (for `/eval many`) |
+| Permissions | Any user |
+
+### How evaluation works 📈
+
+The evaluation is calculated based on the card's star level, collection type, and other factors. Higher-star cards and rarer collections generally evaluate higher.
+
+### Tips 💡
+
+- Always `/eval` before selling to the bot — you only get **40%** of the evaluation when selling directly.
+- Use `/eval many global` to check values of cards you don't even own yet.
+- Evaluation is the baseline for auction pricing (50%–400% of eval).
+
+---
+
+## `/rate` — Personal ratings
+
+Rate cards in your collection on a personal scale. Your ratings are private to you and help you remember which cards you value most.
+
+### Subcommands
+
+| Command | What it does |
+| --- | --- |
+| `/rate one` | Rate one card |
+| `/rate many` | Rate multiple cards (optional `count`) |
+| `/rate remove one` | Remove a rating from one card |
+| `/rate remove many` | Remove ratings from multiple cards (optional `count`) |
+
+| Aspect | Details |
+| --- | --- |
+| Required param | `card_query` |
+| Optional param | `count` (for `/rate many` and `/rate remove many`) |
+| Permissions | Any user |
+
+### Tips 💡
+
+- Use ratings to mark trade priority — for example, rate cards you'd be willing to trade higher or lower.
+- Combine with `/cards` to see your rated cards and sort by rating.
+
+---
+
+## `/mark` — Emoji markers
+
+:::note
+This command feature is only available to our Kofi Subscribers!
+:::
+
+
+Add a single emoji to a card as a visual marker. Marked cards show the emoji in your `/cards` list and on your profile, making your favourites stand out at a glance.
+
+| Aspect | Details |
+| --- | --- |
+| Required param | `card_query` + an **emoji** |
+| Permissions | **Ko-Fi subscribers only** (AmuPlus role required) |
+
+### Subcommands
+
+| Command | What it does |
+| --- | --- |
+| `/mark one` | Add an emoji mark to one card, or remove it if no emoji is provided |
+| `/mark many` | Add/remove emoji marks from multiple cards at once |
+
+### Rules 📏
+
+| Rule | Details |
+| --- | --- |
+| **One emoji only** | You can only set a single emoji per card |
+| **Emoji-only** | Text characters are not allowed — must be a valid emoji |
+| **Ko-Fi required** | Only AmuPlus (Ko-Fi subscriber) users can use this feature |
+| **Removing a mark** | Run `/mark one` without an emoji to clear the mark |
+
+### Tips 💡
+
+- Use distinct emojis to create your own visual system — 🔴 for trade, 💎 for keep, etc.
+- You can also just use this to mark your bias' representative emojis for all of their cards in your collection! Many players do this just for aesthetics!
+- If you apply multiple emojis by mistake, the bot will clear them automatically and ask you to try again.
+
+---
+
+## `/lock` — Inventory protection
+
+Locking a card hides it from other players when they use `/has` or `/diff` on you. It also provides an extra layer of protection against accidents.
+
+### Subcommands
+
+| Command | What it does |
+| --- | --- |
+| `/lock one` | Lock one card 🔒 |
+| `/lock many` | Lock multiple cards (optional `count`) |
+| `/lock remove one` | Unlock one card |
+| `/lock remove many` | Unlock multiple cards (optional `count`) |
+
+| Aspect | Details |
+| --- | --- |
+| Required param | `card_query` |
+| Optional param | `count` (for `/lock many` and `/lock remove many`) |
+| Permissions | Any user |
+
+### What locking does 🛡️
+
+| Protection | Details |
+| --- | --- |
+| Hides from `/has` | Other players can't see your locked cards when checking ownership |
+| Hides from `/diff` | Locked cards won't show up in collection comparisons |
+| Selling | Locked cards are excluded by default — add `locked:true` to include them |
+
+:::tip
+Lock your most valuable or private cards so other players can't snoop on them! Combine with favourites for double protection.
+:::
+
+---
+
+## Comparison at a glance — fav vs lock
+
+| Feature | `/fav` ⭐ | `/lock` 🔒 |
+| --- | --- | --- |
+| Prevents accidental sell/liquefy/forge | ✅ Yes | ❌ No (but excluded by default from sell) |
+| Hides from `/has` / `/diff` | ❌ No | ✅ Yes |
+| Visible on profile | ✅ Yes | ❌ No |
+| Protects from collection reset | ✅ Yes | ❌ No |
+
+---
 
 ## Extra card systems — covered in other sections
 
-These commands are part of the broader card experience but are detailed elsewhere:
+These commands are part of the broader card experience but are detailed elsewhere to avoid duplication:
 
-| Command | Required params | Permissions | What it does | Covered in |
-| --- | --- | --- | --- | --- |
-| `/sell one` | Card query, optional target user | Any user | Sell a card to the bot or another player. | [Sell & Auction House](./sell-and-auction) |
-| `/sell many` | Card query, optional count, optional target user | Any user | Sell multiple cards at once. | [Sell & Auction House](./sell-and-auction) |
-| `/sell preview` | Card query | Any user | Preview the value from selling cards. | [Sell & Auction House](./sell-and-auction) |
-| `/train` | Card query | Any user | Train a card to gain XP. 15 min cooldown. | [Training & Ascension](../clouting/training-ascension) |
-| `/ascend` | Two card queries | Any user | Ascend two maxed cards into a higher card. | [Training & Ascension](../clouting/training-ascension) |
-| `/combine` | Two card queries | Any user | Combine fodder cards into a new card. | [Training & Ascension](../clouting/training-ascension) |
-| `/forge` | Two card queries | Any user | Forge cards into a new card using the smith system. | [Training & Ascension](../clouting/training-ascension) |
-| `/liquefy one` | Card query | Any user | Liquefy one card into vials 🧪. | [Draw & Legroll](../clouting/draw-and-legroll) |
-| `/liquefy many` | Card query, optional count | Any user | Liquefy multiple cards at once. | [Draw & Legroll](../clouting/draw-and-legroll) |
-| `/liquefy preview` | Card query | Any user | Preview the vial value from liquefying. | [Draw & Legroll](../clouting/draw-and-legroll) |
-| `/draw` | Card query | Any user | Spend vials to draw a card. | [Draw & Legroll](../clouting/draw-and-legroll) |
-| `/legroll` | None | Any user | Spend a legendary ticket to roll a 5★ card. | [Draw & Legroll](../clouting/draw-and-legroll) |
+| Command | What it does | Covered in |
+| --- | --- | --- |
+| `/cards` | Browse your collection with filters | [Daily To-Do → Cards](../daily-to-do/cards) |
+| `/claim cards` | Claim cards using flakes | [Daily Claims](../clouting/daily-claims) |
+| `/level claim` | Claim cards with random levels | [Daily Claims](../clouting/daily-claims) |
+| `/sell one` / `/sell many` / `/sell preview` | Sell cards to bot or players | [Sell & Auction House](./sell-and-auction) |
+| `/train` | Train a card to gain XP | [Training & Ascension](../clouting/training-ascension) |
+| `/ascend` | Combine two maxed cards into higher rarity | [Training & Ascension](../clouting/training-ascension) |
+| `/combine` | Fuse two cards into a new card | [Training & Ascension](../clouting/training-ascension) |
+| `/forge` | Forge cards using the smith system | [Training & Ascension](../clouting/training-ascension) |
+| `/liquefy` | Turn cards into vials 🧪 | [Draw & Legroll](../clouting/draw-and-legroll) |
+| `/draw` | Spend vials to draw a card | [Draw & Legroll](../clouting/draw-and-legroll) |
+| `/legroll` | Use a legendary ticket for a 5★ card | [Draw & Legroll](../clouting/draw-and-legroll) |
+| `/collection list` / `/collection info` | Track collection progress | [Collection Progress](../clouting/collection-progress) |
+| `/collection reset` | Clout a completed collection | [Collection Progress](../clouting/collection-progress) |
 
-## A simple starter workflow
-
-If you're new, here's a tidy little flow:
-
-1. Use `/cards` to browse your collection.
-2. Use `/claim cards` to add new cards (or `/summon` to look up specific ones).
-3. Use `/wish` to save cards you want later.
-4. Use `/eval` to understand value before selling or converting.
-5. Use `/rate` and `/fav` to keep your collection organized and personal.
-6. Use `/lock` to protect your most valuable cards.
+---

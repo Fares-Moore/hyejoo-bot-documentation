@@ -4,11 +4,15 @@ title: Training & Ascension
 sidebar_position: 3
 ---
 
-# Training & Ascension ⬆️
+# Training, Combining & Ascension ⬆️
 
 Leveling up your cards and combining them into higher rarities is a key part of progression. This page covers training, ascending, and combining cards.
 
 ## `/train` — Level up your cards
+
+:::tip
+Train cards regularly, especially ones you plan to ascend. Pair training with `/combine` and `/ascend` to push for a clout!
+:::
 
 Use `/train` to give a card experience points. Training is how you max out cards so they're ready for ascension.
 
@@ -18,10 +22,66 @@ Use `/train` to give a card experience points. Training is how you max out cards
 | Card query | Any card from your inventory |
 | Effect | Gains XP toward next level |
 
-:::tip
-Train cards regularly, especially ones you plan to ascend. Pair training with `/cards` and `/profile` to track your collection's growth.
-:::
+### Max XP per star level 🏆
 
+Your target card can only hold so much XP before it's maxed out:
+
+| Star level | Max XP |
+| --- | --- |
+| 1★ | **1,250 XP** |
+| 2★ | **2,500 XP** |
+| 3★ | **5,000 XP** |
+
+Once a card reaches its max, it's ready for ascension! The bot will warn you if your target is already at max.
+
+---
+## `/combine` — Fuse fodder cards
+
+Combine lets you transfer XP from one card (the **fodder**) into another (the **target**), speeding up your training. This is especially useful for cards obtained via `/level claim` that already have levels on them!
+
+| Aspect | Details |
+| --- | --- |
+| Required | Two cards of any star level between 1★ and 3★ |
+| Result | Your target card gains XP; the fodder card is **deleted** |
+| Cost | Flakes ❄️ (scales with number of combines you've done today) |
+
+### How card levels affect the result 📊
+
+The amount of XP your target card gains depends on **three factors**:
+
+| Factor | How it works |
+| --- | --- |
+| **Target's current XP** | Base XP gain is calculated from the target card's current XP using a formula. Higher-XP targets give better returns. |
+| **Fodder's level** | Each level on the fodder card adds a flat bonus of `0.2 × card level` to the XP gained. Higher-level fodder = more XP! |
+| **Random multiplier 🎲** | A hidden roll from `×1.0`, `×1.5`, or `×2.0` is applied. About 1 in 8 combines get a bonus multiplier. |
+
+### Combine rules 📏
+
+| Rule | Details |
+| --- | --- |
+| **Star range** | Both cards must be between **1★ and 3★**. 4★ and above cannot be used. |
+| **XP required on fodder** | The fodder card **must have XP/levels** — you can't combine a freshly claimed card with no XP. |
+| **Duplicate restriction** | You can't combine if either card has multiple copies (`amount > 1`). |
+| **Lottery cards** | Lottery cards cannot be used in combines. |
+| **Favourite protection** | The last favourited copy of a card is protected from being used as fodder. |
+| **Hidden promo levels** | Some 1★ promo cards from special events can drop with hidden levels — these can still be used as combine fodder. |
+
+### Cost calculation 💰
+
+Combine costs scale based on how many times you've already combined **today**:
+
+| Combines today | Cost bracket |
+| --- | --- |
+| 1st – 5th combine | Cheaper rate (lower per-attempt scaling) |
+| 6th+ combine | Higher long-tail rate |
+
+The exact cost also depends on the **fodder card's evaluation** — higher-value fodder costs more to combine.
+
+### Tips 💡
+
+- `/level claim` cards are **perfect combine fodder** — they come with levels pre-loaded, saving you training time!
+- Check your cards' current XP progress in `/level list` to see how close it is to maxing out.
+---
 ## `/ascend` — Combine into higher rarity
 
 Ascension combines **two maxed-out cards** of the same star level into a **single higher-star card**. This is the main way to push your collection toward rarer tiers.
@@ -43,23 +103,7 @@ Ascension combines **two maxed-out cards** of the same star level into a **singl
 :::warning
 Ascension costs flakes ❄️ based on the cards' evaluations. Higher level ascensions cost more, but the **Cherry Blossoms** passive effect reduces forge/ascend costs by 50%!
 :::
-
-## `/combine` — Fuse fodder cards
-
-Combine two cards of the same star level into a new card. Unlike ascension, the cards don't need to be maxed out. This is useful for recycling duplicate cards.
-
-| Aspect | Details |
-| --- | --- |
-| Required | Two cards of any star level between 1★ and 3★ |
-| Result | Your combine target gaining a small amount of exp based on the combine fodder's level |
-| Cost | Flakes ❄️ |
-
-### Combine rules
-
-- In some cases. 1★ promos in special events can be dropped with levels, **although these levels will be hidden**.
-    - You are able to use these cards with levels as combine fodder regardless at your own discretion.
-- Cannot combine 4★ and above cards.
-
+---
 ## `/forge` — The Smith System
 
 Forging is a more advanced card combination system that uses **two cards of the same star level** to create a new card while also earning **vials 🧪**.
@@ -70,27 +114,27 @@ Forging is a more advanced card combination system that uses **two cards of the 
 | Cost | Flakes ❄️ (calculated from card evaluations) |
 | Reward | A new card of the same star level + vials |
 | 4★ forging | Costs 7x more but produces no vials |
+| Group tag | The result's group tag (boygroups, girlgroups, etc.) follows the input cards' tags. |
+---
+## Forging rules
 
-### Forging rules
-
-#### General rules 📏
+### General rules 📏
 
 | Rule | Details |
 | --- | --- |
 | **Eligible cards** | Must be from non-excluded collections (no fragments, limited, birthdays, etc.) |
 | **Specialty collections** | Cannot forge from limited, birthdays, liveauctions, or fragments |
 | **Cost reduction** | **Cherry Blossoms** passive effect reduces forge costs by **50%** |
-
-#### Collection matching 🎯
+---
+### Collection matching 🎯
 
 | Input cards | Result |
 | --- | --- |
 | Two cards from the **same** collection | A card from that same collection (e.g., 3★ -ive + 3★ -ive → 3★ -ive) |
 | Two cards from **different** collections | A card from a **completely random** collection |
 
-The result's group tag (boygroups, girlgroups, etc.) follows the input cards' tags.
-
-#### Promo card forging 🎉
+---
+### Promo card forging 🎉
 
 | Input cards | Result |
 | --- | --- |
@@ -100,63 +144,19 @@ The result's group tag (boygroups, girlgroups, etc.) follows the input cards' ta
 :::warning
 Forging promos from different collections wastes the promo value — the result won't be a promo card!
 :::
-
-#### Album card forging 💿
+---
+### Album card forging 💿
 
 | Input cards | Result |
 | --- | --- |
 | Two album cards from the **same** album collection | An album card from that collection (e.g., 4★ -bgalbums + 4★ -bgalbums → 4★ -bgalbums) |
 | Two album cards from **different** album collections | An album card from **either** collection (e.g., 4★ -bgalbums + 4★ -ggalbums → 4★ -bgalbums or -ggalbums) |
 | An album card + a **normal** card | ❌ A **normal** card — not from either album collection! |
-
-#### Lottery card forging 🎰
+---
+### Lottery card forging 🎰
 
 Lottery cards can be forged, and have a chance to drop when forging normal cards of the same rarity.
 
 :::tip
 Craft the `cherrybloss` effect to halve your forge and ascend costs — it pays for itself quickly if you do a lot of forging!
 :::
-
-## Card management commands
-
-These commands help you manage, compare, and evaluate your cards:
-
-| Command | Required params | What it does |
-| --- | --- | --- |
-| `/cards` | Card query (optional) | Browse all cards you own with filters and search |
-| `/cards global` | Card query (optional) | Browse cards from the global card pool |
-| `/profile` | Target user ID (optional) | View a player's profile card and collection stats |
-| `/eval one` | Card query | Evaluate one card's worth |
-| `/eval many` | Card query, optional count | Evaluate multiple cards at once |
-| `/eval many global` | Card query, optional count | Evaluate cards from the global pool |
-| `/fav one` | Card query | Favorite one card (protects it from accidental actions) |
-| `/fav many` | Card query, optional count | Favorite multiple cards |
-| `/fav remove one` | Card query | Remove favorite from one card |
-| `/fav remove many` | Card query, optional count | Remove favorites from multiple cards |
-| `/lock one` | Card query | Lock one card for extra protection |
-| `/lock many` | Card query, optional count | Lock multiple cards |
-| `/lock remove one` | Card query | Unlock one card |
-| `/lock remove many` | Card query, optional count | Unlock multiple cards |
-| `/rate one` | Card query | Rate one card |
-| `/rate many` | Card query, optional count | Rate multiple cards |
-| `/rate remove one` | Card query | Remove a rating from one card |
-| `/rate remove many` | Card query, optional count | Remove ratings from multiple cards |
-| `/wish one` | Card query | Add one card to your wishlist |
-| `/wish many` | Card query, optional count | Add multiple cards to your wishlist |
-| `/wish remove one` | Card query | Remove one card from your wishlist |
-| `/wish remove many` | Card query, optional count | Remove multiple wishlist entries |
-| `/diff from` | Target user ID | Compare your cards against another user's collection |
-| `/diff for` | Target user ID | Compare another user's cards against yours |
-| `/has` | Target user ID + card query | Check whether another player owns a specific card |
-| `/summon` | Card query | Look up a specific card from the global pool |
-
-:::tip
-Use **favorites ⭐** and **locks 🔒** to protect your most valuable cards! A favorited/locked card can't be accidentally sold, liquefied, or used in forging. Check your cards with `/cards` to keep track.
-:::
-
-## Quick tips 💡
-
-- **Train → Ascend → Repeat** — Build a pipeline: train cards to max, ascend two of 'em, then train another two!
-- **Cherry Blossoms is a must-have 🌸** — 50% off all forges and ascends saves you tons of flakes in the long run!
-- **Combine your leveled cards** — Got extra cards with levels on them from `/level claim`? `/combine` is way better than selling!
-- **Forging = free vials 🧪** — Working toward a draw? Forging recycles cards AND gives you vials!

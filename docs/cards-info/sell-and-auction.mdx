@@ -9,6 +9,9 @@ sidebar_position: 4
 Got extra cards? There are two ways to turn 'em into Flakes ❄️ — sell 'em directly to the bot, or list 'em on the **Auction House** for other players to bid on! Let's get into it! 🏪
 
 ## Selling to the bot 🤖
+:::warning
+**If you don't specify a user during `/sell`, it will default to a bot sell, please exercise caution so you don't lose valuable cards!** 
+:::
 
 The easiest way to get rid of cards you don't need! Sell 'em straight to the bot for a quick payout in Flakes ❄️.
 
@@ -37,16 +40,12 @@ You can sell cards directly to another player — no auction house needed! Just 
 | Payment | Buyer pays in Flakes ❄️ |
 | Notification | The other player gets a prompt to **accept** or **decline** |
 | Pending | If they don't respond immediately, a pending transaction is created |
-| Missing filter | Use `missing:true` to show only cards the other player doesn't have |
+| Missing filter | Use `missing:true` to sell only cards the other player doesn't have |
 
 :::tip
 Selling directly to another player bypasses auction fees — perfect for guildmates and friends! 🤝
 :::
-
-:::warning
-**Safety first!** Some players disable direct selling in their preferences. If a player has selling disabled, the bot will let you know. You can also adjust your own settings with `/preferences`!
-:::
-
+---
 ## Transactions 📋
 
 When you sell to another player, a **transaction** is created. Both parties can manage it:
@@ -63,9 +62,9 @@ When you sell to another player, a **transaction** is created. Both parties can 
 1. Seller runs `/sell one card user_id:player123`
 2. The buyer gets a confirmation prompt
 3. If the buyer accepts — flakes are transferred and the card moves to their inventory ✨
-4. If the buyer declines or is offline — a **pending transaction** is created
+4. If the buyer doesn't accept immediately and the button prompts dissapear — a **pending transaction** is created
 5. Both parties can use `/transaction list` to find it and `/transaction confirm` to finish it later
-
+---
 ## The Auction House 🏛️
 
 Want to get the **best price** for a rare card? List it on the Auction House and let players bid it up! This is where the big money moves happen. 💰
@@ -153,13 +152,13 @@ The bot will DM you about auction activity if you have notifications enabled:
 :::tip
 The **Festival of Wishes 🎐** passive used to be needed for wishlist auction notifications, but now **it's a free feature for everyone**! You can skip crafting that one. 😄
 :::
-
+---
 ## Sell vs Auction — which to choose? 🤔
 
 | Scenario | Best choice |
 | --- | --- |
 | Quick flakes, don't mind the discount | `/sell one` to bot 🤖 |
-| Trading with a friend or guildmate | `/sell one user_id:` 👥 |
+| Trading with a friend or another server member | `/sell one user_id:` 👥 |
 | Rare card that others might want | **Auction House** 🏛️ |
 | You're in a hurry (1 hour listings) | Auction with `timeLength:1` ⏰ |
 | Multiple cards to unload | `/sell many` 📦 |
@@ -169,6 +168,6 @@ The **Festival of Wishes 🎐** passive used to be needed for wishlist auction n
 - **Check `/auction list`** before listing to see what's already on market
 - **Use `/sell preview`** to check values before committing
 - **High demand cards** (popular idols, rare collections) do best on auction
-- **Use the `diff` filter** — `/auction list diff:true` shows cards you don't own yet
+- **Use the `miss` filter** — `/auction list card_query:-miss` shows cards you don't own yet
 - **Watch your bids** — you only get 5 bid attempts per auction, so bid smart!
 - **Discount Center matters** — if your guild has one, auction fees are way cheaper 🏗️
