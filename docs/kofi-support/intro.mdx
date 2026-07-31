@@ -4,31 +4,74 @@ title: Ko-Fi Support
 sidebar_position: 1
 ---
 
+import Link from '@docusaurus/Link';
+
 # Ko-Fi Support ☕
 
-Love Hyejoo Bot and want to support its development? You can drop a coffee on Ko-Fi to help keep the bot running and unlock some *awesome* perks along the way! 🌟
+<p className="hero__subtitle">
+  Love Hyejoo Bot and want to support its development? You can drop a coffee on Ko-Fi to help keep the bot running and unlock some <em>awesome</em> perks along the way! 🌟
+</p>
+
+:::tip
+Don't forget to run `/kofi` with your transaction ID after donating! Your perks don't activate until you verify. 🎫
+:::
+
+## Jump to a section 🧭
+
+<div className="row">
+  <div className="col col--6 margin-bottom--lg">
+    <Link className="function-card" to="/docs/kofi-support/kofi-support/#how-to-support">
+      <div>
+        <h3>💝 How to Support</h3>
+        <p>The simple steps to donate, premium membership details, and how to verify your payment.</p>
+      </div>
+    </Link>
+  </div>
+
+  <div className="col col--6 margin-bottom--lg">
+    <Link className="function-card" to="/docs/kofi-support/kofi-support/#rewards-and-benefits">
+      <div>
+        <h3>🎁 Rewards & Benefits</h3>
+        <p>All the premium perks — the AmuPlus role, daily lottery claims, monthly promos, and tier weights.</p>
+      </div>
+    </Link>
+  </div>
+
+  <div className="col col--6 margin-bottom--lg">
+    <Link className="function-card" to="/docs/kofi-support/kofi-support/#mark-and-profile">
+      <div>
+        <h3>✏️ Mark & Profile Perks</h3>
+        <p>Mark your cards with emoji and get premium profile additions — favourite cards and flex stats.</p>
+      </div>
+    </Link>
+  </div>
+</div>
+
+<a id="how-to-support"></a>
 
 ## How to support 💝
 
-Ready to support the bot? Here's the simple steps:
+Ready to support the bot? Here are the simple steps:
 
-1. 🌐 Head over to our [Ko-Fi page](https://ko-fi.com) and make a donation
-2. 💵 **$5 or more** = **30 days of premium membership**
-3. ✅ Use `/kofi` with your transaction ID to verify and claim your perks
-4. 🎉 That's it! Premium activates immediately!
+1. 🌐 Head over to our [Ko-Fi page](https://ko-fi.com/hyeejx) and make a donation
+2. 💵 **$3 or more** = **30 days of premium membership**
+3. ✅ Verify your Kofi contribution with our staff 
+4. 🎉 Grab your perks!
+
+:::note
+Premium used to activate immediately, but due to some changes with our Ko-Fi integration, donations are now verified **manually** by staff — hang tight after you donate! ⏳
+:::
 
 ### Premium membership details 📋
 
 | Aspect | Details |
 | --- | --- |
-| Minimum donation | $5 USD |
-| Premium duration | 30 days per $5 |
-| Stacking | Donations stack! $10 = 60 days, $15 = 90 days, etc. |
-| Expiry | Premium runs out when time's up, but you can re-up anytime! |
-| Auto-reward | AmuPlus role is automatically added 🏅 |
+| Minimum donation | None |
+| Premium duration | 30 days per donation >$3 |
+| Activation | Staff verify your transaction and assign the AmuPlus role 🏅 |
 
 :::tip
-Don't forget to run `/kofi` with your transaction ID after donating! Your perks don't activate until you verify. 🎫
+Private message any staff in Hyejoo Support and they'll direct you on how to get your Ko-Fi verified and your role added!
 :::
 
 ### How to verify your payment ✅
@@ -36,20 +79,39 @@ Don't forget to run `/kofi` with your transaction ID after donating! Your perks 
 After donating on Ko-Fi:
 
 1. 📋 Copy your **transaction ID** (txid) from your Ko-Fi order page or the order confirmation URL
-2. ⌨️ Run `/kofi transID:your_transaction_id` in the bot
-3. ✅ You'll get a confirmation message with your premium membership duration
-4. 🔗 You can also paste the full order URL instead of just the ID — the bot will extract the txid automatically!
+2. ⌨️ Copy your Discord ID from your Discord profile
+3. ✅ Message an admin *(Renn or Taengu)* or a community mod *(Aerae)* in the Hyejoo Support server, and attach your transaction ID, your Discord username, and a screenshot of your transaction on Ko-Fi!
+   - If you've already subscribed to Ko-Fi and still have the role, you can submit the same info in the `#kofi-renewal` channel instead and our staff will take care of your renewal details
+4. 🕙 Wait for our staff to assign you the role and get access to your benefits
 
-```
-/kofi transID:abc123-abc123-abc123
-/kofi transID:https://ko-fi.com/...?txid=abc123-abc123-abc123
-```
-
-:::warning
-The transaction ID is visible to you when you make the purchase. If you lose it, you can contact us in the [support server] for help. Don't share it with others!
-:::
+<a id="rewards-and-benefits"></a>
 
 ## Rewards and benefits 🌟
+
+Donating to Hyejoo Bot comes with some sweet perks! 🍬 Here's what supporting us gets you:
+
+- 🎁 Access to the **exclusive Ko-Fi channel**, where giveaways are hosted on a **2 to 3 week cycle**
+- ✏️🎰 Access to the `/mark` and `/koficlaim` commands
+- 💫 For **$9**, you can purchase an already existing card, or a voucher for a future card, from the **4★ signed collection**
+
+### Donation rewards 🪙
+
+Just choose the amount you want to donate (special roles at `$3`, `$6+`, `$9+`, `$15+` and `$21+`) and DM Taengu, Renn or a @Community Moderator with a screenshot showing the amount you donated.
+
+These additional rewards are **not stackable**, and you'll get these rewards everytime you renew:
+
+| Donation | Reward |
+| --- | --- |
+| $3 | 7,000 flakes ❄️ |
+| $6 | 15,000 flakes ❄️ |
+| $10 | 25,000 flakes ❄️ |
+| $15 | 45,000 flakes + 1 random promo in the collection of your choice |
+| $30 | 65,000 flakes + 2 random promos in the collection of your choice |
+| $50 | 80,000 flakes + 1 random limited or birthday card |
+
+:::tip
+Want to choose a customized reward? Just DM either admin and they'll sort something out for you! 💌
+:::
 
 ### Ko-Fi Subscriber perks 🏅
 
@@ -62,7 +124,7 @@ The transaction ID is visible to you when you make the purchase. If you lose it,
 
 ### Daily Ko-Fi Claim 🎰 `/koficlaim`
 
-Ko-Fi subscribers (AmuPlus role) get a **daily lottery card claim**! Every 24 hours, you can claim a random lottery card. These are special cards from the `lottery` collection that aren't available through regular claiming!
+Ko-Fi subscribers (AmuPlus role) get a **daily lottery card claim**! Every 24 hours, you can claim a random card from the `lottery` collection — these special cards aren't available through regular claiming! 🎰
 
 | Aspect | Details |
 | --- | --- |
@@ -70,6 +132,8 @@ Ko-Fi subscribers (AmuPlus role) get a **daily lottery card claim**! Every 24 ho
 | Requirement | AmuPlus role |
 | Reward | A random card from the **Lottery Collection** 🎰 |
 | Command | `/koficlaim` |
+
+{/*
 
 ### Monthly Ko-Fi Promo 🎁 `/kofipromo`
 
@@ -81,6 +145,7 @@ Ko-Fi subscribers also get a **monthly promo card** from exclusive collections! 
 | Requirement | AmuPlus role + a valid tier role (Amu3, Amu6, Amu9, Amu12, Amu15, or Amu30) |
 | Reward | A random card from a tier-based collection pool |
 | Command | `/kofipromo` |
+
 
 ### Tier system and collection weights
 
@@ -108,34 +173,68 @@ Your Ko-Fi tier determines which collections you can pull from and your chances 
 Higher tiers massively increase your legendary collection chances. Amu30 gives you a **45% chance** at epic or legendary collections, while Amu3 is capped at common collections.
 :::
 
+*/}
+
+{/*
+
 ## Commands
 
 | Command | Required params | Permissions | Cooldown | What it does |
 | --- | --- | --- | --- | --- |
 | `/kofi` | Optional transaction ID or link | Any user | None | Show premium info or verify a Ko-Fi payment |
 | `/koficlaim` | None | AmuPlus role only | 24 hours | Claim a daily lottery card |
-| `/kofipromo` | None | AmuPlus role only | 30 days | Claim a monthly promo card based on your tier |
+| `/*********` | None | AmuPlus role only | 30 days | *Details Coming Soon* |
 
-## FAQ ❓
+*/}
+<a id="mark-and-profile"></a>
 
-### How do I become a premium member?
-Donate **$5 or more** on our Ko-Fi page, then run `/kofi transID:your_transaction_id` in the bot to verify.
+---
 
-### What does premium give me?
-Premium grants you an **AmuPlus role**, enhanced profile display features, the ability to mark cards with emoji, and access to premium preferences.
+## Marking your cards with emoji ✏️
 
-### How long does premium last?
-**30 days per $5 donated**. If you donate $15, you get 90 days. Donations stack!
+One of the cutest perks of being a Ko-Fi subscriber — you can slap a little emoji marker on your cards! 🌟 Use `/mark` to add a single emoji to your card, so you can sort, find, and show off your favourites at a glance.
 
-### What's the difference between `/koficlaim` and `/kofipromo`?
-- `/koficlaim` is a **daily** claim (24h cooldown) that gives a random **Lottery Collection** card.
-- `/kofipromo` is a **monthly** claim (30d cooldown) that gives a card from a **tier-based promo collection** with weighted rarities.
+| Aspect | Details |
+| --- | --- |
+| Command | `/mark one` or `/mark many` |
+| Requirement | Ko-Fi subscription (AmuPlus role) |
+| What it does | Adds one emoji marker to your card(s) |
+| Removing marks | Run `/mark` with no emoji to remove the mark 🧹 |
+| Limitation | One emoji per card, please! 🙈 |
 
-### My donation isn't working with `/kofi`. What do I do?
-Make sure you're using the correct transaction ID from your Ko-Fi order page. You can either paste the full URL or just the txid parameter. If it still doesn't work, reach out in the [support server] for help.
+:::note
+You'll need to be a Ko-Fi subscriber to use `/mark` — otherwise the bot will politely tell you to go grab a kofi subscription first! ☕
+:::
 
-### Do I need to keep my Ko-Fi subscription active?
-Premium is time-based — once activated, it lasts for the duration you paid for regardless of subscription status.
+---
 
-### Can I upgrade my tier later?
-Yes! Higher donations just add more time or unlock higher tiers. Each new donation can push you into a higher tier for better monthly promo chances.
+## Premium profile additions 🖼️
+
+With a Ko-Fi subscription, your `/profile` gets a fancy glow-up! Here's what premium members can show off:
+
+### Favourite Card 🪷
+
+Set a favourite card to display front and center on your profile — a big image of your pride and joy!
+
+| Aspect | Details |
+| --- | --- |
+| Command | `/preferences set profile option:card` |
+| Requirement | Ko-Fi subscription (AmuPlus role) |
+| What it does | Displays your chosen card as the profile image |
+
+### Flex Stats 💫
+
+Premium members get an extra **Flex Stats** section on their profile that counts up all your rare goodies:
+
+| Stat | What it counts |
+| --- | --- |
+| **Limiteds** | Cards from limited collections |
+| **Birthdays** | Cards from birthday collections |
+| **Promos** | Cards from promo collections |
+| **Signed** | Cards from the signed collection |
+| **Live Aucs** | Cards from live auction events |
+| **Legendaries** | 5★ cards |
+
+:::tip
+Want to also show off a custom **bio** or an **achievement title** on your profile? Those are free for everyone — only the favourite card image and flex stats need the Ko-Fi subscription! 🎉
+:::

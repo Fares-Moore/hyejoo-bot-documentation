@@ -14,12 +14,12 @@ Think of your card collection as a little gallery of your favorite idols! Some p
 
 These are the everyday cards that make up most collections — your bread and butter!
 
-| Star level | Rarity | How common? | Good for |
+| Star level | Rarity | How to get? | Purpose |
 | --- | --- | --- | --- |
-| 1★ | Common | ~47% of claims | Combine fodder, liquefying |
-| 2★ | Common | ~47% of claims | Combine fodder, liquefying, effect recipes |
-| 3★ | Uncommon | ~5% of claims | Core collection pieces, ascension |
-| 4★ | Rare | ~1% of claims | Valuable collection pieces, high-value ascension |
+| 1★ | Common | drops from ~47% of claims, `/draw` | Combine fodder, liquefying, effect recipes, collection pieces |
+| 2★ | Common | drops from ~47% of claims, `/draw` | Combine fodder, liquefying, effect recipes, collection pieces |
+| 3★ | Uncommon | drops from ~5% of claims, `/draw` | Core collection pieces, `/train` for ascension, collection pieces |
+| 4★ | Rare | drops from ~1% of claims, `/ascend` | Highest Value collection pieces |
 
 ### How to get them
 
@@ -34,6 +34,8 @@ These are the everyday cards that make up most collections — your bread and bu
 - **Sell** — Sell for Flakes ❄️
 - **Effect recipes** — Many recipes require sacrificing specific card rarities
 
+---
+
 ## Legendaries (5★) 🌟
 
 Legendary cards are the big dream pulls — the rarest cards in the game. They often become the centerpiece of a player's collection.
@@ -44,6 +46,19 @@ Legendary cards are the big dream pulls — the rarest cards in the game. They o
 | --- | --- |
 | **`/legroll`** | Spend a **Legendary Card Claim Ticket** for a guaranteed 5★ |
 
+### Legendaries and clout progression 🏆
+
+Legendary cards are the heart of the **clout system** — they're the ultimate prize for fully completing and resetting a collection!
+
+- Complete **every card** in a collection, then run `/collection reset` to **clout** it ⭐
+- If the collection has a **5★ legendary**, you earn a **Legendary Card Claim Ticket** 🎟️ to `/legroll` for it
+- **Fragment collections** hand you the **4★** card directly instead — no rolling needed! 🧩
+- Clouting also rewards **XP** and **Flakes ❄️** based on the collection's evaluation
+
+:::tip
+Head over to **[Clouts and Progression](../clouting/intro)** for the full endgame loop, and check out the **[Collection Reset guide](../clouting/draw-and-legroll#collection-reset--turn-completed-collections-into-clouts)** for all the juicy reset details! 🎯
+:::
+
 ### Legendary cards in gameplay
 
 - Basically just a trophy for completing a collection (lol)
@@ -51,7 +66,8 @@ Legendary cards are the big dream pulls — the rarest cards in the game. They o
 - Cannot be ascended
 - Use `/info` to check a legendary card's total owners
 - Protect your legendaries with `/lock` and `/fav`!
-- The **Legendary Card Swapper** (10,000,000 ❄️ in the bonus store) lets you swap a legendary for another random one in the same collection
+
+---
 
 ## Fragments 🧩
 
@@ -60,9 +76,33 @@ Fragment collections work differently from normal collections. They use a fragme
 ### How fragments work
 
 - Fragment collections focus on collecting the **1★ base cards**
-- Higher star cards in fragment collections come from merging/upgrading fragments
+- Higher star cards in fragment collections come from merging/upgrading fragments, and rarely from `/claim cards` or `/journey`
 - When checking collection completion (`/collection list`), only 1★ cards are counted for fragment collections
-- Fragment cards cannot be used in forging
+- **Fragment cards (both 1★ and 4★) cannot be used in forging**
+
+---
+
+## Promo cards 🎉
+
+Promo cards are tied to promotional or limited-release content. They're especially valuable for showing off rare parts of your collection.
+
+:::tip
+Most promos appear during **seasonal events**! Check out the **[Seasonal Events page](../events-activities/seasonal-events)** for the full rundown on when promos run, how event currency works, and past event collections! 🎁
+:::
+
+### How promos work
+
+- Acquired during **boost events** with the according boost ID 
+- Use `/claim cards boostID:` during an active boost event
+- Every 30 claims will grant a guarenteed event promo during the boost event 
+- Promo collections have their own forging rules — two promo cards from the same collection can forge into another promo from the same collection
+
+### Promo restrictions
+
+- **Two promo cards from the same collection can't be forged into another promo, instead grants a random normal card.**
+- Promo cards forged with a normal card will grant a random normal card.
+
+---
 
 ## Nonstandard cards ✨
 
@@ -79,30 +119,16 @@ Nonstandard collections originate from different ideas by our content team!
 
 | Property | Source | Star Count | Rarity | 
 | --- | --- | --- | --- |
-| `lottery` | Involved events, collaborations, or brand endorsements for groups/soloists | 1★ - 4★ | Uncommon |
-| `album` | Cards representing album releases | 4★ | Rare |
-| `fragments` | Based on group subunits | 1★ or 4★ | Common |
-| `liveauction` | Community created cards, adheres to the the liveauction's theme and the idol selected | 4★ | 1 of a Kind |
-| `birthdays` | Birthday celebration cards | 4★ | Extremely Rare (3 maximum owners) | 
-| `limited` | Collaborations, or brand endorsements for groups/soloists | 4★ | Extremely Rare (3 maximum owners) | 
-| `signed` | Signed/autograph variant cards | 4★ | Exceedingly Rare (Only given out during specific giveaway events) |
-| `special` | Solo debuts or releases by idols | 4★ | Rare, from 4★ forges or giveaways |
+| `lottery` 🎟️ | Involved events, collaborations, or brand endorsements for groups/soloists | 1★ - 4★ | Uncommon |
+| `album` 💿 | Cards representing album releases | 4★ | Rare |
+| `fragments` 🧩 | Based on group subunits | 1★ or 4★ | Common |
+| `liveauction` 🏛️ | Community created cards, adheres to the the liveauction's theme and the idol selected | 4★ | 1 of a Kind |
+| `birthdays` 🎂 | Birthday celebration cards | 4★ | Extremely Rare (3 maximum owners) | 
+| `limited` ⏰ | Collaborations, or brand endorsements for groups/soloists | 4★ | Extremely Rare (3 maximum owners) | 
+| `signed` ✍️ | Signed/autograph variant cards | 4★ | Exceedingly Rare (Only given out during specific giveaway events) |
+| `special` ✨ | Solo debuts or releases by idols | 4★ | Rare, from 4★ forges or giveaways |
 
-## Promo cards 🎉
-
-Promo cards are tied to promotional or limited-release content. They're especially valuable for showing off rare parts of your collection.
-
-### How promos work
-
-- Acquired during **boost events** with the according boost ID 
-- Use `/claim cards boostID:` during an active boost event
-- Every 30 claims will grant a guarenteed event promo during the boost event 
-- Promo collections have their own forging rules — two promo cards from the same collection can forge into another promo from the same collection
-
-### Promo restrictions
-
-- **Two promo cards from the same collection can't be forged into another promo, instead grants a random normal card.**
-- Promo cards forged with a normal card will grant a random normal card.
+---
 
 ## Limited & Birthday cards ⏰
 
@@ -112,13 +138,13 @@ These cards celebrate special moments, seasonal themes, or celebratory events. T
 
 - **Limited** — Available only from giveaways and community-hosted events.
 - **Birthdays** — Available only from giveaways and community-hosted events.
-- **Anniversary** — Released for bot anniversary celebrations (e.g., Hyejoo Anniversary26 collection)
 - Cannot be used in forging (excluded collection type)
 
 ### Collecting tips
 
-- Check `/boost list` to see if any boost events are running
-- Limited and Birthdays cards often have higher trade value
+- Check `/auction list` to see if any auctions are running! Our content team will periodically auction off select limited and birthday cards from a wide variety of groups and soloists on a regular basis.
+    - If you have any specific ones you're chasing, add them to your wish list with `/wish one` or `/wish many`
+- Limited and Birthdays cards often have higher trade value, the more popular and in demand the better1
 - Don't liquefy or sell limited cards — they may be gone forever!
 
 ## Live Auction cards 🏛️
@@ -128,33 +154,4 @@ Live auction are annual events where the community does a livebid to **create** 
 ### Live Auction restrictions in forging
 
 - Cards from `liveauction` flagged collections cannot be used in `/forge`
-- They can normally be sold, traded, or kept as collection pieces
-
-## Miscellaneous cards 🎲
-
-This category covers cards that don't fit neatly into the main groups — seasonal cards, giveaway rewards, and other special drops.
-
-### Examples
-
-- **Event rewards** — Given out during community activities
-- **Giveaway cards** — Distributed through promotional giveaways
-- **Milestone cards** — Rewarded for reaching certain goals
-- **Legacy cards** — From past systems or discontinued mechanics
-
-## How to grow your collection
-
-A good collection routine usually looks like:
-
-1. **Claim daily** — Start with `/daily`, then `/claim cards` for new pulls
-2. **Browse and organize** — Use `/cards` to see what you have, `/wish` to track targets
-3. **Evaluate** — Use `/eval` to know what's worth keeping vs selling
-4. **Compare** — Use `/diff from` or `/diff for` to benchmark against other players
-5. **Progress** — Train, ascend, and work toward collection completion
-
-## Quick tips
-
-- **1★ and 2★ cards** are great for liquefying into vials (especially with **The Holy Grail** effect active).
-- **3★ and 4★ cards** are your main collection pieces — keep them for collection completion.
-- **Legendaries** are irreplaceable — lock and favorite them immediately.
-- **Promo and Limited cards** are time-sensitive — grab them while you can!
-- Check `/collection list` regularly to track your progress.
+- They can normally be sold on the auction house, traded, or kept as collection pieces

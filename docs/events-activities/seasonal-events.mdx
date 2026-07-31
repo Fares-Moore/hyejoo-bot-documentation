@@ -1,34 +1,26 @@
 ---
 id: seasonal-events
-title: Seasonal Events
+title: Boost Events
 sidebar_position: 2
 ---
 
-# Seasonal Events 🎄🎃🌸
+# Boost Events 🎄🎃🌸
 
-Seasonal events are limited-time **promo collections** that pop up during holidays and special seasons! Think of them as little holiday surprises 🎁 — each event brings exclusive cards you can **only** get during that time. Grab 'em before they're gone!
+Boost events are limited-time **promo collections** that pop up during holidays, special seasons and just random collection ideas! 
 
-## How seasonal events work 🎡
+Think of them as random content drops from the team 🎁 — each event brings exclusive cards you can **only** get during that time. (Excluding reruns) Grab 'em before they're gone!
 
-- During a seasonal event, an **active promo** is running in the bot.
-- When you claim regular cards with `/claim cards`, you also earn **event currency** equal to **25% of your claim cost** — more claims = more event cards!
-- Use `/claim cards promo:true` to spend your event currency on promo cards from the event collection.
-- Every **30th regular claim** during a boost event guarantees a special promo card drop! 🎉
-- Promo collections have an **expiration date** — once they expire, those cards are gone until the next time the event rolls around.
+## How boost events work 🎡
 
-### Event currency 💎
+- During a boost event, an **active boostID** will be running in the bot.
+- Every **30th card claim** during a boost event guarantees a special promo card🎉 drop when you use the correspending boostID, e.g. `/claim cards boost_ID:sampleboost`
+- Boost events usually last between **1 to 2 weeks** — once the event is over, those promos cards are then unclaimable and no new cards from that promo collection can be 'spawned' except for content giveaways.
 
-Each event has its own temporary currency. Check your balance with `/balance`!
+---
 
-| Action | What happens |
-| --- | --- |
-| Regular card claim 🃏 | Earn **+25%** of claim cost as event currency |
-| Claiming event cards 🎁 | Spends your event currency 💸 |
-| Event achievements 🏅 | Get bonus event currency on top! 🎉 |
+## Past boost events
 
-## Past and recurring seasonal events
-
-Hyejoo Bot has run many seasonal events over the years! Here's a look at the types of events you might see:
+Hyejoo Bot has run many boost events over the years! Here's a look at the types of events you might see:
 
 ### Halloween 🎃
 
@@ -62,7 +54,7 @@ Love-themed promos:
 
 ### Seasons / Easter 🌷🐰
 
-Springtime and Easter-themed collections:
+Springtime, Easter-themed and Summer collections:
 
 | Event ID | Theme | Rarity |
 | --- | --- | --- |
@@ -77,39 +69,20 @@ Miscellaneous-themed events:
 | Event ID | Theme | Rarity |
 | --- | --- | --- |
 | `smileyevent` | Sunny smiley event — ☀️ | 2★ |
-| `smileyevent26` | 2026 Sunny event — 🌻 | 2★ |
-| `flowercrown` | Flower Crown event —  | 2★ |
+| `smileyevent26` | 2026 Smiley event — 🌻 | 2★ |
+| `flowercrown` | Flower Crown event — 🌺  | 2★ |
 
-### Other seasonal celebrations
+### Other seasonal celebrations 🧧🌕
 
 | Event ID | Theme | Rarity |
 | --- | --- | --- |
 | `lunar` | Lunar New Year — 🧧 | 2★ and 3★ |
 | `chuseok24` | Chuseok (Korean Thanksgiving) — 🌕 | 2★ and 3★ |
 
-## Commands for events 🎮
-
-| Command | Parameters | What it does |
-| --- | --- | --- |
-| `/claim cards` | `boost` — Active boost ID | Claim event cards during a promo period |
-| `/claim cards` | `count` — Number of cards (max 10) | Grab multiple cards in one go |
-| `/claim cards` | `promo:true` | Spend event currency on promo cards |
-| `/balance` | *(none)* | Check your event currency balance |
-| `/daily` | *(none)* | Reset claim cost and keep earning |
-
-## Related achievements
-
-During seasonal events, you can earn special achievements by claiming promo cards:
-
-| Achievement | Requirement | Reward |
-| --- | --- | --- |
-| **Seasonal Event Participant** 🏅 | Claim your first promo card | +50 event currency, +5 🍋 |
-| **Event Rush** 🏃 | Claim 5 promo cards in a day | +100 event currency, +10 🍋 |
-| **Maximum Promo** 💪 | Claim 10 promo cards in a day | +150 event currency, +20 🍋 |
+---
 
 ## Quick tips 💡
 
-- **Stack up during events** — Claim lots of regular cards to earn event currency, then spend it on promos!
+- **Stack up during events** — Claim promos to complete your desired collection or to grow your wealth by trading and selling!
 - **30-claim guarantee** — Every 30th claim during an active boost = guaranteed special card drop.
-- **Don't let it expire** — Unused event currency disappears when the event ends. Spend it!
-- **Check achievements** — Event achievements (first promo, 5 promos, 10 promos) give bonus currency and lemons! 🍋
+- **Use your effects** — Effects such as `claimrecall` and `rulerjeanne` are useful to help you get extra promos and save you some flakes!
